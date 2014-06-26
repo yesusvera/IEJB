@@ -22,7 +22,11 @@
 		29A7D623195BBC6C00C3FA40 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7D602195BBC6C00C3FA40 /* UIKit.framework */; };
 		29A7D62B195BBC6C00C3FA40 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29A7D629195BBC6C00C3FA40 /* InfoPlist.strings */; };
 		29A7D62D195BBC6C00C3FA40 /* IEJBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A7D62C195BBC6C00C3FA40 /* IEJBTests.m */; };
-		29A7D638195BC7D500C3FA40 /* homens_iejb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29A7D637195BC7D500C3FA40 /* homens_iejb.jpg */; };
+		FB43ACCE195BC8B300C2121D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FB43ACCD195BC8B300C2121D /* libsqlite3.dylib */; };
+		FB43ACD4195BC90000C2121D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FB43ACD0195BC90000C2121D /* .gitignore */; };
+		FB43ACD5195BC90000C2121D /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = FB43ACD1195BC90000C2121D /* README.markdown */; };
+		FB43ACD6195BC90000C2121D /* SCSQLite.m in Sources */ = {isa = PBXBuildFile; fileRef = FB43ACD3195BC90000C2121D /* SCSQLite.m */; };
+		FB43ACDE195BCA3E00C2121D /* LoginDAO.m in Sources */ = {isa = PBXBuildFile; fileRef = FB43ACDD195BCA3E00C2121D /* LoginDAO.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,7 +60,14 @@
 		29A7D628195BBC6C00C3FA40 /* IEJBTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IEJBTests-Info.plist"; sourceTree = "<group>"; };
 		29A7D62A195BBC6C00C3FA40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29A7D62C195BBC6C00C3FA40 /* IEJBTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEJBTests.m; sourceTree = "<group>"; };
-		29A7D637195BC7D500C3FA40 /* homens_iejb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = homens_iejb.jpg; sourceTree = "<group>"; };
+		FB43ACCD195BC8B300C2121D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		FB43ACD0195BC90000C2121D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		FB43ACD1195BC90000C2121D /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
+		FB43ACD2195BC90000C2121D /* SCSQLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSQLite.h; sourceTree = "<group>"; };
+		FB43ACD3195BC90000C2121D /* SCSQLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSQLite.m; sourceTree = "<group>"; };
+		FB43ACD7195BC94000C2121D /* iejb.bd */ = {isa = PBXFileReference; lastKnownFileType = file; path = iejb.bd; sourceTree = "<group>"; };
+		FB43ACDC195BCA3E00C2121D /* LoginDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginDAO.h; sourceTree = "<group>"; };
+		FB43ACDD195BCA3E00C2121D /* LoginDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginDAO.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB43ACCE195BC8B300C2121D /* libsqlite3.dylib in Frameworks */,
 				29A7D601195BBC6C00C3FA40 /* CoreGraphics.framework in Frameworks */,
 				29A7D603195BBC6C00C3FA40 /* UIKit.framework in Frameworks */,
 				29A7D5FF195BBC6C00C3FA40 /* Foundation.framework in Frameworks */,
@@ -105,6 +117,7 @@
 		29A7D5FD195BBC6C00C3FA40 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FB43ACCD195BC8B300C2121D /* libsqlite3.dylib */,
 				29A7D5FE195BBC6C00C3FA40 /* Foundation.framework */,
 				29A7D600195BBC6C00C3FA40 /* CoreGraphics.framework */,
 				29A7D602195BBC6C00C3FA40 /* UIKit.framework */,
@@ -116,7 +129,9 @@
 		29A7D604195BBC6C00C3FA40 /* IEJB */ = {
 			isa = PBXGroup;
 			children = (
-				29A7D636195BC7C700C3FA40 /* imagens */,
+				FB43ACD8195BC99800C2121D /* DAO */,
+				FB43ACCF195BC90000C2121D /* SCSQLite-master */,
+				FB43ACCC195BC17300C2121D /* resources */,
 				29A7D60D195BBC6C00C3FA40 /* JYAppDelegate.h */,
 				29A7D60E195BBC6C00C3FA40 /* JYAppDelegate.m */,
 				29A7D610195BBC6C00C3FA40 /* Main_iPhone.storyboard */,
@@ -158,12 +173,32 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		29A7D636195BC7C700C3FA40 /* imagens */ = {
+		FB43ACCC195BC17300C2121D /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				29A7D637195BC7D500C3FA40 /* homens_iejb.jpg */,
+				FB43ACD7195BC94000C2121D /* iejb.bd */,
 			);
-			path = imagens;
+			name = resources;
+			sourceTree = "<group>";
+		};
+		FB43ACCF195BC90000C2121D /* SCSQLite-master */ = {
+			isa = PBXGroup;
+			children = (
+				FB43ACD0195BC90000C2121D /* .gitignore */,
+				FB43ACD1195BC90000C2121D /* README.markdown */,
+				FB43ACD2195BC90000C2121D /* SCSQLite.h */,
+				FB43ACD3195BC90000C2121D /* SCSQLite.m */,
+			);
+			path = "SCSQLite-master";
+			sourceTree = "<group>";
+		};
+		FB43ACD8195BC99800C2121D /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				FB43ACDC195BCA3E00C2121D /* LoginDAO.h */,
+				FB43ACDD195BCA3E00C2121D /* LoginDAO.m */,
+			);
+			name = DAO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,8 +278,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB43ACD4195BC90000C2121D /* .gitignore in Resources */,
 				29A7D615195BBC6C00C3FA40 /* Main_iPad.storyboard in Resources */,
-				29A7D638195BC7D500C3FA40 /* homens_iejb.jpg in Resources */,
+				FB43ACD5195BC90000C2121D /* README.markdown in Resources */,
 				29A7D61A195BBC6C00C3FA40 /* Images.xcassets in Resources */,
 				29A7D612195BBC6C00C3FA40 /* Main_iPhone.storyboard in Resources */,
 				29A7D609195BBC6C00C3FA40 /* InfoPlist.strings in Resources */,
@@ -267,6 +303,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				29A7D60B195BBC6C00C3FA40 /* main.m in Sources */,
+				FB43ACDE195BCA3E00C2121D /* LoginDAO.m in Sources */,
+				FB43ACD6195BC90000C2121D /* SCSQLite.m in Sources */,
 				29A7D618195BBC6C00C3FA40 /* JYViewController.m in Sources */,
 				29A7D60F195BBC6C00C3FA40 /* JYAppDelegate.m in Sources */,
 			);
@@ -483,6 +521,7 @@
 				29A7D632195BBC6C00C3FA40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		29A7D633195BBC6C00C3FA40 /* Build configuration list for PBXNativeTarget "IEJBTests" */ = {
 			isa = XCConfigurationList;
@@ -491,6 +530,7 @@
 				29A7D635195BBC6C00C3FA40 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
