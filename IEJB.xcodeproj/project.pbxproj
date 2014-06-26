@@ -22,6 +22,7 @@
 		29A7D623195BBC6C00C3FA40 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7D602195BBC6C00C3FA40 /* UIKit.framework */; };
 		29A7D62B195BBC6C00C3FA40 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29A7D629195BBC6C00C3FA40 /* InfoPlist.strings */; };
 		29A7D62D195BBC6C00C3FA40 /* IEJBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A7D62C195BBC6C00C3FA40 /* IEJBTests.m */; };
+		29A7D63B195BD07200C3FA40 /* homens_iejb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29A7D63A195BD07200C3FA40 /* homens_iejb.jpg */; };
 		FB43ACCE195BC8B300C2121D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FB43ACCD195BC8B300C2121D /* libsqlite3.dylib */; };
 		FB43ACD4195BC90000C2121D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FB43ACD0195BC90000C2121D /* .gitignore */; };
 		FB43ACD5195BC90000C2121D /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = FB43ACD1195BC90000C2121D /* README.markdown */; };
@@ -60,6 +61,7 @@
 		29A7D628195BBC6C00C3FA40 /* IEJBTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IEJBTests-Info.plist"; sourceTree = "<group>"; };
 		29A7D62A195BBC6C00C3FA40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29A7D62C195BBC6C00C3FA40 /* IEJBTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEJBTests.m; sourceTree = "<group>"; };
+		29A7D63A195BD07200C3FA40 /* homens_iejb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = homens_iejb.jpg; sourceTree = "<group>"; };
 		FB43ACCD195BC8B300C2121D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		FB43ACD0195BC90000C2121D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FB43ACD1195BC90000C2121D /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		29A7D604195BBC6C00C3FA40 /* IEJB */ = {
 			isa = PBXGroup;
 			children = (
+				29A7D639195BD07200C3FA40 /* imagens */,
 				FB43ACD8195BC99800C2121D /* DAO */,
 				FB43ACCF195BC90000C2121D /* SCSQLite-master */,
 				FB43ACCC195BC17300C2121D /* resources */,
@@ -171,6 +174,14 @@
 				29A7D629195BBC6C00C3FA40 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		29A7D639195BD07200C3FA40 /* imagens */ = {
+			isa = PBXGroup;
+			children = (
+				29A7D63A195BD07200C3FA40 /* homens_iejb.jpg */,
+			);
+			path = imagens;
 			sourceTree = "<group>";
 		};
 		FB43ACCC195BC17300C2121D /* resources */ = {
@@ -279,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FB43ACD4195BC90000C2121D /* .gitignore in Resources */,
+				29A7D63B195BD07200C3FA40 /* homens_iejb.jpg in Resources */,
 				29A7D615195BBC6C00C3FA40 /* Main_iPad.storyboard in Resources */,
 				FB43ACD5195BC90000C2121D /* README.markdown in Resources */,
 				29A7D61A195BBC6C00C3FA40 /* Images.xcassets in Resources */,
