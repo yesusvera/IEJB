@@ -7,12 +7,16 @@
 //
 
 #import "JYAppDelegate.h"
+#import "SCSQLite.h"
 
 @implementation JYAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    [SCSQLite initWithDatabase:@"iejb.bd"];
+    
     return YES;
 }
 							
