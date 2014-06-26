@@ -22,6 +22,7 @@
 		29A7D623195BBC6C00C3FA40 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7D602195BBC6C00C3FA40 /* UIKit.framework */; };
 		29A7D62B195BBC6C00C3FA40 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29A7D629195BBC6C00C3FA40 /* InfoPlist.strings */; };
 		29A7D62D195BBC6C00C3FA40 /* IEJBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A7D62C195BBC6C00C3FA40 /* IEJBTests.m */; };
+		29A7D638195BC7D500C3FA40 /* homens_iejb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29A7D637195BC7D500C3FA40 /* homens_iejb.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		29A7D628195BBC6C00C3FA40 /* IEJBTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "IEJBTests-Info.plist"; sourceTree = "<group>"; };
 		29A7D62A195BBC6C00C3FA40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29A7D62C195BBC6C00C3FA40 /* IEJBTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEJBTests.m; sourceTree = "<group>"; };
+		29A7D637195BC7D500C3FA40 /* homens_iejb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = homens_iejb.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,6 +116,7 @@
 		29A7D604195BBC6C00C3FA40 /* IEJB */ = {
 			isa = PBXGroup;
 			children = (
+				29A7D636195BC7C700C3FA40 /* imagens */,
 				29A7D60D195BBC6C00C3FA40 /* JYAppDelegate.h */,
 				29A7D60E195BBC6C00C3FA40 /* JYAppDelegate.m */,
 				29A7D610195BBC6C00C3FA40 /* Main_iPhone.storyboard */,
@@ -153,6 +156,14 @@
 				29A7D629195BBC6C00C3FA40 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		29A7D636195BC7C700C3FA40 /* imagens */ = {
+			isa = PBXGroup;
+			children = (
+				29A7D637195BC7D500C3FA40 /* homens_iejb.jpg */,
+			);
+			path = imagens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29A7D615195BBC6C00C3FA40 /* Main_iPad.storyboard in Resources */,
+				29A7D638195BC7D500C3FA40 /* homens_iejb.jpg in Resources */,
 				29A7D61A195BBC6C00C3FA40 /* Images.xcassets in Resources */,
 				29A7D612195BBC6C00C3FA40 /* Main_iPhone.storyboard in Resources */,
 				29A7D609195BBC6C00C3FA40 /* InfoPlist.strings in Resources */,
