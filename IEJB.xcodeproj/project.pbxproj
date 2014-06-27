@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2941DF1A195CF72D004BFEAE /* JYCadastroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2941DF19195CF72D004BFEAE /* JYCadastroViewController.m */; };
 		29A7D5FF195BBC6C00C3FA40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7D5FE195BBC6C00C3FA40 /* Foundation.framework */; };
 		29A7D601195BBC6C00C3FA40 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7D600195BBC6C00C3FA40 /* CoreGraphics.framework */; };
 		29A7D603195BBC6C00C3FA40 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7D602195BBC6C00C3FA40 /* UIKit.framework */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2941DF18195CF72D004BFEAE /* JYCadastroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCadastroViewController.h; sourceTree = "<group>"; };
+		2941DF19195CF72D004BFEAE /* JYCadastroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCadastroViewController.m; sourceTree = "<group>"; };
 		29A7D5FB195BBC6C00C3FA40 /* IEJB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IEJB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A7D5FE195BBC6C00C3FA40 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		29A7D600195BBC6C00C3FA40 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -97,6 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2941DF17195CF704004BFEAE /* cadastro */ = {
+			isa = PBXGroup;
+			children = (
+				2941DF18195CF72D004BFEAE /* JYCadastroViewController.h */,
+				2941DF19195CF72D004BFEAE /* JYCadastroViewController.m */,
+			);
+			path = cadastro;
+			sourceTree = "<group>";
+		};
 		29A7D5F2195BBC6B00C3FA40 = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +143,7 @@
 		29A7D604195BBC6C00C3FA40 /* IEJB */ = {
 			isa = PBXGroup;
 			children = (
+				2941DF17195CF704004BFEAE /* cadastro */,
 				29A7D639195BD07200C3FA40 /* imagens */,
 				FB43ACD8195BC99800C2121D /* DAO */,
 				FB43ACCF195BC90000C2121D /* SCSQLite-master */,
@@ -318,6 +331,7 @@
 				FB43ACDE195BCA3E00C2121D /* LoginDAO.m in Sources */,
 				FB43ACD6195BC90000C2121D /* SCSQLite.m in Sources */,
 				29A7D618195BBC6C00C3FA40 /* JYViewController.m in Sources */,
+				2941DF1A195CF72D004BFEAE /* JYCadastroViewController.m in Sources */,
 				29A7D60F195BBC6C00C3FA40 /* JYAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
