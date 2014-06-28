@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JYCadastroViewController : UIViewController<UITextFieldDelegate>
+@interface JYCadastroViewController : UIViewController<UITextFieldDelegate>{
+}
 @property (weak, nonatomic) IBOutlet UITextField *cadNome;
 @property (weak, nonatomic) IBOutlet UITextField *cadCPF;
 @property (weak, nonatomic) IBOutlet UITextField *cadDataNasc;

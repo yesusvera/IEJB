@@ -38,6 +38,7 @@
     [prefixLabel setFont:[UIFont boldSystemFontOfSize:11]];
     // This fits the frame to size of the text
     [prefixLabel sizeToFit];
+    
     self.cadDataNasc.leftView = prefixLabel;
     //It set when the left prefixLabel to be displayed
     cadNome.leftViewMode = UITextFieldViewModeAlways;
@@ -49,19 +50,47 @@
     // Neste caso foi configurado para exibir apenas a data.
     self.listaData.datePickerMode = UIDatePickerModeDate;
     
+    
+    //[self.listaData addSubview: self.barraData];
+
+    
     // Definir a ação que será executada como resposta ao evento do picker
     [self.listaData addTarget:self action:@selector(getDate:) forControlEvents:UIControlEventValueChanged];
-
+    [self.listaData removeFromSuperview];
     
     // Ligar o picker ao campo de texto mediante a property inputView
     // Com isso estamos substituindo a entrada padrão do text field (teclado) pelo nosso picker
-
+    
     self.cadDataNasc.inputView = listaData;
     
 
 }
 
-- (IBAction)fechaListaDatas:(UIButton *)sender {
+- (void)datePickerView
+{
+    // Initialization code
+    self.listaData = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 250, 325, 250)];
+    self.listaData .datePickerMode = UIDatePickerModeDate;
+    self.listaData.hidden = NO;
+
+    self.listaData .date = [NSDate date];
+    [self.view addSubview:self.listaData ];
+    [self.listaData  addTarget:self
+                   action:@selector(changeDateInLabel:)
+         forControlEvents:UIControlEventValueChanged];
+}
+
+
+- (void)changeDateInLabel:(id)sender{
+    //Use NSDateFormatter to write out the date in a friendly format
+    NSDateFormatter *df = [[NSDateFormatter alloc] init];
+    df.dateStyle = NSDateFormatterMediumStyle;
+    self.cadDataNasc.text = [NSString stringWithFormat:@"%@",
+                  [df stringFromDate:self.listaData.date]];
+    
+}
+
+- (IBAction)fecharLista:(id)sender {
     listaData.hidden = YES;
 }
 
