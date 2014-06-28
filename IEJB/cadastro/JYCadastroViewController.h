@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *cadDataNasc;
 @property (retain, nonatomic) IBOutlet UIDatePicker *listaData;
 
+@property (weak, nonatomic) IBOutlet UIScrollView *barraRolagem;
 
 
 

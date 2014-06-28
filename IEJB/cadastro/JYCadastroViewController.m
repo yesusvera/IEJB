@@ -13,7 +13,7 @@
 @end
 
 @implementation JYCadastroViewController
-@synthesize cadNome,cadCPF, cadDataNasc, listaData;
+@synthesize cadNome,cadCPF, cadDataNasc, listaData,barraRolagem;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -22,6 +22,12 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 - (void)viewDidLoad
@@ -58,10 +64,15 @@
     [self.listaData addTarget:self action:@selector(getDate:) forControlEvents:UIControlEventValueChanged];
     [self.listaData removeFromSuperview];
     
+    
     // Ligar o picker ao campo de texto mediante a property inputView
     // Com isso estamos substituindo a entrada padrão do text field (teclado) pelo nosso picker
     
     self.cadDataNasc.inputView = listaData;
+    
+    
+    [self.barraRolagem setScrollEnabled:YES];
+    [self.barraRolagem setContentSize:CGSizeMake(320, 1624)];
     
 
 }

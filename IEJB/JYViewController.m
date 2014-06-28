@@ -19,9 +19,17 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
-    self.hidesBottomBarWhenPushed;
+
 
 }
+
+- (void) viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {
