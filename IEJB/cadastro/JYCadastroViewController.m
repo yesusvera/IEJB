@@ -33,6 +33,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    //hide keyboard on touch of scroll view
+    UITapGestureRecognizer *yourTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollTap:)];
+    [self.barraRolagem addGestureRecognizer:yourTap];
+    
     // Do any additional setup after loading the view.
     //self.cadNome.layer.cornerRadius = 5.0f;
     //self.cadNome.layer.borderWidth = 0.3;
@@ -49,6 +54,8 @@
     //It set when the left prefixLabel to be displayed
     cadNome.leftViewMode = UITextFieldViewModeAlways;
     
+
+    
     // Criação do picker que irá substituir o teclado no campo de texto
     self.listaData = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 230, 0)];
     
@@ -62,7 +69,9 @@
     
     // Definir a ação que será executada como resposta ao evento do picker
     [self.listaData addTarget:self action:@selector(getDate:) forControlEvents:UIControlEventValueChanged];
+    
     [self.listaData removeFromSuperview];
+
     
     
     // Ligar o picker ao campo de texto mediante a property inputView
@@ -71,10 +80,10 @@
     self.cadDataNasc.inputView = listaData;
     
     
+    
     [self.barraRolagem setScrollEnabled:YES];
     [self.barraRolagem setContentSize:CGSizeMake(320, 1624)];
     
-
 }
 
 - (void)datePickerView
@@ -83,12 +92,14 @@
     self.listaData = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 250, 325, 250)];
     self.listaData .datePickerMode = UIDatePickerModeDate;
     self.listaData.hidden = NO;
+    
 
     self.listaData .date = [NSDate date];
     [self.view addSubview:self.listaData ];
     [self.listaData  addTarget:self
                    action:@selector(changeDateInLabel:)
          forControlEvents:UIControlEventValueChanged];
+    
 }
 
 
@@ -103,6 +114,7 @@
 
 - (IBAction)fecharLista:(id)sender {
     listaData.hidden = YES;
+    
 }
 
 
@@ -125,6 +137,7 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
+    
     // Dispose of any resources that can be recreated.
 }
 
@@ -143,5 +156,12 @@
     listaData.hidden = NO;
 }
 
+
+//hide keyboard on touch of scroll view
+- (void)scrollTap:(UIGestureRecognizer*)gestureRecognizer {
+    
+    //make keyboard disappear , you can use resignFirstResponder too, it's depend.
+    [self.view endEditing:YES];
+}
 
 @end
