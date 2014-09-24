@@ -44,7 +44,7 @@
     // This allocates a label
     UILabel *prefixLabel = [[UILabel alloc]initWithFrame:CGRectZero];
     //This sets the label text
-    prefixLabel.text =@" Data de nascimento   ";
+    //prefixLabel.text =@" Data de nascimento   ";
     // This sets the font for the label
     [prefixLabel setFont:[UIFont boldSystemFontOfSize:11]];
     // This fits the frame to size of the text
@@ -54,18 +54,12 @@
     //It set when the left prefixLabel to be displayed
     cadNome.leftViewMode = UITextFieldViewModeAlways;
     
-
-    
     // Criação do picker que irá substituir o teclado no campo de texto
     self.listaData = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 230, 0)];
     
     // Definir o modo do picker (data e hora, apenas datas, etc.)
     // Neste caso foi configurado para exibir apenas a data.
     self.listaData.datePickerMode = UIDatePickerModeDate;
-    
-    
-    //[self.listaData addSubview: self.barraData];
-
     
     // Definir a ação que será executada como resposta ao evento do picker
     [self.listaData addTarget:self action:@selector(getDate:) forControlEvents:UIControlEventValueChanged];
@@ -78,8 +72,6 @@
     // Com isso estamos substituindo a entrada padrão do text field (teclado) pelo nosso picker
     
     self.cadDataNasc.inputView = listaData;
-    
-    
     
     [self.barraRolagem setScrollEnabled:YES];
     [self.barraRolagem setContentSize:CGSizeMake(320, 1624)];

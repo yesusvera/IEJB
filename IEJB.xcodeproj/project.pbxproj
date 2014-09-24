@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2911791519D25AB80068FBC4 /* Logo_M1A1.png in Resources */ = {isa = PBXBuildFile; fileRef = 2911791419D25AB80068FBC4 /* Logo_M1A1.png */; };
+		2911791719D25B800068FBC4 /* Logo_IEJB.png in Resources */ = {isa = PBXBuildFile; fileRef = 2911791619D25B800068FBC4 /* Logo_IEJB.png */; };
 		2941DF1A195CF72D004BFEAE /* JYCadastroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2941DF19195CF72D004BFEAE /* JYCadastroViewController.m */; };
 		29A7D5FF195BBC6C00C3FA40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7D5FE195BBC6C00C3FA40 /* Foundation.framework */; };
 		29A7D601195BBC6C00C3FA40 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7D600195BBC6C00C3FA40 /* CoreGraphics.framework */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2911791419D25AB80068FBC4 /* Logo_M1A1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo_M1A1.png; path = "../../../../../Downloads/LOGO M1A1/PNG/Logo_M1A1.png"; sourceTree = "<group>"; };
+		2911791619D25B800068FBC4 /* Logo_IEJB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Logo_IEJB.png; path = "../../../../../Downloads/LOGO IEJB/PNG/Logo_IEJB.png"; sourceTree = "<group>"; };
 		2941DF18195CF72D004BFEAE /* JYCadastroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCadastroViewController.h; sourceTree = "<group>"; };
 		2941DF19195CF72D004BFEAE /* JYCadastroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCadastroViewController.m; sourceTree = "<group>"; };
 		29A7D5FB195BBC6C00C3FA40 /* IEJB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IEJB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -192,6 +196,8 @@
 		29A7D639195BD07200C3FA40 /* imagens */ = {
 			isa = PBXGroup;
 			children = (
+				2911791619D25B800068FBC4 /* Logo_IEJB.png */,
+				2911791419D25AB80068FBC4 /* Logo_M1A1.png */,
 				29A7D63A195BD07200C3FA40 /* homens_iejb.jpg */,
 			);
 			path = imagens;
@@ -302,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2911791519D25AB80068FBC4 /* Logo_M1A1.png in Resources */,
 				FB43ACD4195BC90000C2121D /* .gitignore in Resources */,
 				29A7D63B195BD07200C3FA40 /* homens_iejb.jpg in Resources */,
 				29A7D615195BBC6C00C3FA40 /* Main_iPad.storyboard in Resources */,
@@ -309,6 +316,7 @@
 				29A7D61A195BBC6C00C3FA40 /* Images.xcassets in Resources */,
 				29A7D612195BBC6C00C3FA40 /* Main_iPhone.storyboard in Resources */,
 				29A7D609195BBC6C00C3FA40 /* InfoPlist.strings in Resources */,
+				2911791719D25B800068FBC4 /* Logo_IEJB.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
