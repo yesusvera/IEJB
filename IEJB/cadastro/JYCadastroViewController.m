@@ -122,7 +122,7 @@
     [formatter setDateFormat:@"dd/MM/yyyy"];
     
     // Exibir a data no campo de texto
-    self.cadDataNasc.text =[@"  Data de nascimento   " stringByAppendingString: [formatter stringFromDate:currentDate]];
+    self.cadDataNasc.text =[formatter stringFromDate:currentDate];
     
 }
 
