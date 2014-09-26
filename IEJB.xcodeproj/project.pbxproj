@@ -28,6 +28,8 @@
 		29A7D62D195BBC6C00C3FA40 /* IEJBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A7D62C195BBC6C00C3FA40 /* IEJBTests.m */; };
 		29A7D63B195BD07200C3FA40 /* homens_iejb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29A7D63A195BD07200C3FA40 /* homens_iejb.jpg */; };
 		29E23D9F19D506D000F34642 /* JYCadastroSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E23D9E19D506D000F34642 /* JYCadastroSocialViewController.m */; };
+		29E23DA119D5114900F34642 /* Logo_IEJB_Horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 29E23DA019D5114900F34642 /* Logo_IEJB_Horizontal.png */; };
+		29E23DA419D5170D00F34642 /* JYSistemaIEJBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E23DA319D5170D00F34642 /* JYSistemaIEJBViewController.m */; };
 		FB43ACCE195BC8B300C2121D /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FB43ACCD195BC8B300C2121D /* libsqlite3.dylib */; };
 		FB43ACD4195BC90000C2121D /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = FB43ACD0195BC90000C2121D /* .gitignore */; };
 		FB43ACD5195BC90000C2121D /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = FB43ACD1195BC90000C2121D /* README.markdown */; };
@@ -75,6 +77,9 @@
 		29A7D63A195BD07200C3FA40 /* homens_iejb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = homens_iejb.jpg; sourceTree = "<group>"; };
 		29E23D9D19D506D000F34642 /* JYCadastroSocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCadastroSocialViewController.h; sourceTree = "<group>"; };
 		29E23D9E19D506D000F34642 /* JYCadastroSocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCadastroSocialViewController.m; sourceTree = "<group>"; };
+		29E23DA019D5114900F34642 /* Logo_IEJB_Horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_IEJB_Horizontal.png; sourceTree = "<group>"; };
+		29E23DA219D5170D00F34642 /* JYSistemaIEJBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYSistemaIEJBViewController.h; sourceTree = "<group>"; };
+		29E23DA319D5170D00F34642 /* JYSistemaIEJBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYSistemaIEJBViewController.m; sourceTree = "<group>"; };
 		FB43ACCD195BC8B300C2121D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		FB43ACD0195BC90000C2121D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FB43ACD1195BC90000C2121D /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
@@ -119,6 +124,8 @@
 				294F50B919D4F7D9005AC2D6 /* JYCadastroEclesiasticoViewController.m */,
 				29E23D9D19D506D000F34642 /* JYCadastroSocialViewController.h */,
 				29E23D9E19D506D000F34642 /* JYCadastroSocialViewController.m */,
+				29E23DA219D5170D00F34642 /* JYSistemaIEJBViewController.h */,
+				29E23DA319D5170D00F34642 /* JYSistemaIEJBViewController.m */,
 			);
 			path = cadastro;
 			sourceTree = "<group>";
@@ -206,6 +213,7 @@
 		29A7D639195BD07200C3FA40 /* imagens */ = {
 			isa = PBXGroup;
 			children = (
+				29E23DA019D5114900F34642 /* Logo_IEJB_Horizontal.png */,
 				294F50B619D4C599005AC2D6 /* Logo_IEJB.png */,
 				294F50B419D4C577005AC2D6 /* Logo_M1A1.png */,
 				29A7D63A195BD07200C3FA40 /* homens_iejb.jpg */,
@@ -326,6 +334,7 @@
 				29A7D612195BBC6C00C3FA40 /* Main_iPhone.storyboard in Resources */,
 				294F50B519D4C577005AC2D6 /* Logo_M1A1.png in Resources */,
 				29A7D609195BBC6C00C3FA40 /* InfoPlist.strings in Resources */,
+				29E23DA119D5114900F34642 /* Logo_IEJB_Horizontal.png in Resources */,
 				294F50B719D4C599005AC2D6 /* Logo_IEJB.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -345,6 +354,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29E23DA419D5170D00F34642 /* JYSistemaIEJBViewController.m in Sources */,
 				29A7D60B195BBC6C00C3FA40 /* main.m in Sources */,
 				FB43ACDE195BCA3E00C2121D /* LoginDAO.m in Sources */,
 				29E23D9F19D506D000F34642 /* JYCadastroSocialViewController.m in Sources */,
