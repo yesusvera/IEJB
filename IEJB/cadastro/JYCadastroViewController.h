@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JYCadastroViewController : UIViewController<UITextFieldDelegate, UIGestureRecognizerDelegate, UIPickerViewDataSource, UIPickerViewDelegate>{
+@interface JYCadastroViewController : UIViewController<UITextFieldDelegate, UIGestureRecognizerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate>{
     
     UIPickerView *opcoesTpSang;
     NSArray *listaTpSanguineo;

@@ -101,6 +101,18 @@
     [self.view endEditing:YES];
 }
 
+- (IBAction)concluirCadastro:(id)sender {
+    
+    UIAlertView *perguntaConcluirCad = [[UIAlertView alloc]
+                                        initWithTitle:@"Cadastro de Membro"
+                                        message:@"Deseja concluir o cadastro?"
+                                        delegate:self
+                                        cancelButtonTitle:@"Cancelar"
+                                        otherButtonTitles:@"Concluir", nil];
+                                        
+    [perguntaConcluirCad show];
+}
+
 
 
 #pragma mark - UIPickerView Delegate
