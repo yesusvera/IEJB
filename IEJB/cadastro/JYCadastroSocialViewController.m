@@ -35,6 +35,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+}
+
 - (IBAction)concluirCadastro:(id)sender {
     
     UIAlertView *perguntaConcluirCad = [[UIAlertView alloc]
