@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JYOpcoesCadastroViewController : UIViewController
+@interface JYOpcoesCadastroViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>
 
 @end
