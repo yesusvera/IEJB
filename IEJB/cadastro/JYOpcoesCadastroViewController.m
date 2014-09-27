@@ -27,6 +27,8 @@
 {
     [super viewDidLoad];
     
+    //tiposCadastro = [[NSArray alloc]initWithObjects:@"Pessoal",@"Eclesiástico", @"Social", nil];
+    //self.navigationItem.leftBarButtonItem.title = @"Voltar";
     // Do any additional setup after loading the view.
 }
 
@@ -36,6 +38,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    
+}
+
+//#pragma mark - UITableViewDelegate
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+//    return tiposCadastro.count;
+//}
+//
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    
+//    static NSString *CellIdentifier = @"Cell";
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+//    if (cell == nil) {
+//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] ;
+//    }
+//    
+//    cell.textLabel.text = [tiposCadastro objectAtIndex:indexPath.row];
+//    return cell;
+//}
 
 /*
 #pragma mark - Navigation

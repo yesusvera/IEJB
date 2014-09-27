@@ -98,10 +98,10 @@
             </objects>
             <point key="canvasLocation" x="959" y="154"/>
         </scene>
-        <!--JY - Cadastro-->
+        <!--Opcoes Cadastro View Controller - Cadastro-->
         <scene sceneID="MEI-CB-0IJ">
             <objects>
-                <tableViewController id="fv8-FT-vhL" customClass="JY" sceneMemberID="viewController">
+                <tableViewController id="fv8-FT-vhL" customClass="JYOpcoesCadastroViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="rNA-lb-7i7">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -111,7 +111,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <sections>
-                            <tableViewSection id="PQn-tY-uBg">
+                            <tableViewSection id="IWD-Ed-wIN">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cadastro Pessoal" textLabel="wD6-P0-bsm" style="IBUITableViewCellStyleDefault" id="60c-uc-FVg">
                                         <rect key="frame" x="0.0" y="35" width="320" height="44"/>
@@ -183,7 +183,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Cadastro" id="UEf-le-zb7">
-                        <barButtonItem key="backBarButtonItem" title="Voltar" id="wH5-Cq-Uf4"/>
+                        <barButtonItem key="backBarButtonItem" title="Voltar" id="We9-v2-AgC"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xyM-mn-koZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -496,7 +496,7 @@
         <!--Cadastro View Controller - Cadastro Pessoal-->
         <scene sceneID="vn3-6T-ow5">
             <objects>
-                <viewController storyboardIdentifier="cadastro" id="XoQ-vk-LLx" customClass="JYCadastroViewController" sceneMemberID="viewController">
+                <viewController id="XoQ-vk-LLx" customClass="JYCadastroViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6SO-ll-MCl">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1081,7 +1081,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Mtb-UQ-c7M"/>
-        <segue reference="jB2-oj-IbE"/>
+        <segue reference="fEi-H8-QOw"/>
+        <segue reference="wNL-Vv-FA9"/>
     </inferredMetricsTieBreakers>
 </document>
