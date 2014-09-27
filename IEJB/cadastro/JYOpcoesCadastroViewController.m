@@ -1,18 +1,18 @@
 //
-//  JYSistemaIEJBViewController.m
+//  JYOpcoesCadastroViewController.m
 //  IEJB
 //
 //  Created by Jonathan Jordan Carrillo Salcedo on 26/09/14.
 //  Copyright (c) 2014 JY DESENV. All rights reserved.
 //
 
-#import "JYSistemaIEJBViewController.h"
+#import "JYOpcoesCadastroViewController.h"
 
-@interface JYSistemaIEJBViewController ()
+@interface JYOpcoesCadastroViewController ()
 
 @end
 
-@implementation JYSistemaIEJBViewController
+@implementation JYOpcoesCadastroViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -28,12 +28,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
-
-- (void) viewWillAppear:(BOOL)animated
-{
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
-}
-
 
 - (void)didReceiveMemoryWarning
 {

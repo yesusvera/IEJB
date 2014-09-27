@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A361c" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Kta-Qz-FlQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Kta-Qz-FlQ">
     <dependencies>
-        <deployment defaultVersion="1808" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Tela Login View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController extendedLayoutIncludesOpaqueBars="YES" hidesBottomBarWhenPushed="YES" id="vXZ-lx-hvc" customClass="JYViewController" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" hidesBottomBarWhenPushed="YES" id="vXZ-lx-hvc" customClass="JYTelaLoginViewController" sceneMemberID="viewController">
                     <view key="view" autoresizesSubviews="NO" contentMode="scaleAspectFit" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -39,7 +39,7 @@
                                     <color key="titleShadowColor" red="0.18431372940540314" green="0.36862745881080627" blue="0.37647062540054321" alpha="1" colorSpace="deviceRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="Ow2-Z0-DMB" kind="push" id="BCi-7Q-KL8"/>
+                                    <segue destination="q2t-UN-XOC" kind="push" id="ch5-KH-4nW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="x2N-Cg-1NW">
@@ -88,7 +88,7 @@
             </objects>
             <point key="canvasLocation" x="959" y="154"/>
         </scene>
-        <!--Cadastro-->
+        <!--Table View Controller - Cadastro-->
         <scene sceneID="MEI-CB-0IJ">
             <objects>
                 <tableViewController id="fv8-FT-vhL" sceneMemberID="viewController">
@@ -178,9 +178,9 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xyM-mn-koZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1550" y="266"/>
+            <point key="canvasLocation" x="1509" y="277"/>
         </scene>
-        <!--Cadastro Social-->
+        <!--Cadastro Social View Controller - Cadastro Social-->
         <scene sceneID="Sd9-BK-RsY">
             <objects>
                 <viewController id="9At-Ei-LTi" customClass="JYCadastroSocialViewController" sceneMemberID="viewController">
@@ -338,7 +338,7 @@
             </objects>
             <point key="canvasLocation" x="2106" y="1377"/>
         </scene>
-        <!--Cadastro Eclesiástico-->
+        <!--Cadastro Eclesiastico View Controller - Cadastro Eclesiástico-->
         <scene sceneID="gwT-Zj-1OO">
             <objects>
                 <viewController title="Cadastro Eclesiástico" id="EWZ-oX-fH1" customClass="JYCadastroEclesiasticoViewController" sceneMemberID="viewController">
@@ -483,7 +483,7 @@
             </objects>
             <point key="canvasLocation" x="2111" y="649"/>
         </scene>
-        <!--Cadastro Pessoal-->
+        <!--Cadastro View Controller - Cadastro Pessoal-->
         <scene sceneID="vn3-6T-ow5">
             <objects>
                 <viewController storyboardIdentifier="cadastro" id="XoQ-vk-LLx" customClass="JYCadastroViewController" sceneMemberID="viewController">
@@ -496,7 +496,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Rua - Logradouro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="waJ-7x-ZYG">
-                                        <rect key="frame" x="9" y="284.5" width="303" height="29.5"/>
+                                        <rect key="frame" x="9" y="285" width="303" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
@@ -504,7 +504,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Digite a Rua - Logradouro" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" id="m7j-Fa-cyo">
-                                        <rect key="frame" x="115" y="284.5" width="184" height="29.5"/>
+                                        <rect key="frame" x="115" y="285" width="184" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -897,46 +897,94 @@
             </objects>
             <point key="canvasLocation" x="2106" y="-35"/>
         </scene>
-        <!--Sistema IEJB-->
-        <scene sceneID="11h-0U-Ous">
+        <!--SistemaIEJB View Controller-->
+        <scene sceneID="Vcy-DN-y4J">
             <objects>
-                <viewController id="Ow2-Z0-DMB" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ZHV-BE-Xv4" customClass="JYsis">
+                <viewController id="Iuk-6c-agW" customClass="JYSistemaIEJBViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pwB-gn-DPR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" barStyle="black" id="5UT-QD-k2B">
-                                <rect key="frame" x="0.0" y="519" width="320" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <items>
-                                    <tabBarItem systemItem="favorites" id="RMx-iE-MLI"/>
-                                    <tabBarItem systemItem="more" id="yNS-wc-kSM"/>
-                                </items>
-                            </tabBar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo_M1A1.png" id="Xv9-KI-rjG">
-                                <rect key="frame" x="1" y="184" width="319" height="209"/>
+                            <view contentMode="scaleToFill" id="faz-xl-UQW" customClass="JYsis">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo_IEJB_Horizontal.png" id="LC1-hX-893">
-                                <rect key="frame" x="-5" y="-8" width="320" height="129"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo_M1A1.png" id="MhC-IS-FE0">
+                                        <rect key="frame" x="0.0" y="142" width="319" height="209"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo_IEJB_Horizontal.png" id="qOr-lH-jmR">
+                                        <rect key="frame" x="-5" y="-18" width="320" height="129"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Sistema IEJB" id="Ffq-JG-KjD">
-                        <barButtonItem key="backBarButtonItem" title="Voltar" id="LFP-Tg-tiA"/>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" tag="1" title="" systemItem="favorites" id="mKn-cf-xXL"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="61H-Ts-4Dz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gIt-Qs-Eqq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1578" y="-1112"/>
+            <point key="canvasLocation" x="2106" y="-1383"/>
         </scene>
-        <!--Recuperar senha-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="oYk-nH-1DU">
+            <objects>
+                <tabBarController definesPresentationContext="YES" id="q2t-UN-XOC" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="3o4-VM-xFF"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="7Zu-Mh-U79">
+                        <rect key="frame" x="129" y="330" width="163" height="49"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Iuk-6c-agW" kind="relationship" relationship="viewControllers" id="yUm-hS-mDZ"/>
+                        <segue destination="vbr-O6-bWg" kind="relationship" relationship="viewControllers" id="Vg0-4a-Bsl"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZId-xF-pFl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1540" y="-1068"/>
+        </scene>
+        <!--SistemaIEJB View Controller-->
+        <scene sceneID="qXM-Yk-gah">
+            <objects>
+                <viewController id="vbr-O6-bWg" customClass="JYSistemaIEJBViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5yI-ao-yCp">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="fw1-pQ-s9M" customClass="JYsis">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo_M1A1.png" id="bcj-yM-dbT">
+                                        <rect key="frame" x="-5" y="101" width="319" height="209"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo_IEJB_Horizontal.png" id="lMN-CC-pzJ">
+                                        <rect key="frame" x="-5" y="-18" width="320" height="129"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="" systemItem="more" id="9er-OQ-1sS"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9xw-os-Qsh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2118" y="-712"/>
+        </scene>
+        <!--Recupera Senha View Controller - Recuperar senha-->
         <scene sceneID="Ksv-hw-3lI">
             <objects>
-                <viewController id="axu-6z-4w4" sceneMemberID="viewController">
+                <viewController id="axu-6z-4w4" customClass="JYRecuperaSenhaViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u5v-fF-XFG">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -986,7 +1034,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kVy-yT-JUV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1550" y="-417"/>
+            <point key="canvasLocation" x="1555" y="-401"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WRv-kF-fCF">
@@ -1024,6 +1072,6 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="Mtb-UQ-c7M"/>
-        <segue reference="wNL-Vv-FA9"/>
+        <segue reference="jB2-oj-IbE"/>
     </inferredMetricsTieBreakers>
 </document>

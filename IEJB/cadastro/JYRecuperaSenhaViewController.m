@@ -1,18 +1,18 @@
 //
-//  JYSistemaIEJBViewController.m
+//  JYRepuraSenhaViewController.m
 //  IEJB
 //
 //  Created by Jonathan Jordan Carrillo Salcedo on 26/09/14.
 //  Copyright (c) 2014 JY DESENV. All rights reserved.
 //
 
-#import "JYSistemaIEJBViewController.h"
+#import "JYRecuperaSenhaViewController.h"
 
-@interface JYSistemaIEJBViewController ()
+@interface JYRecuperaSenhaViewController ()
 
 @end
 
-@implementation JYSistemaIEJBViewController
+@implementation JYRecuperaSenhaViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -23,17 +23,16 @@
     return self;
 }
 
-- (void)viewDidLoad
-{
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
-
 - (void) viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+}
 
 - (void)didReceiveMemoryWarning
 {

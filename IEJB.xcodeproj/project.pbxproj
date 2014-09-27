@@ -11,6 +11,11 @@
 		294F50B519D4C577005AC2D6 /* Logo_M1A1.png in Resources */ = {isa = PBXBuildFile; fileRef = 294F50B419D4C577005AC2D6 /* Logo_M1A1.png */; };
 		294F50B719D4C599005AC2D6 /* Logo_IEJB.png in Resources */ = {isa = PBXBuildFile; fileRef = 294F50B619D4C599005AC2D6 /* Logo_IEJB.png */; };
 		294F50BA19D4F7D9005AC2D6 /* JYCadastroEclesiasticoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 294F50B919D4F7D9005AC2D6 /* JYCadastroEclesiasticoViewController.m */; };
+		29A3014C19D634C700FD1214 /* JYTelaLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A3014B19D634C700FD1214 /* JYTelaLoginViewController.m */; };
+		29A3014F19D6379B00FD1214 /* JYRecuperaSenhaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A3014E19D6379B00FD1214 /* JYRecuperaSenhaViewController.m */; };
+		29A3015119D63B2800FD1214 /* Logo_IEJB_icone.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A3015019D63B2800FD1214 /* Logo_IEJB_icone.png */; };
+		29A3015519D63C1200FD1214 /* H2CD.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A3015419D63C1200FD1214 /* H2CD.png */; };
+		29A3015819D63ED400FD1214 /* JYOpcoesCadastroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A3015719D63ED400FD1214 /* JYOpcoesCadastroViewController.m */; };
 		29A7D5FF195BBC6C00C3FA40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7D5FE195BBC6C00C3FA40 /* Foundation.framework */; };
 		29A7D601195BBC6C00C3FA40 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7D600195BBC6C00C3FA40 /* CoreGraphics.framework */; };
 		29A7D603195BBC6C00C3FA40 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7D602195BBC6C00C3FA40 /* UIKit.framework */; };
@@ -19,7 +24,6 @@
 		29A7D60F195BBC6C00C3FA40 /* JYAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A7D60E195BBC6C00C3FA40 /* JYAppDelegate.m */; };
 		29A7D612195BBC6C00C3FA40 /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A7D610195BBC6C00C3FA40 /* Main_iPhone.storyboard */; };
 		29A7D615195BBC6C00C3FA40 /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29A7D613195BBC6C00C3FA40 /* Main_iPad.storyboard */; };
-		29A7D618195BBC6C00C3FA40 /* JYViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A7D617195BBC6C00C3FA40 /* JYViewController.m */; };
 		29A7D61A195BBC6C00C3FA40 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 29A7D619195BBC6C00C3FA40 /* Images.xcassets */; };
 		29A7D621195BBC6C00C3FA40 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7D620195BBC6C00C3FA40 /* XCTest.framework */; };
 		29A7D622195BBC6C00C3FA40 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A7D5FE195BBC6C00C3FA40 /* Foundation.framework */; };
@@ -54,6 +58,14 @@
 		294F50B619D4C599005AC2D6 /* Logo_IEJB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_IEJB.png; sourceTree = "<group>"; };
 		294F50B819D4F7D9005AC2D6 /* JYCadastroEclesiasticoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCadastroEclesiasticoViewController.h; sourceTree = "<group>"; };
 		294F50B919D4F7D9005AC2D6 /* JYCadastroEclesiasticoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCadastroEclesiasticoViewController.m; sourceTree = "<group>"; };
+		29A3014A19D634C700FD1214 /* JYTelaLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYTelaLoginViewController.h; sourceTree = "<group>"; };
+		29A3014B19D634C700FD1214 /* JYTelaLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYTelaLoginViewController.m; sourceTree = "<group>"; };
+		29A3014D19D6379B00FD1214 /* JYRecuperaSenhaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYRecuperaSenhaViewController.h; sourceTree = "<group>"; };
+		29A3014E19D6379B00FD1214 /* JYRecuperaSenhaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYRecuperaSenhaViewController.m; sourceTree = "<group>"; };
+		29A3015019D63B2800FD1214 /* Logo_IEJB_icone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_IEJB_icone.png; sourceTree = "<group>"; };
+		29A3015419D63C1200FD1214 /* H2CD.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = H2CD.png; sourceTree = "<group>"; };
+		29A3015619D63ED400FD1214 /* JYOpcoesCadastroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYOpcoesCadastroViewController.h; sourceTree = "<group>"; };
+		29A3015719D63ED400FD1214 /* JYOpcoesCadastroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYOpcoesCadastroViewController.m; sourceTree = "<group>"; };
 		29A7D5FB195BBC6C00C3FA40 /* IEJB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IEJB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A7D5FE195BBC6C00C3FA40 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		29A7D600195BBC6C00C3FA40 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -66,8 +78,6 @@
 		29A7D60E195BBC6C00C3FA40 /* JYAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYAppDelegate.m; sourceTree = "<group>"; };
 		29A7D611195BBC6C00C3FA40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		29A7D614195BBC6C00C3FA40 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		29A7D616195BBC6C00C3FA40 /* JYViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JYViewController.h; sourceTree = "<group>"; };
-		29A7D617195BBC6C00C3FA40 /* JYViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JYViewController.m; sourceTree = "<group>"; };
 		29A7D619195BBC6C00C3FA40 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		29A7D61F195BBC6C00C3FA40 /* IEJBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IEJBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29A7D620195BBC6C00C3FA40 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -126,6 +136,12 @@
 				29E23D9E19D506D000F34642 /* JYCadastroSocialViewController.m */,
 				29E23DA219D5170D00F34642 /* JYSistemaIEJBViewController.h */,
 				29E23DA319D5170D00F34642 /* JYSistemaIEJBViewController.m */,
+				29A3014A19D634C700FD1214 /* JYTelaLoginViewController.h */,
+				29A3014B19D634C700FD1214 /* JYTelaLoginViewController.m */,
+				29A3014D19D6379B00FD1214 /* JYRecuperaSenhaViewController.h */,
+				29A3014E19D6379B00FD1214 /* JYRecuperaSenhaViewController.m */,
+				29A3015619D63ED400FD1214 /* JYOpcoesCadastroViewController.h */,
+				29A3015719D63ED400FD1214 /* JYOpcoesCadastroViewController.m */,
 			);
 			path = cadastro;
 			sourceTree = "<group>";
@@ -173,8 +189,6 @@
 				29A7D60E195BBC6C00C3FA40 /* JYAppDelegate.m */,
 				29A7D610195BBC6C00C3FA40 /* Main_iPhone.storyboard */,
 				29A7D613195BBC6C00C3FA40 /* Main_iPad.storyboard */,
-				29A7D616195BBC6C00C3FA40 /* JYViewController.h */,
-				29A7D617195BBC6C00C3FA40 /* JYViewController.m */,
 				29A7D619195BBC6C00C3FA40 /* Images.xcassets */,
 				29A7D605195BBC6C00C3FA40 /* Supporting Files */,
 			);
@@ -213,6 +227,8 @@
 		29A7D639195BD07200C3FA40 /* imagens */ = {
 			isa = PBXGroup;
 			children = (
+				29A3015419D63C1200FD1214 /* H2CD.png */,
+				29A3015019D63B2800FD1214 /* Logo_IEJB_icone.png */,
 				29E23DA019D5114900F34642 /* Logo_IEJB_Horizontal.png */,
 				294F50B619D4C599005AC2D6 /* Logo_IEJB.png */,
 				294F50B419D4C577005AC2D6 /* Logo_M1A1.png */,
@@ -326,10 +342,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29A3015519D63C1200FD1214 /* H2CD.png in Resources */,
 				FB43ACD4195BC90000C2121D /* .gitignore in Resources */,
 				29A7D63B195BD07200C3FA40 /* homens_iejb.jpg in Resources */,
 				29A7D615195BBC6C00C3FA40 /* Main_iPad.storyboard in Resources */,
 				FB43ACD5195BC90000C2121D /* README.markdown in Resources */,
+				29A3015119D63B2800FD1214 /* Logo_IEJB_icone.png in Resources */,
 				29A7D61A195BBC6C00C3FA40 /* Images.xcassets in Resources */,
 				29A7D612195BBC6C00C3FA40 /* Main_iPhone.storyboard in Resources */,
 				294F50B519D4C577005AC2D6 /* Logo_M1A1.png in Resources */,
@@ -357,10 +375,12 @@
 				29E23DA419D5170D00F34642 /* JYSistemaIEJBViewController.m in Sources */,
 				29A7D60B195BBC6C00C3FA40 /* main.m in Sources */,
 				FB43ACDE195BCA3E00C2121D /* LoginDAO.m in Sources */,
+				29A3014C19D634C700FD1214 /* JYTelaLoginViewController.m in Sources */,
+				29A3014F19D6379B00FD1214 /* JYRecuperaSenhaViewController.m in Sources */,
+				29A3015819D63ED400FD1214 /* JYOpcoesCadastroViewController.m in Sources */,
 				29E23D9F19D506D000F34642 /* JYCadastroSocialViewController.m in Sources */,
 				294F50BA19D4F7D9005AC2D6 /* JYCadastroEclesiasticoViewController.m in Sources */,
 				FB43ACD6195BC90000C2121D /* SCSQLite.m in Sources */,
-				29A7D618195BBC6C00C3FA40 /* JYViewController.m in Sources */,
 				2941DF1A195CF72D004BFEAE /* JYCadastroViewController.m in Sources */,
 				29A7D60F195BBC6C00C3FA40 /* JYAppDelegate.m in Sources */,
 			);

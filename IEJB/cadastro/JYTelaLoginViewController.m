@@ -1,18 +1,18 @@
 //
-//  JYSistemaIEJBViewController.m
+//  JYTelaLoginViewController.m
 //  IEJB
 //
 //  Created by Jonathan Jordan Carrillo Salcedo on 26/09/14.
 //  Copyright (c) 2014 JY DESENV. All rights reserved.
 //
 
-#import "JYSistemaIEJBViewController.h"
+#import "JYTelaLoginViewController.h"
 
-@interface JYSistemaIEJBViewController ()
+@interface JYTelaLoginViewController ()
 
 @end
 
-@implementation JYSistemaIEJBViewController
+@implementation JYTelaLoginViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,9 +31,8 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
 }
-
 
 - (void)didReceiveMemoryWarning
 {
