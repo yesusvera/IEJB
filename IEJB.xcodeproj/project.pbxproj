@@ -31,6 +31,8 @@
 		29A7D62B195BBC6C00C3FA40 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 29A7D629195BBC6C00C3FA40 /* InfoPlist.strings */; };
 		29A7D62D195BBC6C00C3FA40 /* IEJBTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A7D62C195BBC6C00C3FA40 /* IEJBTests.m */; };
 		29A7D63B195BD07200C3FA40 /* homens_iejb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29A7D63A195BD07200C3FA40 /* homens_iejb.jpg */; };
+		29A930B619D77327002A2E00 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A930B519D77327002A2E00 /* MapKit.framework */; };
+		29A930B819D7732F002A2E00 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A930B719D7732F002A2E00 /* CoreLocation.framework */; };
 		29E23D9F19D506D000F34642 /* JYCadastroSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E23D9E19D506D000F34642 /* JYCadastroSocialViewController.m */; };
 		29E23DA119D5114900F34642 /* Logo_IEJB_Horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 29E23DA019D5114900F34642 /* Logo_IEJB_Horizontal.png */; };
 		29E23DA419D5170D00F34642 /* JYSistemaIEJBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E23DA319D5170D00F34642 /* JYSistemaIEJBViewController.m */; };
@@ -85,6 +87,8 @@
 		29A7D62A195BBC6C00C3FA40 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		29A7D62C195BBC6C00C3FA40 /* IEJBTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IEJBTests.m; sourceTree = "<group>"; };
 		29A7D63A195BD07200C3FA40 /* homens_iejb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = homens_iejb.jpg; sourceTree = "<group>"; };
+		29A930B519D77327002A2E00 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		29A930B719D7732F002A2E00 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		29E23D9D19D506D000F34642 /* JYCadastroSocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCadastroSocialViewController.h; sourceTree = "<group>"; };
 		29E23D9E19D506D000F34642 /* JYCadastroSocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCadastroSocialViewController.m; sourceTree = "<group>"; };
 		29E23DA019D5114900F34642 /* Logo_IEJB_Horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_IEJB_Horizontal.png; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29A930B819D7732F002A2E00 /* CoreLocation.framework in Frameworks */,
+				29A930B619D77327002A2E00 /* MapKit.framework in Frameworks */,
 				FB43ACCE195BC8B300C2121D /* libsqlite3.dylib in Frameworks */,
 				29A7D601195BBC6C00C3FA40 /* CoreGraphics.framework in Frameworks */,
 				29A7D603195BBC6C00C3FA40 /* UIKit.framework in Frameworks */,
@@ -168,6 +174,8 @@
 		29A7D5FD195BBC6C00C3FA40 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				29A930B719D7732F002A2E00 /* CoreLocation.framework */,
+				29A930B519D77327002A2E00 /* MapKit.framework */,
 				FB43ACCD195BC8B300C2121D /* libsqlite3.dylib */,
 				29A7D5FE195BBC6C00C3FA40 /* Foundation.framework */,
 				29A7D600195BBC6C00C3FA40 /* CoreGraphics.framework */,
@@ -313,6 +321,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = "JY DESENV";
 				TargetAttributes = {
+					29A7D5FA195BBC6C00C3FA40 = {
+						DevelopmentTeam = WED6F4TVEP;
+					};
 					29A7D61E195BBC6C00C3FA40 = {
 						TestTargetID = 29A7D5FA195BBC6C00C3FA40;
 					};

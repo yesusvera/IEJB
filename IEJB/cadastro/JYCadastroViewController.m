@@ -113,6 +113,14 @@
     [perguntaConcluirCad show];
 }
 
+- (IBAction)incrementarFilhos:(id)sender {
+    
+    UIStepper *incrementador = (UIStepper *)sender;
+    self.qtdFilhos.text = [NSString stringWithFormat:@"%d",
+                                 (int)incrementador.value];
+}
+
+
 
 
 #pragma mark - UIPickerView Delegate

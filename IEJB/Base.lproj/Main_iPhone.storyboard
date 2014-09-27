@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Kta-Qz-FlQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="Kta-Qz-FlQ">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+        <deployment defaultVersion="1808" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
         <!--Tela Login View Controller-->
@@ -98,7 +98,7 @@
             </objects>
             <point key="canvasLocation" x="959" y="154"/>
         </scene>
-        <!--Opcoes Cadastro View Controller - Cadastro-->
+        <!--Cadastro-->
         <scene sceneID="MEI-CB-0IJ">
             <objects>
                 <tableViewController id="fv8-FT-vhL" customClass="JYOpcoesCadastroViewController" sceneMemberID="viewController">
@@ -190,7 +190,7 @@
             </objects>
             <point key="canvasLocation" x="1517" y="371"/>
         </scene>
-        <!--Cadastro Social View Controller - Cadastro Social-->
+        <!--Cadastro Social-->
         <scene sceneID="Sd9-BK-RsY">
             <objects>
                 <viewController id="9At-Ei-LTi" customClass="JYCadastroSocialViewController" sceneMemberID="viewController">
@@ -348,7 +348,7 @@
             </objects>
             <point key="canvasLocation" x="2106" y="1377"/>
         </scene>
-        <!--Cadastro Eclesiastico View Controller - Cadastro Eclesiástico-->
+        <!--Cadastro Eclesiástico-->
         <scene sceneID="gwT-Zj-1OO">
             <objects>
                 <viewController title="Cadastro Eclesiástico" id="EWZ-oX-fH1" customClass="JYCadastroEclesiasticoViewController" sceneMemberID="viewController">
@@ -493,7 +493,7 @@
             </objects>
             <point key="canvasLocation" x="2111" y="649"/>
         </scene>
-        <!--Cadastro View Controller - Cadastro Pessoal-->
+        <!--Cadastro Pessoal-->
         <scene sceneID="vn3-6T-ow5">
             <objects>
                 <viewController id="XoQ-vk-LLx" customClass="JYCadastroViewController" sceneMemberID="viewController">
@@ -843,6 +843,40 @@
                                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Filhos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6pP-2a-8yM">
+                                        <rect key="frame" x="9" y="211" width="59" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="oSl-v4-yma">
+                                        <rect key="frame" x="137" y="211" width="175" height="31"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
+                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" textAlignment="center" minimumFontSize="2" clearButtonMode="whileEditing" id="o3p-S9-PI4">
+                                        <rect key="frame" x="63" y="213" width="74" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="XoQ-vk-LLx" id="dlz-W8-lkS"/>
+                                        </connections>
+                                    </textField>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" id="1Jv-tU-3kW">
+                                        <rect key="frame" x="129" y="213" width="94" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <connections>
+                                            <action selector="incrementarFilhos:" destination="XoQ-vk-LLx" eventType="valueChanged" id="8fK-34-3qf"/>
+                                        </connections>
+                                    </stepper>
                                     <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Digite o nome do cônjuge" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" id="X7Q-tM-5Er">
                                         <rect key="frame" x="69" y="178" width="230" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -853,41 +887,6 @@
                                             <outlet property="delegate" destination="XoQ-vk-LLx" id="Pt4-h3-R54"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Filhos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="6pP-2a-8yM">
-                                        <rect key="frame" x="9" y="211" width="162" height="31"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
-                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Quantos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="K2b-WV-cW8">
-                                        <rect key="frame" x="171" y="210" width="141" height="32"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="11"/>
-                                        <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Quantidade" textAlignment="center" minimumFontSize="2" clearButtonMode="whileEditing" id="o3p-S9-PI4">
-                                        <rect key="frame" x="231" y="207" width="68" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="textColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="XoQ-vk-LLx" id="dlz-W8-lkS"/>
-                                        </connections>
-                                    </textField>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="1L5-uu-Oft">
-                                        <rect key="frame" x="56" y="211" width="107" height="29"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <segments>
-                                            <segment title="Não"/>
-                                            <segment title="Sim"/>
-                                        </segments>
-                                    </segmentedControl>
                                 </subviews>
                             </scrollView>
                         </subviews>
@@ -899,7 +898,7 @@
                     <connections>
                         <outlet property="barraRolagem" destination="RDG-uU-aWW" id="4eA-6s-bal"/>
                         <outlet property="dataNascimento" destination="nWx-jP-VYg" id="N5J-U8-jCV"/>
-                        <outlet property="qtdFilhos" destination="o3p-S9-PI4" id="jGg-wT-IsC"/>
+                        <outlet property="qtdFilhos" destination="o3p-S9-PI4" id="ufc-Cz-pEO"/>
                         <outlet property="tipoSanguineo" destination="PAJ-LP-Lvh" id="UKx-nF-TKj"/>
                     </connections>
                 </viewController>
@@ -991,7 +990,7 @@
             </objects>
             <point key="canvasLocation" x="2118" y="-712"/>
         </scene>
-        <!--Recupera Senha View Controller - Recuperar senha-->
+        <!--Recuperar senha-->
         <scene sceneID="Ksv-hw-3lI">
             <objects>
                 <viewController id="axu-6z-4w4" customClass="JYRecuperaSenhaViewController" sceneMemberID="viewController">
