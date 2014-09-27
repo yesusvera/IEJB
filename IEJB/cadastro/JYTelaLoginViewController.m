@@ -26,12 +26,33 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+    
+    
+    
+}
+
+-(void)dismissKeyboard {
+    [self.usuario resignFirstResponder];
+    [self.senha resignFirstResponder];
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    
+    return TRUE;
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
+    
     [self.navigationController setNavigationBarHidden:YES animated:animated];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -39,6 +60,9 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+
 
 /*
 #pragma mark - Navigation

@@ -26,14 +26,14 @@
 
 - (void) viewWillAppear:(BOOL)animated
 {
-    [super viewWillAppear:animated];
     [self.navigationController setNavigationBarHidden:NO animated:animated];
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
+   
     //hide keyboard on touch of scroll view
     UITapGestureRecognizer *yourTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollTap:)];
     [self.barraRolagem addGestureRecognizer:yourTap];

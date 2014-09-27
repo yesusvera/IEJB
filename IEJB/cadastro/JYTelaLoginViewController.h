@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JYTelaLoginViewController : UIViewController
+@interface JYTelaLoginViewController : UIViewController<UITextFieldDelegate, UIGestureRecognizerDelegate>{
+    
+}
+@property (weak, nonatomic) IBOutlet UITextField *usuario;
+
+@property (weak, nonatomic) IBOutlet UITextField *senha;
+
 
 @end
