@@ -33,6 +33,7 @@
 		29A7D63B195BD07200C3FA40 /* homens_iejb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 29A7D63A195BD07200C3FA40 /* homens_iejb.jpg */; };
 		29A930B619D77327002A2E00 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A930B519D77327002A2E00 /* MapKit.framework */; };
 		29A930B819D7732F002A2E00 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A930B719D7732F002A2E00 /* CoreLocation.framework */; };
+		29A930BB19D78DA2002A2E00 /* UfCidadeDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A930BA19D78DA2002A2E00 /* UfCidadeDao.m */; };
 		29E23D9F19D506D000F34642 /* JYCadastroSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E23D9E19D506D000F34642 /* JYCadastroSocialViewController.m */; };
 		29E23DA119D5114900F34642 /* Logo_IEJB_Horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 29E23DA019D5114900F34642 /* Logo_IEJB_Horizontal.png */; };
 		29E23DA419D5170D00F34642 /* JYSistemaIEJBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E23DA319D5170D00F34642 /* JYSistemaIEJBViewController.m */; };
@@ -89,6 +90,8 @@
 		29A7D63A195BD07200C3FA40 /* homens_iejb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = homens_iejb.jpg; sourceTree = "<group>"; };
 		29A930B519D77327002A2E00 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		29A930B719D7732F002A2E00 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		29A930B919D78DA2002A2E00 /* UfCidadeDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UfCidadeDao.h; sourceTree = "<group>"; };
+		29A930BA19D78DA2002A2E00 /* UfCidadeDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UfCidadeDao.m; sourceTree = "<group>"; };
 		29E23D9D19D506D000F34642 /* JYCadastroSocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCadastroSocialViewController.h; sourceTree = "<group>"; };
 		29E23D9E19D506D000F34642 /* JYCadastroSocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCadastroSocialViewController.m; sourceTree = "<group>"; };
 		29E23DA019D5114900F34642 /* Logo_IEJB_Horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_IEJB_Horizontal.png; sourceTree = "<group>"; };
@@ -269,6 +272,8 @@
 			children = (
 				FB43ACDC195BCA3E00C2121D /* LoginDAO.h */,
 				FB43ACDD195BCA3E00C2121D /* LoginDAO.m */,
+				29A930B919D78DA2002A2E00 /* UfCidadeDao.h */,
+				29A930BA19D78DA2002A2E00 /* UfCidadeDao.m */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -388,6 +393,7 @@
 				FB43ACDE195BCA3E00C2121D /* LoginDAO.m in Sources */,
 				29A3014C19D634C700FD1214 /* JYTelaLoginViewController.m in Sources */,
 				29A3014F19D6379B00FD1214 /* JYRecuperaSenhaViewController.m in Sources */,
+				29A930BB19D78DA2002A2E00 /* UfCidadeDao.m in Sources */,
 				29A3015819D63ED400FD1214 /* JYOpcoesCadastroViewController.m in Sources */,
 				29E23D9F19D506D000F34642 /* JYCadastroSocialViewController.m in Sources */,
 				294F50BA19D4F7D9005AC2D6 /* JYCadastroEclesiasticoViewController.m in Sources */,
