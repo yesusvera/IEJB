@@ -13,7 +13,7 @@
 @end
 
 @implementation JYCadastroViewController
-@synthesize nome,CPF, dataNascimento, listaData,barraRolagem,tipoSanguineo,qtdFilhos;
+@synthesize nome, CPF, dataNascimento, tipoSanguineo,qtdFilhos;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -24,6 +24,7 @@
     return self;
 }
 
+// Mostrando a barra de navegação
 - (void) viewWillAppear:(BOOL)animated
 {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
@@ -34,39 +35,30 @@
 {
     [super viewDidLoad];
    
-    //hide keyboard on touch of scroll view
+    //Comando para fechar os componentes na Scrool Vew. Ex: Teclado, PickerView, DatePickerView. etc...
     UITapGestureRecognizer *yourTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollTap:)];
-    [self.barraRolagem addGestureRecognizer:yourTap];
+    [barraRolagem addGestureRecognizer:yourTap];
+    [barraRolagem setScrollEnabled:YES];
+    [barraRolagem setContentSize:CGSizeMake(320, 1400)];
+    
+    //DataPickerView da data de nascimento
+    listaData = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 230, 0)];
+    listaData.datePickerMode = UIDatePickerModeDate;
+    [listaData addTarget:self action:@selector(getDate:) forControlEvents:UIControlEventValueChanged];
+    [listaData removeFromSuperview];
+    dataNascimento.inputView = listaData;
     
     
-    self.listaData = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 230, 0)];
-    self.listaData.datePickerMode = UIDatePickerModeDate;
-    [self.listaData addTarget:self action:@selector(getDate:) forControlEvents:UIControlEventValueChanged];
-    [self.listaData removeFromSuperview];
-    self.dataNascimento.inputView = listaData;
-    
-    
-    
+    //PickerView com as opções de tipo sanquineo
     listaTpSanguineo = [[NSArray alloc] initWithObjects:@"O-",@"O+",@"A-",@"A+",@"B-",@"B+",@"AB-",@"AB+", nil];
     opcoesTpSang= [[UIPickerView alloc]initWithFrame:CGRectMake(0, 0, 230, 0)];
     [tipoSanguineo setDelegate: self];
     tipoSanguineo.inputView = opcoesTpSang;
-    //tipoSanguineo.text = [listaTpSanguineo objectAtIndex:0];
     [opcoesTpSang setDelegate:self];
     
-    
-//    listaQtdFilhos = [[NSArray alloc] initWithObjects:@"O",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10", nil];
-//    opcoesQtdFilhos= [[UIPickerView alloc]initWithFrame:CGRectMake(0, 0, 230, 0)];
-//    [qtdFilhos setDelegate: self];
-//    qtdFilhos.inputView = opcoesQtdFilhos;
-//    qtdFilhos.text = [listaQtdFilhos objectAtIndex:0];
-//    [opcoesQtdFilhos setDelegate:self];
-    
-    
-    
-    [self.barraRolagem setScrollEnabled:YES];
-    [self.barraRolagem setContentSize:CGSizeMake(320, 1624)];
-    
+    //Setando o campo qtdFilhos com o valor padrão zero
+    qtdFilhos.text = @"0";
+ 
 }
 
 
@@ -89,18 +81,16 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    
-    // Dispose of any resources that can be recreated.
 }
 
 
-//hide keyboard on touch of scroll view
+//Compando para controlar os componentes na ScroolView
 - (void)scrollTap:(UIGestureRecognizer*)gestureRecognizer {
     
-    //make keyboard disappear , you can use resignFirstResponder too, it's depend.
     [self.view endEditing:YES];
 }
 
+// Confirma com o usuário se quer realmente concluir o cadastro.
 - (IBAction)concluirCadastro:(id)sender {
     
     UIAlertView *perguntaConcluirCad = [[UIAlertView alloc]
@@ -113,14 +103,13 @@
     [perguntaConcluirCad show];
 }
 
+// Metodo do para incrementar a quantidade de filhos
 - (IBAction)incrementarFilhos:(id)sender {
     
     UIStepper *incrementador = (UIStepper *)sender;
-    self.qtdFilhos.text = [NSString stringWithFormat:@"%d",
+    qtdFilhos.text = [NSString stringWithFormat:@"%d",
                                  (int)incrementador.value];
 }
-
-
 
 
 #pragma mark - UIPickerView Delegate
@@ -130,15 +119,24 @@
 }
 
 -(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
-    return [listaTpSanguineo count];
+    
+    if (pickerView == opcoesTpSang) {
+        return [listaTpSanguineo count];
+    }
+    return 0;
 }
 
 -(NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
-    return [listaTpSanguineo objectAtIndex:row];
+    if (pickerView == opcoesTpSang) {
+        return [listaTpSanguineo objectAtIndex:row];
+    }
+    return nil;
 }
 
 -(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
-    tipoSanguineo.text = [listaTpSanguineo objectAtIndex:row];
+    if (pickerView == opcoesTpSang) {
+        tipoSanguineo.text = [listaTpSanguineo objectAtIndex:row];
+    }
 }
 
 #pragma mark - UITextFieldDelegate

@@ -28,8 +28,10 @@
         if (![[resultUfCidade objectForKey:@"sigla"] isEqualToString:uf]) {
             
             if (![uf isEqualToString:@""]){
+                
                 [ufCidade setValue:cidades forKey:@"cidades"];
                 [ufCidade setValue:uf forKey:@"uf"];
+                
                 [listaUfCidades setValue:ufCidade forKey:@"ufCidades"];
                 
                 ufCidade = [[NSDictionary alloc]init];
@@ -44,6 +46,11 @@
         
         i++;
     }
+    
+    ufCidade = nil;
+    cidades = nil;
+    resultsUFCidades = nil;
+    
     return listaUfCidades;
 }
 

@@ -13,21 +13,17 @@
     UIPickerView *opcoesTpSang;
     NSArray *listaTpSanguineo;
     
-    UIPickerView *opcoesQtdFilhos;
-    NSArray *listaQtdFilhos;
+    UIDatePicker *listaData;
     
-    
+    UIScrollView *barraRolagem;
+
     
 }
 @property (weak, nonatomic) IBOutlet UITextField *nome;
 @property (weak, nonatomic) IBOutlet UITextField *CPF;
 @property (weak, nonatomic) IBOutlet UITextField *dataNascimento;
-@property (retain, nonatomic) IBOutlet UIDatePicker *listaData;
 @property (weak, nonatomic) IBOutlet UITextField *tipoSanguineo;
 @property (weak, nonatomic) IBOutlet UITextField *qtdFilhos;
-
-@property (weak, nonatomic) IBOutlet UIScrollView *barraRolagem;
-
 
 
 @end
