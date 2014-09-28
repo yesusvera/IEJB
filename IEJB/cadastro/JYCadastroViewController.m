@@ -7,7 +7,8 @@
 //
 
 #import "JYCadastroViewController.h"
-
+#import "UfCidadeDao.h"
+#import "UfCidades.h"
 @interface JYCadastroViewController ()
 
 @end
@@ -51,13 +52,28 @@
     
     //PickerView com as opções de tipo sanquineo
     listaTpSanguineo = [[NSArray alloc] initWithObjects:@"O-",@"O+",@"A-",@"A+",@"B-",@"B+",@"AB-",@"AB+", nil];
-    opcoesTpSang= [[UIPickerView alloc]initWithFrame:CGRectMake(0, 0, 230, 0)];
-    [tipoSanguineo setDelegate: self];
-    tipoSanguineo.inputView = opcoesTpSang;
+    opcoesTpSang = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 0, 230, 0)];
     [opcoesTpSang setDelegate:self];
+    [opcoesTpSang setDataSource:self];
+    tipoSanguineo.inputView = opcoesTpSang;
     
     //Setando o campo qtdFilhos com o valor padrão zero
     qtdFilhos.text = @"0";
+    
+    //PickerView com as opções de UF
+    UfCidadeDao *ufCidadeDao = [[UfCidadeDao alloc]init];
+    listaUfCidade = ufCidadeDao.buscarUfCidades;
+    opcoesUF = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 0, 230, 0)];
+    [opcoesUF setDelegate:self];
+    [opcoesUF setDataSource:self];
+    self.UF.inputView = opcoesUF;
+    
+    //PickerView com as opções de Cidade
+
+    opcoesCidade = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 0, 230, 0)];
+    [opcoesCidade setDelegate:self];
+    [opcoesCidade setDataSource:self];
+    self.cidade.inputView = opcoesCidade;
  
 }
 
@@ -122,13 +138,25 @@
     
     if (pickerView == opcoesTpSang) {
         return [listaTpSanguineo count];
+    }else if(pickerView == opcoesUF){
+        return [listaUfCidade count];
+    }else if(pickerView == opcoesCidade){
+        return [listaCidades count];
     }
+    
     return 0;
 }
 
 -(NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     if (pickerView == opcoesTpSang) {
         return [listaTpSanguineo objectAtIndex:row];
+    }else if(pickerView == opcoesUF){
+        
+        UfCidades *uf =  [listaUfCidade objectAtIndex:row];
+        return uf.uf;
+    }else if(pickerView == opcoesCidade){
+        
+        return [listaCidades objectAtIndex:row];;
     }
     return nil;
 }
@@ -136,6 +164,15 @@
 -(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     if (pickerView == opcoesTpSang) {
         tipoSanguineo.text = [listaTpSanguineo objectAtIndex:row];
+    }else if(pickerView == opcoesUF){
+        
+        UfCidades *uf =  [listaUfCidade objectAtIndex:row];
+        self.UF.text = uf.uf;
+        listaCidades = nil;
+        listaCidades = uf.cidades;
+    }
+    else if(pickerView == opcoesCidade){
+        self.cidade.text = [listaCidades objectAtIndex:row];
     }
 }
 

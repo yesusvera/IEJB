@@ -10,12 +10,15 @@
 
 @interface JYCadastroViewController : UIViewController<UITextFieldDelegate, UIGestureRecognizerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate>{
     
-    UIPickerView *opcoesTpSang;
     NSArray *listaTpSanguineo;
+    NSArray *listaUfCidade;
+    NSArray *listaCidades;
     
+    UIPickerView *opcoesTpSang;
     UIDatePicker *listaData;
-    
     UIScrollView *barraRolagem;
+    UIPickerView *opcoesUF;
+    UIPickerView *opcoesCidade;
 
     
 }
@@ -25,5 +28,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *tipoSanguineo;
 @property (weak, nonatomic) IBOutlet UITextField *qtdFilhos;
 
+@property (weak, nonatomic) IBOutlet UITextField *UF;
+@property (weak, nonatomic) IBOutlet UITextField *cidade;
 
 @end

@@ -783,7 +783,7 @@
                                             <outlet property="delegate" destination="XoQ-vk-LLx" id="awC-z1-p2X"/>
                                         </connections>
                                     </textField>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Sexo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="amw-D7-Q0X">
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="   Sexo" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="amw-D7-Q0X">
                                         <rect key="frame" x="161" y="141" width="151" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -808,7 +808,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tipo" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" id="PAJ-LP-Lvh">
-                                        <rect key="frame" x="103" y="141" width="46" height="37"/>
+                                        <rect key="frame" x="99" y="141" width="64" height="37"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -896,7 +896,9 @@
                         <barButtonItem key="backBarButtonItem" title="Voltar" id="1sB-cx-9On"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="UF" destination="zLR-aH-JYl" id="zjB-a0-HpX"/>
                         <outlet property="barraRolagem" destination="RDG-uU-aWW" id="4eA-6s-bal"/>
+                        <outlet property="cidade" destination="Qgr-yc-77R" id="Gck-LD-kI0"/>
                         <outlet property="dataNascimento" destination="nWx-jP-VYg" id="N5J-U8-jCV"/>
                         <outlet property="qtdFilhos" destination="o3p-S9-PI4" id="ufc-Cz-pEO"/>
                         <outlet property="tipoSanguineo" destination="PAJ-LP-Lvh" id="UKx-nF-TKj"/>

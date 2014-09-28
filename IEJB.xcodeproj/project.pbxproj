@@ -11,6 +11,7 @@
 		294F50B519D4C577005AC2D6 /* Logo_M1A1.png in Resources */ = {isa = PBXBuildFile; fileRef = 294F50B419D4C577005AC2D6 /* Logo_M1A1.png */; };
 		294F50B719D4C599005AC2D6 /* Logo_IEJB.png in Resources */ = {isa = PBXBuildFile; fileRef = 294F50B619D4C599005AC2D6 /* Logo_IEJB.png */; };
 		294F50BA19D4F7D9005AC2D6 /* JYCadastroEclesiasticoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 294F50B919D4F7D9005AC2D6 /* JYCadastroEclesiasticoViewController.m */; };
+		2977A35419D88F63006FC4C3 /* UfCidades.m in Sources */ = {isa = PBXBuildFile; fileRef = 2977A35319D88F63006FC4C3 /* UfCidades.m */; };
 		29A3014C19D634C700FD1214 /* JYTelaLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A3014B19D634C700FD1214 /* JYTelaLoginViewController.m */; };
 		29A3014F19D6379B00FD1214 /* JYRecuperaSenhaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A3014E19D6379B00FD1214 /* JYRecuperaSenhaViewController.m */; };
 		29A3015119D63B2800FD1214 /* Logo_IEJB_icone.png in Resources */ = {isa = PBXBuildFile; fileRef = 29A3015019D63B2800FD1214 /* Logo_IEJB_icone.png */; };
@@ -61,6 +62,8 @@
 		294F50B619D4C599005AC2D6 /* Logo_IEJB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_IEJB.png; sourceTree = "<group>"; };
 		294F50B819D4F7D9005AC2D6 /* JYCadastroEclesiasticoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCadastroEclesiasticoViewController.h; sourceTree = "<group>"; };
 		294F50B919D4F7D9005AC2D6 /* JYCadastroEclesiasticoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCadastroEclesiasticoViewController.m; sourceTree = "<group>"; };
+		2977A35219D88F63006FC4C3 /* UfCidades.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UfCidades.h; sourceTree = "<group>"; };
+		2977A35319D88F63006FC4C3 /* UfCidades.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UfCidades.m; sourceTree = "<group>"; };
 		29A3014A19D634C700FD1214 /* JYTelaLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYTelaLoginViewController.h; sourceTree = "<group>"; };
 		29A3014B19D634C700FD1214 /* JYTelaLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYTelaLoginViewController.m; sourceTree = "<group>"; };
 		29A3014D19D6379B00FD1214 /* JYRecuperaSenhaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYRecuperaSenhaViewController.h; sourceTree = "<group>"; };
@@ -155,6 +158,15 @@
 			path = cadastro;
 			sourceTree = "<group>";
 		};
+		2977A35119D88F36006FC4C3 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				2977A35219D88F63006FC4C3 /* UfCidades.h */,
+				2977A35319D88F63006FC4C3 /* UfCidades.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 		29A7D5F2195BBC6B00C3FA40 = {
 			isa = PBXGroup;
 			children = (
@@ -191,6 +203,7 @@
 		29A7D604195BBC6C00C3FA40 /* IEJB */ = {
 			isa = PBXGroup;
 			children = (
+				2977A35119D88F36006FC4C3 /* model */,
 				2941DF17195CF704004BFEAE /* cadastro */,
 				29A7D639195BD07200C3FA40 /* imagens */,
 				FB43ACD8195BC99800C2121D /* DAO */,
@@ -394,6 +407,7 @@
 				29A3014C19D634C700FD1214 /* JYTelaLoginViewController.m in Sources */,
 				29A3014F19D6379B00FD1214 /* JYRecuperaSenhaViewController.m in Sources */,
 				29A930BB19D78DA2002A2E00 /* UfCidadeDao.m in Sources */,
+				2977A35419D88F63006FC4C3 /* UfCidades.m in Sources */,
 				29A3015819D63ED400FD1214 /* JYOpcoesCadastroViewController.m in Sources */,
 				29E23D9F19D506D000F34642 /* JYCadastroSocialViewController.m in Sources */,
 				294F50BA19D4F7D9005AC2D6 /* JYCadastroEclesiasticoViewController.m in Sources */,

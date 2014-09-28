@@ -10,4 +10,6 @@
 
 @interface UfCidadeDao : NSObject
 
+
+- (NSArray *)buscarUfCidades;
 @end

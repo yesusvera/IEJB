@@ -8,19 +8,20 @@
 
 #import "UfCidadeDao.h"
 #import "SCSQLite.h"
+#import "UfCidades.h"
 
 @implementation UfCidadeDao
 
 
 - (NSArray *)buscarUfCidades{
     
-    NSArray *resultsUFCidades = [SCSQLite selectRowSQL: @"select u.sigla, c.nome from tb_uf u, tb_cidade c where u.id = c.idEstado order by u.id"];
+    NSArray *resultsUFCidades = [SCSQLite selectRowSQL: @"Select tb_uf.sigla, tb_cidade.nome from tb_uf, tb_cidade where tb_uf.id = tb_cidade.idEstado order by tb_uf.id"];
     
     int i = 0;
     NSString *uf= @"";
-    NSArray *listaUfCidades = [[NSArray alloc]init];
-    NSDictionary *ufCidade = [[NSDictionary alloc]init];
-    NSArray *cidades;
+    NSMutableArray *listaUfCidades = [[NSMutableArray alloc]init];
+    UfCidades *ufCidade = [[UfCidades alloc]init];
+    NSMutableArray *cidades;
     while(i < resultsUFCidades.count){
         
         NSDictionary *resultUfCidade = [resultsUFCidades objectAtIndex:i];
@@ -29,23 +30,26 @@
             
             if (![uf isEqualToString:@""]){
                 
-                [ufCidade setValue:cidades forKey:@"cidades"];
-                [ufCidade setValue:uf forKey:@"uf"];
+                ufCidade.uf = uf;
+                ufCidade.cidades = cidades;
+                [listaUfCidades addObject:ufCidade];
                 
-                [listaUfCidades setValue:ufCidade forKey:@"ufCidades"];
-                
-                ufCidade = [[NSDictionary alloc]init];
+                ufCidade = [[UfCidades alloc]init];
             }
             
-            cidades = [[NSArray alloc]init];
+            cidades = [[NSMutableArray alloc]init];
             
             uf = [resultUfCidade objectForKey:@"sigla"];
         }
         
-        [cidades setValue:[resultUfCidade objectForKey:@"cidade"] forKey:uf];
+        [cidades addObject:[resultUfCidade objectForKey:@"nome"]];
         
         i++;
     }
+    
+    ufCidade.uf = uf;
+    ufCidade.cidades = cidades;
+    [listaUfCidades addObject:ufCidade];
     
     ufCidade = nil;
     cidades = nil;
