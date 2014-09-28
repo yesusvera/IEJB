@@ -7,24 +7,41 @@
 //
 
 #import "UfCidadeDao.h"
+#import "SCSQLite.h"
 
 @implementation UfCidadeDao
 
 
-//- (NSDictionary)loginValido:(NSString *)usuario senha:(NSString *)senha{
-//    NSArray *results = [SCSQLite selectRowSQL:@"Select * from tbl_login where usuario = '%@' and senha = '%@'", usuario, senha];
-//    return results.count > 0;
-//    
-//    
-//    _itemId = dictionary[@"id"];
-//    16.    _name = dictionary[@"name"];
-//    17.    NSArray *tags = dictionary[@"tags"];
-//    18.    NSMutableArray *tagsArray = [[NSMutableArray alloc]
-//                                        initWithCapacity:tags.count];
-//    19.    for (NSDictionary *tag in tags) {
-//        20.     [tagsArray addObject:tag[@"name"]];
-//        21.    }
-//    22.    _tagsArray = [tagsArray copy];
+- (NSArray *)buscarUfCidades{
+    
+    NSArray *resultsUFCidades = [SCSQLite selectRowSQL: @"select u.sigla, c.nome from tb_uf u, tb_cidade c where u.id = c.idEstado order by u.id"];
+    
+    int i = 0;
+    NSString *uf;
+    NSArray *listaUfCidades = [[NSArray alloc]init];
+    NSDictionary *ufCidade = [[NSDictionary alloc]init];
+    NSArray *cidades;
+    while(i < resultsUFCidades.count){
+        
+        NSDictionary *resultUfCidade = [resultsUFCidades objectAtIndex:i];
+        
+        
+        if (![[resultUfCidade objectForKey:@"sigla"] isEqualToString:uf]) {
+            
+            [ufCidade setValue:[resultUfCidade objectForKey:@"sigla"] forKey:@"uf"];
+            cidades = [[NSArray alloc]init];
+            
+            uf = [resultUfCidade objectForKey:@"sigla"];
+        }
+        
+        [cidades setValue:[resultUfCidade objectForKey:@"cidade"] forKey:uf];
+        
+        i++;
+        
+    }
+    
+    return listaUfCidades;
+    
 }
 
 @end
