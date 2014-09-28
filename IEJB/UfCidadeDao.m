@@ -17,7 +17,7 @@
     NSArray *resultsUFCidades = [SCSQLite selectRowSQL: @"select u.sigla, c.nome from tb_uf u, tb_cidade c where u.id = c.idEstado order by u.id"];
     
     int i = 0;
-    NSString *uf;
+    NSString *uf= @"";
     NSArray *listaUfCidades = [[NSArray alloc]init];
     NSDictionary *ufCidade = [[NSDictionary alloc]init];
     NSArray *cidades;
@@ -25,10 +25,16 @@
         
         NSDictionary *resultUfCidade = [resultsUFCidades objectAtIndex:i];
         
-        
         if (![[resultUfCidade objectForKey:@"sigla"] isEqualToString:uf]) {
             
-            [ufCidade setValue:[resultUfCidade objectForKey:@"sigla"] forKey:@"uf"];
+            if (![uf isEqualToString:@""]){
+                [ufCidade setValue:cidades forKey:@"cidades"];
+                [ufCidade setValue:uf forKey:@"uf"];
+                [listaUfCidades setValue:ufCidade forKey:@"ufCidades"];
+                
+                ufCidade = [[NSDictionary alloc]init];
+            }
+            
             cidades = [[NSArray alloc]init];
             
             uf = [resultUfCidade objectForKey:@"sigla"];
@@ -37,11 +43,8 @@
         [cidades setValue:[resultUfCidade objectForKey:@"cidade"] forKey:uf];
         
         i++;
-        
     }
-    
     return listaUfCidades;
-    
 }
 
 @end
