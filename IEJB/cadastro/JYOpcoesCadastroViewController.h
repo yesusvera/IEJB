@@ -9,7 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface JYOpcoesCadastroViewController : UITableViewController<UITableViewDelegate, UITableViewDataSource>{
-    //NSArray *tiposCadastro;
 }
 
 @end

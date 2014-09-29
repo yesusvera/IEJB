@@ -153,6 +153,7 @@
     }else if(pickerView == opcoesUF){
         
         UfCidades *uf =  [listaUfCidade objectAtIndex:row];
+        listaCidades = nil;
         return uf.uf;
     }else if(pickerView == opcoesCidade){
         
@@ -168,7 +169,6 @@
         
         UfCidades *uf =  [listaUfCidade objectAtIndex:row];
         self.UF.text = uf.uf;
-        listaCidades = nil;
         listaCidades = uf.cidades;
     }
     else if(pickerView == opcoesCidade){
