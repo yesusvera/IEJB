@@ -13,7 +13,9 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    [SCSQLite initWithDatabase:@"iejb.bd"];
+    
+    [SCSQLite initWithDatabase:@"iejb.db"];
+    //[self copyDatabaseFile];
     
     return YES;
 }
@@ -44,5 +46,23 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+
+-(void) copyDatabaseFile {
+    BOOL success;
+    NSFileManager *fileMAnager = [NSFileManager defaultManager];
+    NSError *error;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *documentDirectory = [paths objectAtIndex:0];
+    NSLog(@"document Directory:%@", documentDirectory);
+    NSString *writableDBPath = [documentDirectory stringByAppendingPathComponent:@"iejb.db"];
+    NSLog(@"Writable path:%@", writableDBPath);
+    success = [fileMAnager fileExistsAtPath:writableDBPath];
+    if (success) return;
+    NSString *defaultDBPath = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:@"iejb.db"];
+    NSLog(@"default database path:%@", defaultDBPath);
+    success = [fileMAnager copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
+    if (!success) NSAssert1(0,@"\failed to create writable database file with message'%@'.\"", [error localizedDescription]); }
+
 
 @end

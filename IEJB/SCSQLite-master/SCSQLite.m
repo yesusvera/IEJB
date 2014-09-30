@@ -282,7 +282,7 @@
     
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     
-   // NSString *documentsDirectory = [[NSBundle mainBundle] resourcePath ];
+    //NSString *documentsDirectory = [[NSBundle mainBundle] resourcePath ];
     
     NSString *documentsDirectory = [paths objectAtIndex:0];
     

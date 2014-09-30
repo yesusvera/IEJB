@@ -11,6 +11,7 @@
 		294F50B519D4C577005AC2D6 /* Logo_M1A1.png in Resources */ = {isa = PBXBuildFile; fileRef = 294F50B419D4C577005AC2D6 /* Logo_M1A1.png */; };
 		294F50B719D4C599005AC2D6 /* Logo_IEJB.png in Resources */ = {isa = PBXBuildFile; fileRef = 294F50B619D4C599005AC2D6 /* Logo_IEJB.png */; };
 		294F50BA19D4F7D9005AC2D6 /* JYCadastroEclesiasticoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 294F50B919D4F7D9005AC2D6 /* JYCadastroEclesiasticoViewController.m */; };
+		295BA7EC19DA4900006030D9 /* iejb.db in Resources */ = {isa = PBXBuildFile; fileRef = 295BA7EB19DA4900006030D9 /* iejb.db */; };
 		2977A35419D88F63006FC4C3 /* UfCidades.m in Sources */ = {isa = PBXBuildFile; fileRef = 2977A35319D88F63006FC4C3 /* UfCidades.m */; };
 		29A3014C19D634C700FD1214 /* JYTelaLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A3014B19D634C700FD1214 /* JYTelaLoginViewController.m */; };
 		29A3014F19D6379B00FD1214 /* JYRecuperaSenhaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A3014E19D6379B00FD1214 /* JYRecuperaSenhaViewController.m */; };
@@ -62,6 +63,7 @@
 		294F50B619D4C599005AC2D6 /* Logo_IEJB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_IEJB.png; sourceTree = "<group>"; };
 		294F50B819D4F7D9005AC2D6 /* JYCadastroEclesiasticoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCadastroEclesiasticoViewController.h; sourceTree = "<group>"; };
 		294F50B919D4F7D9005AC2D6 /* JYCadastroEclesiasticoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCadastroEclesiasticoViewController.m; sourceTree = "<group>"; };
+		295BA7EB19DA4900006030D9 /* iejb.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = iejb.db; sourceTree = "<group>"; };
 		2977A35219D88F63006FC4C3 /* UfCidades.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UfCidades.h; sourceTree = "<group>"; };
 		2977A35319D88F63006FC4C3 /* UfCidades.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UfCidades.m; sourceTree = "<group>"; };
 		29A3014A19D634C700FD1214 /* JYTelaLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYTelaLoginViewController.h; sourceTree = "<group>"; };
@@ -105,7 +107,6 @@
 		FB43ACD1195BC90000C2121D /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
 		FB43ACD2195BC90000C2121D /* SCSQLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCSQLite.h; sourceTree = "<group>"; };
 		FB43ACD3195BC90000C2121D /* SCSQLite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCSQLite.m; sourceTree = "<group>"; };
-		FB43ACD7195BC94000C2121D /* iejb.bd */ = {isa = PBXFileReference; lastKnownFileType = file; path = iejb.bd; sourceTree = "<group>"; };
 		FB43ACDC195BCA3E00C2121D /* LoginDAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginDAO.h; sourceTree = "<group>"; };
 		FB43ACDD195BCA3E00C2121D /* LoginDAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginDAO.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -264,7 +265,7 @@
 		FB43ACCC195BC17300C2121D /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				FB43ACD7195BC94000C2121D /* iejb.bd */,
+				295BA7EB19DA4900006030D9 /* iejb.db */,
 			);
 			name = resources;
 			sourceTree = "<group>";
@@ -376,6 +377,7 @@
 				29A7D63B195BD07200C3FA40 /* homens_iejb.jpg in Resources */,
 				29A7D615195BBC6C00C3FA40 /* Main_iPad.storyboard in Resources */,
 				FB43ACD5195BC90000C2121D /* README.markdown in Resources */,
+				295BA7EC19DA4900006030D9 /* iejb.db in Resources */,
 				29A3015119D63B2800FD1214 /* Logo_IEJB_icone.png in Resources */,
 				29A7D61A195BBC6C00C3FA40 /* Images.xcassets in Resources */,
 				29A7D612195BBC6C00C3FA40 /* Main_iPhone.storyboard in Resources */,
