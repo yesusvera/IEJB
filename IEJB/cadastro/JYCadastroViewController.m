@@ -151,9 +151,8 @@
     if (pickerView == opcoesTpSang) {
         return [listaTpSanguineo objectAtIndex:row];
     }else if(pickerView == opcoesUF){
-        
         UfCidades *uf =  [listaUfCidade objectAtIndex:row];
-        listaCidades = nil;
+        //listaCidades = nil;
         return uf.uf;
     }else if(pickerView == opcoesCidade){
         
@@ -166,10 +165,12 @@
     if (pickerView == opcoesTpSang) {
         tipoSanguineo.text = [listaTpSanguineo objectAtIndex:row];
     }else if(pickerView == opcoesUF){
-        
+        listaCidades = nil;
+        self.cidade.text = nil;
         UfCidades *uf =  [listaUfCidade objectAtIndex:row];
         self.UF.text = uf.uf;
         listaCidades = uf.cidades;
+        self.cidade.text = [uf.cidades objectAtIndex:0];
     }
     else if(pickerView == opcoesCidade){
         self.cidade.text = [listaCidades objectAtIndex:row];

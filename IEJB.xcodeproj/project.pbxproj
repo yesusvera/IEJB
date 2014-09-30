@@ -100,8 +100,8 @@
 		29E23D9D19D506D000F34642 /* JYCadastroSocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCadastroSocialViewController.h; sourceTree = "<group>"; };
 		29E23D9E19D506D000F34642 /* JYCadastroSocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCadastroSocialViewController.m; sourceTree = "<group>"; };
 		29E23DA019D5114900F34642 /* Logo_IEJB_Horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_IEJB_Horizontal.png; sourceTree = "<group>"; };
-		29E23DA219D5170D00F34642 /* JYSistemaIEJBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYSistemaIEJBViewController.h; sourceTree = "<group>"; };
-		29E23DA319D5170D00F34642 /* JYSistemaIEJBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYSistemaIEJBViewController.m; sourceTree = "<group>"; };
+		29E23DA219D5170D00F34642 /* JYSistemaIEJBViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JYSistemaIEJBViewController.h; path = cadastro/JYSistemaIEJBViewController.h; sourceTree = "<group>"; };
+		29E23DA319D5170D00F34642 /* JYSistemaIEJBViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JYSistemaIEJBViewController.m; path = cadastro/JYSistemaIEJBViewController.m; sourceTree = "<group>"; };
 		FB43ACCD195BC8B300C2121D /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		FB43ACD0195BC90000C2121D /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		FB43ACD1195BC90000C2121D /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = "<group>"; };
@@ -147,8 +147,6 @@
 				294F50B919D4F7D9005AC2D6 /* JYCadastroEclesiasticoViewController.m */,
 				29E23D9D19D506D000F34642 /* JYCadastroSocialViewController.h */,
 				29E23D9E19D506D000F34642 /* JYCadastroSocialViewController.m */,
-				29E23DA219D5170D00F34642 /* JYSistemaIEJBViewController.h */,
-				29E23DA319D5170D00F34642 /* JYSistemaIEJBViewController.m */,
 				29A3014A19D634C700FD1214 /* JYTelaLoginViewController.h */,
 				29A3014B19D634C700FD1214 /* JYTelaLoginViewController.m */,
 				29A3014D19D6379B00FD1214 /* JYRecuperaSenhaViewController.h */,
@@ -157,6 +155,15 @@
 				29A3015719D63ED400FD1214 /* JYOpcoesCadastroViewController.m */,
 			);
 			path = cadastro;
+			sourceTree = "<group>";
+		};
+		295BA7ED19DA4A32006030D9 /* sistema */ = {
+			isa = PBXGroup;
+			children = (
+				29E23DA219D5170D00F34642 /* JYSistemaIEJBViewController.h */,
+				29E23DA319D5170D00F34642 /* JYSistemaIEJBViewController.m */,
+			);
+			name = sistema;
 			sourceTree = "<group>";
 		};
 		2977A35119D88F36006FC4C3 /* model */ = {
@@ -204,6 +211,7 @@
 		29A7D604195BBC6C00C3FA40 /* IEJB */ = {
 			isa = PBXGroup;
 			children = (
+				295BA7ED19DA4A32006030D9 /* sistema */,
 				2977A35119D88F36006FC4C3 /* model */,
 				2941DF17195CF704004BFEAE /* cadastro */,
 				29A7D639195BD07200C3FA40 /* imagens */,
