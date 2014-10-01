@@ -10,6 +10,7 @@
 #import "UfCidadeDao.h"
 #import "UfCidades.h"
 #import "Membro.h"
+#import "ConexaoCadastrarMembro.h"
 @interface JYCadastroViewController ()
 
 @end
@@ -144,6 +145,10 @@ BOOL concluiCad;
         membro.senha = senha.text;
         membro.confirmaSenha = confirmaSenha.text;
         
+        
+        ConexaoCadastrarMembro *cadMembro = [[ConexaoCadastrarMembro alloc]init];
+        
+        [cadMembro cadastrarMembro:membro];
     }
 }
 

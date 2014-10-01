@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Membro.h"
 
 @interface ConexaoCadastrarMembro : NSObject<NSXMLParserDelegate>
-
+-(void)cadastrarMembro:(Membro *) membro;
 @end

@@ -9,6 +9,7 @@
 #import "ConexaoCadastrarMembro.h"
 #import "GLB.h"
 #import "Membro.h"
+#import "AFHTTPRequestOperationManager.h"
 
 @implementation ConexaoCadastrarMembro
 
@@ -53,82 +54,67 @@ NSMutableString *valorElementoAtual;
     NSOperationQueue *networkQueue = [[NSOperationQueue alloc] init];
     networkQueue.maxConcurrentOperationCount = 5;
     
-//    NSURL *url = [NSURL URLWithString:[self montarUrlParaRegistroLivro:registrarDispositivoResponse comLivroResponse:livroResponse]];
-//    NSLog(@"%@", url);
-//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-//    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-//    NSLog(@"%@", operation);
-//    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-//        NSString *respostaXML = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
-//        NSLog(@"%@", respostaXML);
-//        
-//        NSData *respDataXML = [respostaXML dataUsingEncoding:NSUTF8StringEncoding];
-//        NSLog(@"%@", respostaXML);
-//        NSXMLParser *parser = [[NSXMLParser alloc] initWithData:respDataXML];
-//        [parser setDelegate:self];
-//        
-//        if(![parser parse]){
-//            NSLog(@"Erro ao realizar o parse");
-//        }else{
-//            NSLog(@"Ok Parse");
-//        }
-//        
-//        
+    NSURL *url = [NSURL URLWithString:[self montarUrlParaCadastroMembro:membro]];
+    NSLog(@"%@", url);
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    NSLog(@"%@", operation);
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSString *respostaXML = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+        NSLog(@"%@", respostaXML);
+        
+        NSData *respDataXML = [respostaXML dataUsingEncoding:NSUTF8StringEncoding];
+        NSLog(@"%@", respostaXML);
+        NSXMLParser *parser = [[NSXMLParser alloc] initWithData:respDataXML];
+        [parser setDelegate:self];
+        
+        if(![parser parse]){
+            NSLog(@"Erro ao realizar o parse");
+        }else{
+            NSLog(@"Ok Parse");
+        }
+        
+        
 //        NSString *mensagemAlerta = registrarLivroResponse.status;
 //        if(![registrarLivroResponse.erro isEqualToString:@"0"]){
 //            mensagemAlerta = [mensagemAlerta stringByAppendingString:@" - "];
 //            mensagemAlerta = [mensagemAlerta stringByAppendingString:registrarLivroResponse.msgErro];
 //            
-//            /*            UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Não foi possível registrar o livro no portal"
-//             message:mensagemAlerta
-//             delegate:nil
-//             cancelButtonTitle:@"OK"
-//             otherButtonTitles:nil
-//             
-//             ];
-//             
-//             [alert show];*/
 //        }
-//        
-//    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-//        NSLog(@"%s: AFHTTPRequestOperation error: %@", __FUNCTION__, error);
-//        
-//        UIAlertView *alertError = [
-//                                   [UIAlertView alloc] initWithTitle:@"Erro ao registrar livro no portal."
-//                                   message:error.description
-//                                   delegate:nil
-//                                   cancelButtonTitle:@"OK"
-//                                   otherButtonTitles:nil
-//                                   ];
-//        
-//        [alertError show];
-//        
-//        
-//    }];
-//    
-//    [networkQueue addOperation:operation];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"%s: AFHTTPRequestOperation error: %@", __FUNCTION__, error);
+        
+        UIAlertView *alertError = [
+                                   [UIAlertView alloc] initWithTitle:@"Erro ao registrar livro no portal."
+                                   message:error.description
+                                   delegate:nil
+                                   cancelButtonTitle:@"OK"
+                                   otherButtonTitles:nil
+                                   ];
+        
+        [alertError show];
+        
+        
+    }];
+    
+    [networkQueue addOperation:operation];
 }
 
 - (NSString *)montarUrlParaCadastroMembro:(Membro *) membro{
     
-    NSString *urlRegistrarLivro = @"http://www.ibracon.com.br/idr/ws/ws_registrar_livro.php?";
+    NSString *urlCadMembro = @"http://localhost:8080/sgi/RCadMem?usuario=iejb2014&senha=iejb%25membro%252014&cpf=72345098104&nome=YESUS+ALFONSINO+CASTILLO+VERA&datanascimento=25121984";
     
-    urlRegistrarLivro = [[urlRegistrarLivro stringByAppendingString:@"cliente="] stringByAppendingString: [GLB urlEncodeUsingEncoding:registrarDispositivoResponse.codCliente]];
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"usuario="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.usuario]];
     
-    urlRegistrarLivro = [[urlRegistrarLivro stringByAppendingString:@"&documento="] stringByAppendingString: [GLB urlEncodeUsingEncoding:registrarDispositivoResponse.dadosCliente.documento]];
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&senha="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.senha]];
     
-    urlRegistrarLivro = [[urlRegistrarLivro stringByAppendingString:@"&dispositivo="] stringByAppendingString: [GLB urlEncodeUsingEncoding:registrarDispositivoResponse.codDispositivo]];
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&cpf="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.CPF]];
     
-    urlRegistrarLivro = [[urlRegistrarLivro stringByAppendingString:@"&produto="] stringByAppendingString: [GLB urlEncodeUsingEncoding:livroResponse.codigolivro]];
-    
-    if(registrarDispositivoResponse.dadosCliente.palavraChave!=nil){
-        urlRegistrarLivro = [[urlRegistrarLivro stringByAppendingString:@"&keyword="] stringByAppendingString: [GLB urlEncodeUsingEncoding:registrarDispositivoResponse.dadosCliente.palavraChave]];
-    }
-    
-    if(registrarDispositivoResponse.dadosCliente.senha!=nil){
-        urlRegistrarLivro = [[urlRegistrarLivro stringByAppendingString:@"&senha="] stringByAppendingString: [GLB urlEncodeUsingEncoding:registrarDispositivoResponse.dadosCliente.senha]];
-    }
-    
-    return urlRegistrarLivro;
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&nome="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.nome]];
+
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&datanascimento="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.dataNascimento]];
+  
+    return urlCadMembro;
 }
 @end
