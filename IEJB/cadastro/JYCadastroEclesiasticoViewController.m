@@ -13,6 +13,7 @@
 @end
 
 @implementation JYCadastroEclesiasticoViewController
+@synthesize anoConversao, igrejaOrigem, motivoMudanca, miniterio, funcao, trabDesenvolvidos;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -26,7 +27,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    //Comando para fechar os componentes na Scrool Vew. Ex: Teclado, PickerView, DatePickerView. etc...
+    UITapGestureRecognizer *yourTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollTap:)];
+    [barraRolagemEcles addGestureRecognizer:yourTap];
+    
+    //PickerView com as opções de Cidade
+    opcoesMinisterios = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 0, 230, 0)];
+    [opcoesMinisterios setDelegate:self];
+    [opcoesMinisterios setDataSource:self];
+    miniterio.inputView = opcoesMinisterios;
+    NSString *plistCaminho = [[NSBundle mainBundle]
+                              pathForResource:@"ministerios"  ofType:@"plist"];
+    listaMinisterios = [NSArray
+                        arrayWithContentsOfFile:plistCaminho];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,15 +60,57 @@
     [perguntaConcluirCad show];
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+//Compando para controlar os componentes na ScroolView
+- (void)scrollTap:(UIGestureRecognizer*)gestureRecognizer {
+    
+    [self.view endEditing:YES];
 }
-*/
+
+#pragma mark - UIPickerView Delegate
+
+-(NSInteger) numberOfComponentsInPickerView:(UIPickerView *)pickerView{
+    return 1;
+}
+
+-(NSInteger) pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
+    
+    if(pickerView == opcoesMinisterios){
+        return [listaMinisterios count];
+    }
+    
+    return 0;
+}
+
+-(NSString *) pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
+    if(pickerView == opcoesMinisterios){
+        
+        return [listaMinisterios objectAtIndex:row];;
+    }
+    return nil;
+}
+
+-(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
+    if(pickerView == opcoesMinisterios){
+        miniterio.text = [listaMinisterios objectAtIndex:row];
+    }
+}
+
+#pragma mark - UITextFieldDelegate
+
+-(BOOL)textFieldShouldReturn:(UITextField*)textField;
+{
+    NSInteger nextTag = textField.tag + 1;
+    // Try to find next responder
+    UIResponder* nextResponder = [textField.superview viewWithTag:nextTag];
+    if (nextResponder) {
+        // Found next responder, so set it.
+        [nextResponder becomeFirstResponder];
+    } else {
+        // Not found, so remove keyboard.
+        [textField resignFirstResponder];
+    }
+    return NO; // We do not want UITextField to insert line-breaks.
+}
+
 
 @end

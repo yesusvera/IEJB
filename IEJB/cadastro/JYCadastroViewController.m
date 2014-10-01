@@ -14,7 +14,7 @@
 @end
 
 @implementation JYCadastroViewController
-@synthesize nome, CPF, dataNascimento, tipoSanguineo,qtdFilhos;
+@synthesize nome, CPF, dataNascimento, tipoSanguineo,qtdFilhos,cidade, UF;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -66,15 +66,15 @@
     opcoesUF = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 0, 230, 0)];
     [opcoesUF setDelegate:self];
     [opcoesUF setDataSource:self];
-    self.UF.inputView = opcoesUF;
+    UF.inputView = opcoesUF;
     
     //PickerView com as opções de Cidade
-
     opcoesCidade = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 0, 230, 0)];
     [opcoesCidade setDelegate:self];
     [opcoesCidade setDataSource:self];
-    self.cidade.inputView = opcoesCidade;
- 
+    cidade.inputView = opcoesCidade;
+    
+
 }
 
 
@@ -90,7 +90,7 @@
     [formatter setDateFormat:@"dd/MM/yyyy"];
     
     // Exibir a data no campo de texto
-    self.dataNascimento.text =[formatter stringFromDate:currentDate];
+    dataNascimento.text =[formatter stringFromDate:currentDate];
     
 }
 
@@ -152,7 +152,6 @@
         return [listaTpSanguineo objectAtIndex:row];
     }else if(pickerView == opcoesUF){
         UfCidades *uf =  [listaUfCidade objectAtIndex:row];
-        //listaCidades = nil;
         return uf.uf;
     }else if(pickerView == opcoesCidade){
         
@@ -166,14 +165,13 @@
         tipoSanguineo.text = [listaTpSanguineo objectAtIndex:row];
     }else if(pickerView == opcoesUF){
         listaCidades = nil;
-        self.cidade.text = nil;
+        cidade.text = nil;
         UfCidades *uf =  [listaUfCidade objectAtIndex:row];
-        self.UF.text = uf.uf;
+        UF.text = uf.uf;
         listaCidades = uf.cidades;
-        self.cidade.text = [uf.cidades objectAtIndex:0];
-    }
-    else if(pickerView == opcoesCidade){
-        self.cidade.text = [listaCidades objectAtIndex:row];
+        cidade.text = [uf.cidades objectAtIndex:0];
+    }else if(pickerView == opcoesCidade){
+        cidade.text = [listaCidades objectAtIndex:row];
     }
 }
 

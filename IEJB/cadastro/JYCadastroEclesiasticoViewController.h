@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JYCadastroEclesiasticoViewController : UIViewController
+@interface JYCadastroEclesiasticoViewController : UIViewController<UITextFieldDelegate, UIGestureRecognizerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate>{
+    
+    UIScrollView *barraRolagemEcles;
+
+    NSArray *listaMinisterios;
+    UIPickerView *opcoesMinisterios;
+}
+@property (weak, nonatomic) IBOutlet UITextField *anoConversao;
+@property (weak, nonatomic) IBOutlet UITextField *igrejaOrigem;
+@property (weak, nonatomic) IBOutlet UITextField *motivoMudanca;
+@property (weak, nonatomic) IBOutlet UITextField *miniterio;
+@property (weak, nonatomic) IBOutlet UITextField *funcao;
+@property (weak, nonatomic) IBOutlet UITextField *trabDesenvolvidos;
 
 @end

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<string>1º grau</string>
+	<string>2º grau</string>
+	<string>Superior</string>
+	<string>Pós-Graduação/Especialização</string>
+	<string>Mestrado</string>
+	<string>Doutorado</string>
+	<string>Pós-Doutorado</string>
+</array>
+</plist>

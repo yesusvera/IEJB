@@ -36,6 +36,10 @@
 		29A930B619D77327002A2E00 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A930B519D77327002A2E00 /* MapKit.framework */; };
 		29A930B819D7732F002A2E00 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 29A930B719D7732F002A2E00 /* CoreLocation.framework */; };
 		29A930BB19D78DA2002A2E00 /* UfCidadeDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A930BA19D78DA2002A2E00 /* UfCidadeDao.m */; };
+		29B612F219DB8822003B6C68 /* ministerios.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29B612F119DB8822003B6C68 /* ministerios.plist */; };
+		29B612F419DB94ED003B6C68 /* rendas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29B612F319DB94ED003B6C68 /* rendas.plist */; };
+		29B612F619DB9A3F003B6C68 /* grauInstrucao.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29B612F519DB9A3F003B6C68 /* grauInstrucao.plist */; };
+		29B612F919DBA404003B6C68 /* ProfissoesDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B612F819DBA404003B6C68 /* ProfissoesDao.m */; };
 		29E23D9F19D506D000F34642 /* JYCadastroSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E23D9E19D506D000F34642 /* JYCadastroSocialViewController.m */; };
 		29E23DA119D5114900F34642 /* Logo_IEJB_Horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 29E23DA019D5114900F34642 /* Logo_IEJB_Horizontal.png */; };
 		29E23DA419D5170D00F34642 /* JYSistemaIEJBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E23DA319D5170D00F34642 /* JYSistemaIEJBViewController.m */; };
@@ -97,6 +101,11 @@
 		29A930B719D7732F002A2E00 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		29A930B919D78DA2002A2E00 /* UfCidadeDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UfCidadeDao.h; sourceTree = "<group>"; };
 		29A930BA19D78DA2002A2E00 /* UfCidadeDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UfCidadeDao.m; sourceTree = "<group>"; };
+		29B612F119DB8822003B6C68 /* ministerios.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ministerios.plist; sourceTree = "<group>"; };
+		29B612F319DB94ED003B6C68 /* rendas.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = rendas.plist; sourceTree = "<group>"; };
+		29B612F519DB9A3F003B6C68 /* grauInstrucao.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = grauInstrucao.plist; sourceTree = "<group>"; };
+		29B612F719DBA404003B6C68 /* ProfissoesDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfissoesDao.h; sourceTree = "<group>"; };
+		29B612F819DBA404003B6C68 /* ProfissoesDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfissoesDao.m; sourceTree = "<group>"; };
 		29E23D9D19D506D000F34642 /* JYCadastroSocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCadastroSocialViewController.h; sourceTree = "<group>"; };
 		29E23D9E19D506D000F34642 /* JYCadastroSocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCadastroSocialViewController.m; sourceTree = "<group>"; };
 		29E23DA019D5114900F34642 /* Logo_IEJB_Horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_IEJB_Horizontal.png; sourceTree = "<group>"; };
@@ -273,7 +282,10 @@
 		FB43ACCC195BC17300C2121D /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				29B612F119DB8822003B6C68 /* ministerios.plist */,
 				295BA7EB19DA4900006030D9 /* iejb.db */,
+				29B612F319DB94ED003B6C68 /* rendas.plist */,
+				29B612F519DB9A3F003B6C68 /* grauInstrucao.plist */,
 			);
 			name = resources;
 			sourceTree = "<group>";
@@ -296,6 +308,8 @@
 				FB43ACDD195BCA3E00C2121D /* LoginDAO.m */,
 				29A930B919D78DA2002A2E00 /* UfCidadeDao.h */,
 				29A930BA19D78DA2002A2E00 /* UfCidadeDao.m */,
+				29B612F719DBA404003B6C68 /* ProfissoesDao.h */,
+				29B612F819DBA404003B6C68 /* ProfissoesDao.m */,
 			);
 			name = DAO;
 			sourceTree = "<group>";
@@ -381,7 +395,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				29A3015519D63C1200FD1214 /* H2CD.png in Resources */,
+				29B612F219DB8822003B6C68 /* ministerios.plist in Resources */,
 				FB43ACD4195BC90000C2121D /* .gitignore in Resources */,
+				29B612F419DB94ED003B6C68 /* rendas.plist in Resources */,
+				29B612F619DB9A3F003B6C68 /* grauInstrucao.plist in Resources */,
 				29A7D63B195BD07200C3FA40 /* homens_iejb.jpg in Resources */,
 				29A7D615195BBC6C00C3FA40 /* Main_iPad.storyboard in Resources */,
 				FB43ACD5195BC90000C2121D /* README.markdown in Resources */,
@@ -412,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				29E23DA419D5170D00F34642 /* JYSistemaIEJBViewController.m in Sources */,
+				29B612F919DBA404003B6C68 /* ProfissoesDao.m in Sources */,
 				29A7D60B195BBC6C00C3FA40 /* main.m in Sources */,
 				FB43ACDE195BCA3E00C2121D /* LoginDAO.m in Sources */,
 				29A3014C19D634C700FD1214 /* JYTelaLoginViewController.m in Sources */,
