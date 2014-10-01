@@ -9,12 +9,15 @@
 #import "JYCadastroViewController.h"
 #import "UfCidadeDao.h"
 #import "UfCidades.h"
+#import "Membro.h"
 @interface JYCadastroViewController ()
 
 @end
 
 @implementation JYCadastroViewController
-@synthesize nome, CPF, dataNascimento, tipoSanguineo,qtdFilhos,cidade, UF;
+@synthesize nome, CPF, dataNascimento, tipoSanguineo, sexo, conjuge, qtdFilhos, ruaLogradouro, bairro, UF, cidade, cep, telFixo, telCelular, telComercial, email, usuario, senha, confirmaSenha;
+
+BOOL concluiCad;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -117,7 +120,33 @@
                                         otherButtonTitles:@"Concluir", nil];
                                         
     [perguntaConcluirCad show];
+    
+    if (concluiCad) {
+        Membro *membro = [[Membro alloc]init];
+        
+        membro.nome = nome.text;
+        membro.CPF = CPF.text;
+        membro.dataNascimento = dataNascimento.text;
+        membro.tipoSanguineo = tipoSanguineo.text;
+        membro.sexo          = sexo.textInputContextIdentifier;
+        membro.conjuge     = conjuge.text;
+        membro.qtdFilhos = qtdFilhos.text;
+        membro.ruaLogradouro = ruaLogradouro.text;
+        membro.bairro   = bairro.text;
+        membro.UF = UF.text;
+        membro.cidade = cidade.text;
+        membro.cep = cep.text;
+        membro.telFixo = telFixo.text;
+        membro.telCelular = telCelular.text;
+        membro.telComercial = telComercial.text;
+        membro.email = email.text;
+        membro.usuario = usuario.text;
+        membro.senha = senha.text;
+        membro.confirmaSenha = confirmaSenha.text;
+        
+    }
 }
+
 
 // Metodo do para incrementar a quantidade de filhos
 - (IBAction)incrementarFilhos:(id)sender {
@@ -125,6 +154,20 @@
     UIStepper *incrementador = (UIStepper *)sender;
     qtdFilhos.text = [NSString stringWithFormat:@"%d",
                                  (int)incrementador.value];
+}
+
+#pragma mark - UIAlertView
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    switch (buttonIndex) {
+        case 1:
+            break;
+        case 2:
+            concluiCad = YES;
+            break;
+            
+        default:
+            break;
+    }
 }
 
 

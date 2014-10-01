@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface JYCadastroViewController : UIViewController<UITextFieldDelegate, UIGestureRecognizerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate>{
+@interface JYCadastroViewController : UIViewController<UITextFieldDelegate, UIGestureRecognizerDelegate, UIPickerViewDataSource, UIPickerViewDelegate, UIActionSheetDelegate, UIAlertViewDelegate>{
     
     NSArray *listaTpSanguineo;
     NSArray *listaUfCidade;

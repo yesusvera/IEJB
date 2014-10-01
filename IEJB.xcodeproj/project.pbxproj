@@ -40,6 +40,12 @@
 		29B612F419DB94ED003B6C68 /* rendas.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29B612F319DB94ED003B6C68 /* rendas.plist */; };
 		29B612F619DB9A3F003B6C68 /* grauInstrucao.plist in Resources */ = {isa = PBXBuildFile; fileRef = 29B612F519DB9A3F003B6C68 /* grauInstrucao.plist */; };
 		29B612F919DBA404003B6C68 /* ProfissoesDao.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B612F819DBA404003B6C68 /* ProfissoesDao.m */; };
+		29B6154119DBAF7F003B6C68 /* CWSBrasilValidate.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B6154019DBAF7F003B6C68 /* CWSBrasilValidate.m */; };
+		29B6154619DBAF97003B6C68 /* NSStringMask.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B6154319DBAF97003B6C68 /* NSStringMask.m */; };
+		29B6154719DBAF97003B6C68 /* UITextFieldMask.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B6154519DBAF97003B6C68 /* UITextFieldMask.m */; };
+		29B6154B19DBB088003B6C68 /* Membro.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B6154A19DBB088003B6C68 /* Membro.m */; };
+		29B6154F19DBB63A003B6C68 /* ConexaoCadastrarMembro.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B6154E19DBB63A003B6C68 /* ConexaoCadastrarMembro.m */; };
+		29B6155219DBB684003B6C68 /* GLB.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B6155119DBB684003B6C68 /* GLB.m */; };
 		29E23D9F19D506D000F34642 /* JYCadastroSocialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E23D9E19D506D000F34642 /* JYCadastroSocialViewController.m */; };
 		29E23DA119D5114900F34642 /* Logo_IEJB_Horizontal.png in Resources */ = {isa = PBXBuildFile; fileRef = 29E23DA019D5114900F34642 /* Logo_IEJB_Horizontal.png */; };
 		29E23DA419D5170D00F34642 /* JYSistemaIEJBViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29E23DA319D5170D00F34642 /* JYSistemaIEJBViewController.m */; };
@@ -106,6 +112,18 @@
 		29B612F519DB9A3F003B6C68 /* grauInstrucao.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = grauInstrucao.plist; sourceTree = "<group>"; };
 		29B612F719DBA404003B6C68 /* ProfissoesDao.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfissoesDao.h; sourceTree = "<group>"; };
 		29B612F819DBA404003B6C68 /* ProfissoesDao.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfissoesDao.m; sourceTree = "<group>"; };
+		29B6153F19DBAF7F003B6C68 /* CWSBrasilValidate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWSBrasilValidate.h; sourceTree = "<group>"; };
+		29B6154019DBAF7F003B6C68 /* CWSBrasilValidate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWSBrasilValidate.m; sourceTree = "<group>"; };
+		29B6154219DBAF97003B6C68 /* NSStringMask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStringMask.h; sourceTree = "<group>"; };
+		29B6154319DBAF97003B6C68 /* NSStringMask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStringMask.m; sourceTree = "<group>"; };
+		29B6154419DBAF97003B6C68 /* UITextFieldMask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextFieldMask.h; sourceTree = "<group>"; };
+		29B6154519DBAF97003B6C68 /* UITextFieldMask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITextFieldMask.m; sourceTree = "<group>"; };
+		29B6154919DBB088003B6C68 /* Membro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Membro.h; sourceTree = "<group>"; };
+		29B6154A19DBB088003B6C68 /* Membro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Membro.m; sourceTree = "<group>"; };
+		29B6154D19DBB63A003B6C68 /* ConexaoCadastrarMembro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConexaoCadastrarMembro.h; sourceTree = "<group>"; };
+		29B6154E19DBB63A003B6C68 /* ConexaoCadastrarMembro.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConexaoCadastrarMembro.m; sourceTree = "<group>"; };
+		29B6155019DBB684003B6C68 /* GLB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GLB.h; sourceTree = "<group>"; };
+		29B6155119DBB684003B6C68 /* GLB.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GLB.m; sourceTree = "<group>"; };
 		29E23D9D19D506D000F34642 /* JYCadastroSocialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCadastroSocialViewController.h; sourceTree = "<group>"; };
 		29E23D9E19D506D000F34642 /* JYCadastroSocialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCadastroSocialViewController.m; sourceTree = "<group>"; };
 		29E23DA019D5114900F34642 /* Logo_IEJB_Horizontal.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_IEJB_Horizontal.png; sourceTree = "<group>"; };
@@ -220,6 +238,9 @@
 		29A7D604195BBC6C00C3FA40 /* IEJB */ = {
 			isa = PBXGroup;
 			children = (
+				29B6154C19DBB60F003B6C68 /* connection */,
+				29B6154819DBB061003B6C68 /* model */,
+				29B612FA19DBAF30003B6C68 /* util */,
 				295BA7ED19DA4A32006030D9 /* sistema */,
 				2977A35119D88F36006FC4C3 /* model */,
 				2941DF17195CF704004BFEAE /* cadastro */,
@@ -277,6 +298,39 @@
 				29A7D63A195BD07200C3FA40 /* homens_iejb.jpg */,
 			);
 			path = imagens;
+			sourceTree = "<group>";
+		};
+		29B612FA19DBAF30003B6C68 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				29B6155019DBB684003B6C68 /* GLB.h */,
+				29B6155119DBB684003B6C68 /* GLB.m */,
+				29B6154219DBAF97003B6C68 /* NSStringMask.h */,
+				29B6154319DBAF97003B6C68 /* NSStringMask.m */,
+				29B6154419DBAF97003B6C68 /* UITextFieldMask.h */,
+				29B6154519DBAF97003B6C68 /* UITextFieldMask.m */,
+				29B6153F19DBAF7F003B6C68 /* CWSBrasilValidate.h */,
+				29B6154019DBAF7F003B6C68 /* CWSBrasilValidate.m */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		29B6154819DBB061003B6C68 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				29B6154919DBB088003B6C68 /* Membro.h */,
+				29B6154A19DBB088003B6C68 /* Membro.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		29B6154C19DBB60F003B6C68 /* connection */ = {
+			isa = PBXGroup;
+			children = (
+				29B6154D19DBB63A003B6C68 /* ConexaoCadastrarMembro.h */,
+				29B6154E19DBB63A003B6C68 /* ConexaoCadastrarMembro.m */,
+			);
+			name = connection;
 			sourceTree = "<group>";
 		};
 		FB43ACCC195BC17300C2121D /* resources */ = {
@@ -437,11 +491,17 @@
 				29A930BB19D78DA2002A2E00 /* UfCidadeDao.m in Sources */,
 				2977A35419D88F63006FC4C3 /* UfCidades.m in Sources */,
 				29A3015819D63ED400FD1214 /* JYOpcoesCadastroViewController.m in Sources */,
+				29B6154119DBAF7F003B6C68 /* CWSBrasilValidate.m in Sources */,
 				29E23D9F19D506D000F34642 /* JYCadastroSocialViewController.m in Sources */,
 				294F50BA19D4F7D9005AC2D6 /* JYCadastroEclesiasticoViewController.m in Sources */,
 				FB43ACD6195BC90000C2121D /* SCSQLite.m in Sources */,
+				29B6154619DBAF97003B6C68 /* NSStringMask.m in Sources */,
 				2941DF1A195CF72D004BFEAE /* JYCadastroViewController.m in Sources */,
 				29A7D60F195BBC6C00C3FA40 /* JYAppDelegate.m in Sources */,
+				29B6154719DBAF97003B6C68 /* UITextFieldMask.m in Sources */,
+				29B6155219DBB684003B6C68 /* GLB.m in Sources */,
+				29B6154B19DBB088003B6C68 /* Membro.m in Sources */,
+				29B6154F19DBB63A003B6C68 /* ConexaoCadastrarMembro.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -576,9 +636,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IEJB/COD_PDF/LeitorIDR/FastPdfKit.embeddedframework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IEJB/IEJB-Prefix.pch";
 				INFOPLIST_FILE = "IEJB/IEJB-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IEJB/COD_PDF/LeitorIDR/LeitorIDR/PDFLib",
+					"$(PROJECT_DIR)/IEJB/COD_PDF/LeitorIDR/PDFViewer/PDFLib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -589,9 +658,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IEJB/COD_PDF/LeitorIDR/FastPdfKit.embeddedframework",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IEJB/IEJB-Prefix.pch";
 				INFOPLIST_FILE = "IEJB/IEJB-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/IEJB/COD_PDF/LeitorIDR/LeitorIDR/PDFLib",
+					"$(PROJECT_DIR)/IEJB/COD_PDF/LeitorIDR/PDFViewer/PDFLib",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
