@@ -45,8 +45,8 @@
         }
         
         cidade = [[Cidade alloc]init];
-        cidade.id = (int)[resultUfCidade objectForKey:@"id"];
-        cidade.ehCapital = [(BOOL)[resultUfCidade objectForKey:@"capital"];
+        cidade.id = [resultUfCidade objectForKey:@"id"];
+        //cidade.ehCapital = [[[resultUfCidade objectForKey:@"capital"] isEqualToString:@"0" ]? NO : YES];
         cidade.nome  = [resultUfCidade objectForKey:@"nome"];
         
         [cidades addObject:cidade];
