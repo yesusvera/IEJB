@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		290245FE19DDBD3E00539CE7 /* logo do APP 1 a 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 290245FD19DDBD3E00539CE7 /* logo do APP 1 a 1.png */; };
 		2941DF1A195CF72D004BFEAE /* JYCadastroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2941DF19195CF72D004BFEAE /* JYCadastroViewController.m */; };
 		294F50B519D4C577005AC2D6 /* Logo_M1A1.png in Resources */ = {isa = PBXBuildFile; fileRef = 294F50B419D4C577005AC2D6 /* Logo_M1A1.png */; };
 		294F50B719D4C599005AC2D6 /* Logo_IEJB.png in Resources */ = {isa = PBXBuildFile; fileRef = 294F50B619D4C599005AC2D6 /* Logo_IEJB.png */; };
@@ -77,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		290245FD19DDBD3E00539CE7 /* logo do APP 1 a 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo do APP 1 a 1.png"; sourceTree = "<group>"; };
 		2941DF18195CF72D004BFEAE /* JYCadastroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCadastroViewController.h; sourceTree = "<group>"; };
 		2941DF19195CF72D004BFEAE /* JYCadastroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCadastroViewController.m; sourceTree = "<group>"; };
 		294F50B419D4C577005AC2D6 /* Logo_M1A1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_M1A1.png; sourceTree = "<group>"; };
@@ -351,6 +353,7 @@
 		29A7D639195BD07200C3FA40 /* imagens */ = {
 			isa = PBXGroup;
 			children = (
+				290245FD19DDBD3E00539CE7 /* logo do APP 1 a 1.png */,
 				29A3015419D63C1200FD1214 /* H2CD.png */,
 				29A3015019D63B2800FD1214 /* Logo_IEJB_icone.png */,
 				29E23DA019D5114900F34642 /* Logo_IEJB_Horizontal.png */,
@@ -502,6 +505,7 @@
 			files = (
 				29A3015519D63C1200FD1214 /* H2CD.png in Resources */,
 				29B612F219DB8822003B6C68 /* ministerios.plist in Resources */,
+				290245FE19DDBD3E00539CE7 /* logo do APP 1 a 1.png in Resources */,
 				FB43ACD4195BC90000C2121D /* .gitignore in Resources */,
 				29B612F419DB94ED003B6C68 /* rendas.plist in Resources */,
 				29B612F619DB9A3F003B6C68 /* grauInstrucao.plist in Resources */,
