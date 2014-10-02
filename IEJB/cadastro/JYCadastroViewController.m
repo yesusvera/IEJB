@@ -46,7 +46,7 @@ BOOL concluiCad;
     UITapGestureRecognizer *yourTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollTap:)];
     [barraRolagem addGestureRecognizer:yourTap];
     [barraRolagem setScrollEnabled:YES];
-    [barraRolagem setContentSize:CGSizeMake(320, 1400)];
+    [barraRolagem setContentSize:CGSizeMake(320, 1470)];
     
     //DataPickerView da data de nascimento
     listaData = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 230, 0)];

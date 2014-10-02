@@ -554,7 +554,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" canCancelContentTouches="NO" id="RDG-uU-aWW">
-                                <rect key="frame" x="0.0" y="59" width="320" height="952"/>
+                                <rect key="frame" x="0.0" y="143" width="320" height="952"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Rua - Logradouro" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="waJ-7x-ZYG">
@@ -788,6 +788,16 @@
                                         <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Digite o nome" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" id="u3h-gS-vpu">
+                                        <rect key="frame" x="56" y="40" width="243" height="35"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="XoQ-vk-LLx" id="GFo-KE-0Jx"/>
+                                        </connections>
+                                    </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  CPF" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="65X-cI-kIl">
                                         <rect key="frame" x="9" y="75" width="303" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -901,16 +911,6 @@
                                             <action selector="incrementarFilhos:" destination="XoQ-vk-LLx" eventType="valueChanged" id="8fK-34-3qf"/>
                                         </connections>
                                     </stepper>
-                                    <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Digite o nome do cônjuge" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" id="X7Q-tM-5Er">
-                                        <rect key="frame" x="69" y="178" width="230" height="35"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                                        <connections>
-                                            <outlet property="delegate" destination="XoQ-vk-LLx" id="Pt4-h3-R54"/>
-                                        </connections>
-                                    </textField>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="  Cidade" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z6F-vw-RPd">
                                         <rect key="frame" x="124" y="348" width="188" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -929,14 +929,14 @@
                                             <outlet property="delegate" destination="XoQ-vk-LLx" id="ifT-2M-alS"/>
                                         </connections>
                                     </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Digite o nome" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" id="u3h-gS-vpu">
-                                        <rect key="frame" x="56" y="40" width="243" height="35"/>
+                                    <textField opaque="NO" clipsSubviews="YES" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Digite o nome do cônjuge" textAlignment="right" minimumFontSize="17" clearButtonMode="whileEditing" id="X7Q-tM-5Er">
+                                        <rect key="frame" x="69" y="178" width="230" height="35"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="next"/>
                                         <connections>
-                                            <outlet property="delegate" destination="XoQ-vk-LLx" id="GFo-KE-0Jx"/>
+                                            <outlet property="delegate" destination="XoQ-vk-LLx" id="Pt4-h3-R54"/>
                                         </connections>
                                     </textField>
                                 </subviews>
@@ -958,6 +958,7 @@
                         <outlet property="conjuge" destination="X7Q-tM-5Er" id="DHz-wr-2L4"/>
                         <outlet property="dataNascimento" destination="nWx-jP-VYg" id="N5J-U8-jCV"/>
                         <outlet property="email" destination="A1T-Yd-eQF" id="4gS-6T-6k2"/>
+                        <outlet property="nome" destination="u3h-gS-vpu" id="fhV-9F-3Ek"/>
                         <outlet property="qtdFilhos" destination="o3p-S9-PI4" id="ufc-Cz-pEO"/>
                         <outlet property="ruaLogradouro" destination="m7j-Fa-cyo" id="g4r-m1-Cpn"/>
                         <outlet property="senha" destination="NFI-ez-ZG1" id="bfT-nf-xfr"/>

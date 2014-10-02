@@ -109,9 +109,13 @@ NSString *msgCad;
     
     NSString *urlCadMembro = @"http://localhost:8080/sgi/RCadMem?";
     
-    urlCadMembro = [[urlCadMembro stringByAppendingString:@"usrCadServ="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.usuario]];
+//    urlCadMembro = [[urlCadMembro stringByAppendingString:@"usrCadServ="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.usuario]];
+//    
+//    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&passCadServ="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.senha]];
     
-    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&passCadServ="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.senha]];
+    urlCadMembro = [urlCadMembro stringByAppendingString:@"usrCadServ=iejb2014"];
+    
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&passCadServ="] stringByAppendingString: [GLB urlEncodeUsingEncoding:@"iejb%membro%2014"]];
     
     urlCadMembro = [[urlCadMembro stringByAppendingString:@"&cpf="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.CPF]];
     
