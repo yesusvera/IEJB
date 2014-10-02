@@ -22,6 +22,8 @@
     UIPickerView *opcoesUF;
     UIPickerView *opcoesCidade;
     
+    NSString *idCidade;
+    
 }
 @property (weak, nonatomic) IBOutlet UITextField *nome;
 @property (weak, nonatomic) IBOutlet UITextField *CPF;

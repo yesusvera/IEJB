@@ -16,7 +16,7 @@
 
 - (NSArray *)buscarUfCidades{
     
-    NSArray *resultsUFCidades = [SCSQLite selectRowSQL: @"Select tb_uf.sigla, tb_cidade.nome, tb_cidade.id, tb_cidade.idestado, tb_cidade.capital from tb_uf, tb_cidade where tb_uf.id = tb_cidade.idEstado order by tb_uf.id"];
+    NSArray *resultsUFCidades = [SCSQLite selectRowSQL: @"Select tb_uf.sigla, tb_cidade.nome, tb_cidade.id, tb_cidade.idEstado, tb_cidade.capital from tb_uf, tb_cidade where tb_uf.id = tb_cidade.idEstado order by tb_uf.id"];
     
     int i = 0;
     NSString *uf= @"";
@@ -45,7 +45,7 @@
         }
         
         cidade = [[Cidade alloc]init];
-        cidade.id = [resultUfCidade objectForKey:@"id"];
+        cidade.id = [[resultUfCidade objectForKey:@"id"] stringValue];
         //cidade.ehCapital = [[[resultUfCidade objectForKey:@"capital"] isEqualToString:@"0" ]? NO : YES];
         cidade.nome  = [resultUfCidade objectForKey:@"nome"];
         

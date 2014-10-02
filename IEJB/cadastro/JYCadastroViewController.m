@@ -20,7 +20,7 @@
 @synthesize nome, CPF, dataNascimento, tipoSanguineo, sexo, conjuge, qtdFilhos, ruaLogradouro, bairro, UF, cidade, cep, telFixo, telCelular, telComercial, email, usuario, senha, confirmaSenha;
 
 BOOL concluiCad;
-NSString *idCidade;
+//NSString *idCidade;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -115,16 +115,16 @@ NSString *idCidade;
 // Confirma com o usuário se quer realmente concluir o cadastro.
 - (IBAction)concluirCadastro:(id)sender {
     
-    UIAlertView *perguntaConcluirCad = [[UIAlertView alloc]
-                                        initWithTitle:@"Cadastro de Membro"
-                                        message:@"Deseja concluir o cadastro?"
-                                        delegate:self
-                                        cancelButtonTitle:@"Cancelar"
-                                        otherButtonTitles:@"Concluir", nil];
-                                        
-    [perguntaConcluirCad show];
+//    UIAlertView *perguntaConcluirCad = [[UIAlertView alloc]
+//                                        initWithTitle:@"Cadastro de Membro"
+//                                        message:@"Deseja concluir o cadastro?"
+//                                        delegate:self
+//                                        cancelButtonTitle:@"Cancelar"
+//                                        otherButtonTitles:@"Concluir", nil];
+//                                        
+//    [perguntaConcluirCad show];
     
-    if (concluiCad) {
+    //if (concluiCad) {
         Membro *membro = [[Membro alloc]init];
         
         membro.nome = nome.text;
@@ -151,7 +151,7 @@ NSString *idCidade;
         ConexaoCadastrarMembro *cadMembro = [[ConexaoCadastrarMembro alloc]init];
         
         [cadMembro cadastrarMembro:membro];
-    }
+    //}
 }
 
 
@@ -204,8 +204,8 @@ NSString *idCidade;
         UfCidades *uf =  [listaUfCidade objectAtIndex:row];
         return uf.uf;
     }else if(pickerView == opcoesCidade){
-        
-        return [listaCidades objectAtIndex:row];;
+        Cidade *cidadeEscolhida = [listaCidades objectAtIndex:row];
+        return cidadeEscolhida.nome;
     }
     return nil;
 }
@@ -219,11 +219,13 @@ NSString *idCidade;
         UfCidades *uf =  [listaUfCidade objectAtIndex:row];
         UF.text = uf.uf;
         listaCidades = uf.cidades;
-        cidade.text = [uf.cidades objectAtIndex:0];
+        
+        Cidade *cidadePrinc = [listaCidades objectAtIndex:0];
+        cidade.text = cidadePrinc.nome;
     }else if(pickerView == opcoesCidade){
         Cidade *cidadeEscolhida = [listaCidades objectAtIndex:row];
         cidade.text = cidadeEscolhida.nome;
-        idCidade    = cidadeEscolhida.id;
+        idCidade  = cidadeEscolhida.id;
     }
 }
 
