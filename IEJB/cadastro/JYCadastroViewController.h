@@ -16,8 +16,6 @@
     
     UIDatePicker *listaData;
     
-    UIScrollView *barraRolagem;
-    
     UIPickerView *opcoesTpSang;
     UIPickerView *opcoesUF;
     UIPickerView *opcoesCidade;
@@ -44,6 +42,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *usuario;
 @property (weak, nonatomic) IBOutlet UITextField *senha;
 @property (weak, nonatomic) IBOutlet UITextField *confirmaSenha;
+@property (weak, nonatomic) IBOutlet UIScrollView *barraRolagem;
 
 
 @end

@@ -13,11 +13,10 @@
 #import "ConexaoCadastrarMembro.h"
 #import "Cidade.h"
 @interface JYCadastroViewController ()
-
+@property(nonatomic) UITextField *activeField;
 @end
 
 @implementation JYCadastroViewController
-@synthesize nome, CPF, dataNascimento, tipoSanguineo, sexo, conjuge, qtdFilhos, ruaLogradouro, bairro, UF, cidade, cep, telFixo, telCelular, telComercial, email, usuario, senha, confirmaSenha;
 
 BOOL concluiCad;
 //NSString *idCidade;
@@ -36,24 +35,46 @@ BOOL concluiCad;
 {
     [self.navigationController setNavigationBarHidden:NO animated:animated];
     
+    // register for keyboard notifications
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWasShown:)
+                                                 name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardWillBeHidden:)
+                                                 name:UIKeyboardWillHideNotification object:nil];
+    
 }
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    
+    [super viewWillDisappear:animated];
+    
+    // unregister for keyboard notifications
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidShowNotification object:nil];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIKeyboardDidHideNotification object:nil];
+    
+}
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-   
+    
     //Comando para fechar os componentes na Scrool Vew. Ex: Teclado, PickerView, DatePickerView. etc...
     UITapGestureRecognizer *yourTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(scrollTap:)];
-    [barraRolagem addGestureRecognizer:yourTap];
-    [barraRolagem setScrollEnabled:YES];
-    [barraRolagem setContentSize:CGSizeMake(320, 1470)];
+    [self.barraRolagem addGestureRecognizer:yourTap];
+    [self.barraRolagem setScrollEnabled:YES];
+    [self.barraRolagem setContentSize:CGSizeMake(320, 1470)];
     
     //DataPickerView da data de nascimento
     listaData = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 0, 230, 0)];
     listaData.datePickerMode = UIDatePickerModeDate;
     [listaData addTarget:self action:@selector(getDate:) forControlEvents:UIControlEventValueChanged];
     [listaData removeFromSuperview];
-    dataNascimento.inputView = listaData;
+    self.dataNascimento.inputView = listaData;
     
     
     //PickerView com as opções de tipo sanquineo
@@ -61,10 +82,10 @@ BOOL concluiCad;
     opcoesTpSang = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 0, 230, 0)];
     [opcoesTpSang setDelegate:self];
     [opcoesTpSang setDataSource:self];
-    tipoSanguineo.inputView = opcoesTpSang;
+    self.tipoSanguineo.inputView = opcoesTpSang;
     
     //Setando o campo qtdFilhos com o valor padrão zero
-    qtdFilhos.text = @"0";
+    self.qtdFilhos.text = @"0";
     
     //PickerView com as opções de UF
     UfCidadeDao *ufCidadeDao = [[UfCidadeDao alloc]init];
@@ -72,15 +93,15 @@ BOOL concluiCad;
     opcoesUF = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 0, 230, 0)];
     [opcoesUF setDelegate:self];
     [opcoesUF setDataSource:self];
-    UF.inputView = opcoesUF;
+    self.UF.inputView = opcoesUF;
     
     //PickerView com as opções de Cidade
     opcoesCidade = [[UIPickerView alloc]initWithFrame:CGRectMake(0, 0, 230, 0)];
     [opcoesCidade setDelegate:self];
     [opcoesCidade setDataSource:self];
-    cidade.inputView = opcoesCidade;
+    self.cidade.inputView = opcoesCidade;
     
-
+    
 }
 
 
@@ -96,7 +117,7 @@ BOOL concluiCad;
     [formatter setDateFormat:@"dd/MM/yyyy"];
     
     // Exibir a data no campo de texto
-    dataNascimento.text =[formatter stringFromDate:currentDate];
+    self.dataNascimento.text =[formatter stringFromDate:currentDate];
     
 }
 
@@ -110,47 +131,48 @@ BOOL concluiCad;
 - (void)scrollTap:(UIGestureRecognizer*)gestureRecognizer {
     
     [self.view endEditing:YES];
+    [_activeField resignFirstResponder];
 }
 
 // Confirma com o usuário se quer realmente concluir o cadastro.
 - (IBAction)concluirCadastro:(id)sender {
     
-//    UIAlertView *perguntaConcluirCad = [[UIAlertView alloc]
-//                                        initWithTitle:@"Cadastro de Membro"
-//                                        message:@"Deseja concluir o cadastro?"
-//                                        delegate:self
-//                                        cancelButtonTitle:@"Cancelar"
-//                                        otherButtonTitles:@"Concluir", nil];
-//                                        
-//    [perguntaConcluirCad show];
+    //    UIAlertView *perguntaConcluirCad = [[UIAlertView alloc]
+    //                                        initWithTitle:@"Cadastro de Membro"
+    //                                        message:@"Deseja concluir o cadastro?"
+    //                                        delegate:self
+    //                                        cancelButtonTitle:@"Cancelar"
+    //                                        otherButtonTitles:@"Concluir", nil];
+    //
+    //    [perguntaConcluirCad show];
     
     //if (concluiCad) {
-        Membro *membro = [[Membro alloc]init];
-        
-        membro.nome = nome.text;
-        membro.CPF = CPF.text;
-        membro.dataNascimento = dataNascimento.text;
-        membro.tipoSanguineo = tipoSanguineo.text;
-        membro.sexo          = sexo.textInputContextIdentifier;
-        membro.conjuge     = conjuge.text;
-        membro.qtdFilhos = qtdFilhos.text;
-        membro.ruaLogradouro = ruaLogradouro.text;
-        membro.bairro   = bairro.text;
-        membro.UF = UF.text;
-        membro.cidade = cidade.text;
-        membro.cep = cep.text;
-        membro.telFixo = telFixo.text;
-        membro.telCelular = telCelular.text;
-        membro.telComercial = telComercial.text;
-        membro.email = email.text;
-        membro.usuario = usuario.text;
-        membro.senha = senha.text;
-        membro.confirmaSenha = confirmaSenha.text;
-        membro.idCidade = idCidade;
-        
-        ConexaoCadastrarMembro *cadMembro = [[ConexaoCadastrarMembro alloc]init];
-        
-        [cadMembro cadastrarMembro:membro];
+    Membro *membro = [[Membro alloc]init];
+    
+    membro.nome = self.nome.text;
+    membro.CPF = self.CPF.text;
+    membro.dataNascimento = self.dataNascimento.text;
+    membro.tipoSanguineo = self.tipoSanguineo.text;
+    membro.sexo          = self.sexo.textInputContextIdentifier;
+    membro.conjuge     = self.conjuge.text;
+    membro.qtdFilhos = self.qtdFilhos.text;
+    membro.ruaLogradouro = self.ruaLogradouro.text;
+    membro.bairro   = self.bairro.text;
+    membro.UF = self.UF.text;
+    membro.cidade = self.cidade.text;
+    membro.cep = self.cep.text;
+    membro.telFixo = self.telFixo.text;
+    membro.telCelular = self.telCelular.text;
+    membro.telComercial = self.telComercial.text;
+    membro.email = self.email.text;
+    membro.usuario = self.usuario.text;
+    membro.senha = self.senha.text;
+    membro.confirmaSenha = self.confirmaSenha.text;
+    membro.idCidade = idCidade;
+    
+    ConexaoCadastrarMembro *cadMembro = [[ConexaoCadastrarMembro alloc]init];
+    
+    [cadMembro cadastrarMembro:membro];
     //}
 }
 
@@ -159,8 +181,8 @@ BOOL concluiCad;
 - (IBAction)incrementarFilhos:(id)sender {
     
     UIStepper *incrementador = (UIStepper *)sender;
-    qtdFilhos.text = [NSString stringWithFormat:@"%d",
-                                 (int)incrementador.value];
+    self.qtdFilhos.text = [NSString stringWithFormat:@"%d",
+                           (int)incrementador.value];
 }
 
 #pragma mark - UIAlertView
@@ -212,19 +234,19 @@ BOOL concluiCad;
 
 -(void) pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component{
     if (pickerView == opcoesTpSang) {
-        tipoSanguineo.text = [listaTpSanguineo objectAtIndex:row];
+        self.tipoSanguineo.text = [listaTpSanguineo objectAtIndex:row];
     }else if(pickerView == opcoesUF){
         listaCidades = nil;
-        cidade.text = nil;
+        self.cidade.text = nil;
         UfCidades *uf =  [listaUfCidade objectAtIndex:row];
-        UF.text = uf.uf;
+        self.UF.text = uf.uf;
         listaCidades = uf.cidades;
         
         Cidade *cidadePrinc = [listaCidades objectAtIndex:0];
-        cidade.text = cidadePrinc.nome;
+        self.cidade.text = cidadePrinc.nome;
     }else if(pickerView == opcoesCidade){
         Cidade *cidadeEscolhida = [listaCidades objectAtIndex:row];
-        cidade.text = cidadeEscolhida.nome;
+        self.cidade.text = cidadeEscolhida.nome;
         idCidade  = cidadeEscolhida.id;
     }
 }
@@ -244,6 +266,53 @@ BOOL concluiCad;
         [textField resignFirstResponder];
     }
     return NO; // We do not want UITextField to insert line-breaks.
+}
+
+-(void)textFieldDidBeginEditing:(UITextField *)textField{
+    self.activeField = textField;
+}
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    self.activeField = nil;
+}
+
+// Called when the UIKeyboardDidShowNotification is sent.
+
+- (void)keyboardWasShown:(NSNotification*)aNotification
+
+{
+    
+    NSDictionary* info = [aNotification userInfo];
+    
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    CGRect aRect = self.view.bounds;
+    
+    aRect.size.height -= kbSize.height;
+    
+    if (!CGRectContainsPoint(aRect, _activeField.frame.origin) ) {
+        
+        CGRect bkgndRect = _activeField.superview.frame;
+        
+        bkgndRect.size.height += kbSize.height;
+        
+        [_activeField.superview setFrame:bkgndRect];
+        
+        [_barraRolagem setContentOffset:CGPointMake(0.0, _activeField.frame.origin.y-kbSize.height + 40) animated:YES];
+        
+    }
+    
+}
+
+// Called when the UIKeyboardWillHideNotification is received
+- (void)keyboardWillBeHidden:(NSNotification *)aNotification
+{
+    // scroll back..
+    UIEdgeInsets contentInsets = UIEdgeInsetsZero;
+    
+    self.barraRolagem.contentInset = contentInsets;
+    
+    self.barraRolagem.scrollIndicatorInsets = contentInsets;
 }
 
 @end
