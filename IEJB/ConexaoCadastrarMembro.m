@@ -14,11 +14,10 @@
 @implementation ConexaoCadastrarMembro
 
 NSMutableString *valorElementoAtual;
+BOOL cadErro;
+NSString *msgCad;
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict{
-    if([elementName isEqualToString:@"response"]){
-       // registrarLivroResponse = [[RegistrarLivroResponse alloc] init];
-    }
 }
 
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string{
@@ -34,16 +33,17 @@ NSMutableString *valorElementoAtual;
 
 -(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName{
     
-    if([elementName isEqualToString:@"response"] || [elementName isEqualToString:@"livro"]){
+    if([elementName isEqualToString:@"iejbCadMemb"]){
         return;
-    } else if([elementName isEqualToString:@"codigolivro"]){
-      //  [registrarLivroResponse setCodLivro:valorElementoAtual];
-    }else if([elementName isEqualToString:@"status"]){
-       // [registrarLivroResponse setStatus:valorElementoAtual];
-    }else if([elementName isEqualToString:@"erro"]){
-      //  [registrarLivroResponse setErro:valorElementoAtual];
-    }else if([elementName isEqualToString:@"msgErro"]){
-      //  [registrarLivroResponse setMsgErro:valorElementoAtual];
+    }
+    if([elementName isEqualToString:@"erro"]){
+        if([valorElementoAtual isEqualToString:@"false"]){
+            cadErro = NO;
+        }else{
+            cadErro = YES;
+        }
+    }else if([elementName isEqualToString:@"mensagem"]){
+        msgCad = valorElementoAtual;
     }
     
     valorElementoAtual = nil;
@@ -75,18 +75,22 @@ NSMutableString *valorElementoAtual;
         }
         
         
-//        NSString *mensagemAlerta = registrarLivroResponse.status;
-//        if(![registrarLivroResponse.erro isEqualToString:@"0"]){
-//            mensagemAlerta = [mensagemAlerta stringByAppendingString:@" - "];
-//            mensagemAlerta = [mensagemAlerta stringByAppendingString:registrarLivroResponse.msgErro];
-//            
-//        }
+        UIAlertView *perguntaConcluirCad = [[UIAlertView alloc]
+                                                initWithTitle:@"Cadastro de Membro"
+                                                message:msgCad
+                                                delegate:self
+                                                cancelButtonTitle:@"OK"
+                                                otherButtonTitles:nil, nil];
+            
+        [perguntaConcluirCad show];
+            
+
         
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"%s: AFHTTPRequestOperation error: %@", __FUNCTION__, error);
         
         UIAlertView *alertError = [
-                                   [UIAlertView alloc] initWithTitle:@"Erro ao registrar livro no portal."
+                                   [UIAlertView alloc] initWithTitle:@"Erro cadatrar o membr!"
                                    message:error.description
                                    delegate:nil
                                    cancelButtonTitle:@"OK"
@@ -103,18 +107,45 @@ NSMutableString *valorElementoAtual;
 
 - (NSString *)montarUrlParaCadastroMembro:(Membro *) membro{
     
-    NSString *urlCadMembro = @"http://localhost:8080/sgi/RCadMem?usuario=iejb2014&senha=iejb%25membro%252014&cpf=72345098104&nome=YESUS+ALFONSINO+CASTILLO+VERA&datanascimento=25121984";
+    NSString *urlCadMembro = @"http://localhost:8080/sgi/RCadMem?";
     
-    urlCadMembro = [[urlCadMembro stringByAppendingString:@"usuario="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.usuario]];
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"usrCadServ="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.usuario]];
     
-    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&senha="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.senha]];
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&passCadServ="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.senha]];
     
     urlCadMembro = [[urlCadMembro stringByAppendingString:@"&cpf="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.CPF]];
     
     urlCadMembro = [[urlCadMembro stringByAppendingString:@"&nome="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.nome]];
 
-    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&datanascimento="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.dataNascimento]];
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&nomeConjuge="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.conjuge]];
+    
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&dataNascimento="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.dataNascimento]];
+    
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&tipoSanguineo="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.tipoSanguineo]];
+    
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&email="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.email]];
+    
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&filhos="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.qtdFilhos]];
+    
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&endereco="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.ruaLogradouro]];
+    
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&bairro="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.bairro]];
+    
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&idCidade="] stringByAppendingString: [GLB urlEncodeUsingEncoding: membro.idCidade ]];
+    
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&cep="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.cep]];
+    
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&telefoneFixo="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.telFixo]];
+    
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&telefoneCelular="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.telCelular]];
+    
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&telefoneComercial="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.telCelular]];
+    
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&login="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.usuario]];
+    
+    urlCadMembro = [[urlCadMembro stringByAppendingString:@"&senha="] stringByAppendingString: [GLB urlEncodeUsingEncoding:membro.senha]];
   
     return urlCadMembro;
 }
+
 @end

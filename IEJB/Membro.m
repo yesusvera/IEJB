@@ -9,5 +9,5 @@
 #import "Membro.h"
 
 @implementation Membro
-@synthesize nome, CPF, dataNascimento, tipoSanguineo, sexo, conjuge, qtdFilhos, ruaLogradouro, bairro, UF, cidade, cep, telFixo, telCelular, telComercial, email, usuario, senha, confirmaSenha;
+@synthesize nome, CPF, dataNascimento, tipoSanguineo, sexo, conjuge, qtdFilhos, ruaLogradouro, bairro, UF, cidade, cep, telFixo, telCelular, telComercial, email, usuario, senha, confirmaSenha, idCidade;
 @end

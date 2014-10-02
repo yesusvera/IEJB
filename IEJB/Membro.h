@@ -29,5 +29,6 @@
 @property(nonatomic, retain) NSString *usuario;
 @property(nonatomic, retain) NSString *senha;
 @property(nonatomic, retain) NSString *confirmaSenha;
+@property(nonatomic, retain) NSString *idCidade;
 
 @end

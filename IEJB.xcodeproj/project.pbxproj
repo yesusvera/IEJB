@@ -21,6 +21,7 @@
 		2967DB1C19DC2EBC00A0F2E2 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 2967DB1119DC2EBC00A0F2E2 /* AFURLRequestSerialization.m */; };
 		2967DB1D19DC2EBC00A0F2E2 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 2967DB1319DC2EBC00A0F2E2 /* AFURLResponseSerialization.m */; };
 		2967DB1E19DC2EBC00A0F2E2 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2967DB1519DC2EBC00A0F2E2 /* AFURLSessionManager.m */; };
+		2967DB2119DCE28D00A0F2E2 /* Cidade.m in Sources */ = {isa = PBXBuildFile; fileRef = 2967DB2019DCE28D00A0F2E2 /* Cidade.m */; };
 		2977A35419D88F63006FC4C3 /* UfCidades.m in Sources */ = {isa = PBXBuildFile; fileRef = 2977A35319D88F63006FC4C3 /* UfCidades.m */; };
 		29A3014C19D634C700FD1214 /* JYTelaLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A3014B19D634C700FD1214 /* JYTelaLoginViewController.m */; };
 		29A3014F19D6379B00FD1214 /* JYRecuperaSenhaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29A3014E19D6379B00FD1214 /* JYRecuperaSenhaViewController.m */; };
@@ -102,6 +103,8 @@
 		2967DB1319DC2EBC00A0F2E2 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
 		2967DB1419DC2EBC00A0F2E2 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
 		2967DB1519DC2EBC00A0F2E2 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		2967DB1F19DCE28D00A0F2E2 /* Cidade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cidade.h; sourceTree = "<group>"; };
+		2967DB2019DCE28D00A0F2E2 /* Cidade.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cidade.m; sourceTree = "<group>"; };
 		2977A35219D88F63006FC4C3 /* UfCidades.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UfCidades.h; sourceTree = "<group>"; };
 		2977A35319D88F63006FC4C3 /* UfCidades.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UfCidades.m; sourceTree = "<group>"; };
 		29A3014A19D634C700FD1214 /* JYTelaLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYTelaLoginViewController.h; sourceTree = "<group>"; };
@@ -250,8 +253,12 @@
 		2977A35119D88F36006FC4C3 /* model */ = {
 			isa = PBXGroup;
 			children = (
+				29B6154919DBB088003B6C68 /* Membro.h */,
+				29B6154A19DBB088003B6C68 /* Membro.m */,
 				2977A35219D88F63006FC4C3 /* UfCidades.h */,
 				2977A35319D88F63006FC4C3 /* UfCidades.m */,
+				2967DB1F19DCE28D00A0F2E2 /* Cidade.h */,
+				2967DB2019DCE28D00A0F2E2 /* Cidade.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -294,7 +301,6 @@
 			isa = PBXGroup;
 			children = (
 				29B6154C19DBB60F003B6C68 /* connection */,
-				29B6154819DBB061003B6C68 /* model */,
 				29B612FA19DBAF30003B6C68 /* util */,
 				295BA7ED19DA4A32006030D9 /* sistema */,
 				2977A35119D88F36006FC4C3 /* model */,
@@ -368,15 +374,6 @@
 				29B6154019DBAF7F003B6C68 /* CWSBrasilValidate.m */,
 			);
 			name = util;
-			sourceTree = "<group>";
-		};
-		29B6154819DBB061003B6C68 /* model */ = {
-			isa = PBXGroup;
-			children = (
-				29B6154919DBB088003B6C68 /* Membro.h */,
-				29B6154A19DBB088003B6C68 /* Membro.m */,
-			);
-			name = model;
 			sourceTree = "<group>";
 		};
 		29B6154C19DBB60F003B6C68 /* connection */ = {
@@ -556,6 +553,7 @@
 				294F50BA19D4F7D9005AC2D6 /* JYCadastroEclesiasticoViewController.m in Sources */,
 				2967DB1819DC2EBC00A0F2E2 /* AFHTTPSessionManager.m in Sources */,
 				FB43ACD6195BC90000C2121D /* SCSQLite.m in Sources */,
+				2967DB2119DCE28D00A0F2E2 /* Cidade.m in Sources */,
 				29B6154619DBAF97003B6C68 /* NSStringMask.m in Sources */,
 				2941DF1A195CF72D004BFEAE /* JYCadastroViewController.m in Sources */,
 				2967DB1719DC2EBC00A0F2E2 /* AFHTTPRequestOperationManager.m in Sources */,

@@ -11,6 +11,7 @@
 #import "UfCidades.h"
 #import "Membro.h"
 #import "ConexaoCadastrarMembro.h"
+#import "Cidade.h"
 @interface JYCadastroViewController ()
 
 @end
@@ -19,6 +20,7 @@
 @synthesize nome, CPF, dataNascimento, tipoSanguineo, sexo, conjuge, qtdFilhos, ruaLogradouro, bairro, UF, cidade, cep, telFixo, telCelular, telComercial, email, usuario, senha, confirmaSenha;
 
 BOOL concluiCad;
+NSString *idCidade;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -144,7 +146,7 @@ BOOL concluiCad;
         membro.usuario = usuario.text;
         membro.senha = senha.text;
         membro.confirmaSenha = confirmaSenha.text;
-        
+        membro.idCidade = idCidade;
         
         ConexaoCadastrarMembro *cadMembro = [[ConexaoCadastrarMembro alloc]init];
         
@@ -219,7 +221,9 @@ BOOL concluiCad;
         listaCidades = uf.cidades;
         cidade.text = [uf.cidades objectAtIndex:0];
     }else if(pickerView == opcoesCidade){
-        cidade.text = [listaCidades objectAtIndex:row];
+        Cidade *cidadeEscolhida = [listaCidades objectAtIndex:row];
+        cidade.text = cidadeEscolhida.nome;
+        idCidade    = cidadeEscolhida.id;
     }
 }
 

@@ -12,6 +12,6 @@
 
 @property(nonatomic, retain) NSString *uf;
 
-@property(nonatomic, retain) NSArray *cidades;
+@property(nonatomic, retain) NSArray  *cidades;
 
 @end

@@ -9,19 +9,21 @@
 #import "UfCidadeDao.h"
 #import "SCSQLite.h"
 #import "UfCidades.h"
+#import "Cidade.h"
 
 @implementation UfCidadeDao
 
 
 - (NSArray *)buscarUfCidades{
     
-    NSArray *resultsUFCidades = [SCSQLite selectRowSQL: @"Select tb_uf.sigla, tb_cidade.nome from tb_uf, tb_cidade where tb_uf.id = tb_cidade.idEstado order by tb_uf.id"];
+    NSArray *resultsUFCidades = [SCSQLite selectRowSQL: @"Select tb_uf.sigla, tb_cidade.nome, tb_cidade.id, tb_cidade.idestado, tb_cidade.capital from tb_uf, tb_cidade where tb_uf.id = tb_cidade.idEstado order by tb_uf.id"];
     
     int i = 0;
     NSString *uf= @"";
     NSMutableArray *listaUfCidades = [[NSMutableArray alloc]init];
     UfCidades *ufCidade = [[UfCidades alloc]init];
     NSMutableArray *cidades;
+    Cidade *cidade;
     while(i < resultsUFCidades.count){
         
         NSDictionary *resultUfCidade = [resultsUFCidades objectAtIndex:i];
@@ -42,7 +44,12 @@
             uf = [resultUfCidade objectForKey:@"sigla"];
         }
         
-        [cidades addObject:[resultUfCidade objectForKey:@"nome"]];
+        cidade = [[Cidade alloc]init];
+        cidade.id = (int)[resultUfCidade objectForKey:@"id"];
+        cidade.ehCapital = [(BOOL)[resultUfCidade objectForKey:@"capital"];
+        cidade.nome  = [resultUfCidade objectForKey:@"nome"];
+        
+        [cidades addObject:cidade];
         
         i++;
     }
@@ -54,6 +61,7 @@
     ufCidade = nil;
     cidades = nil;
     resultsUFCidades = nil;
+    cidade = nil;
     
     return listaUfCidades;
 }
