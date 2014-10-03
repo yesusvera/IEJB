@@ -12,14 +12,15 @@
 #import "Membro.h"
 #import "ConexaoCadastrarMembro.h"
 #import "Cidade.h"
+#import "GLB.h"
+#import "CWSBrasilValidate.h"
 @interface JYCadastroViewController ()
 @property(nonatomic) UITextField *activeField;
 @end
 
 @implementation JYCadastroViewController
 
-BOOL concluiCad;
-//NSString *idCidade;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -137,16 +138,6 @@ BOOL concluiCad;
 // Confirma com o usuário se quer realmente concluir o cadastro.
 - (IBAction)concluirCadastro:(id)sender {
     
-    //    UIAlertView *perguntaConcluirCad = [[UIAlertView alloc]
-    //                                        initWithTitle:@"Cadastro de Membro"
-    //                                        message:@"Deseja concluir o cadastro?"
-    //                                        delegate:self
-    //                                        cancelButtonTitle:@"Cancelar"
-    //                                        otherButtonTitles:@"Concluir", nil];
-    //
-    //    [perguntaConcluirCad show];
-    
-    //if (concluiCad) {
     Membro *membro = [[Membro alloc]init];
     
     membro.nome = self.nome.text;
@@ -173,7 +164,6 @@ BOOL concluiCad;
     ConexaoCadastrarMembro *cadMembro = [[ConexaoCadastrarMembro alloc]init];
     
     [cadMembro cadastrarMembro:membro];
-    //}
 }
 
 
@@ -185,13 +175,14 @@ BOOL concluiCad;
                            (int)incrementador.value];
 }
 
+
 #pragma mark - UIAlertView
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     switch (buttonIndex) {
         case 1:
             break;
         case 2:
-            concluiCad = YES;
+            //concluiCad = YES;
             break;
             
         default:
@@ -244,6 +235,7 @@ BOOL concluiCad;
         
         Cidade *cidadePrinc = [listaCidades objectAtIndex:0];
         self.cidade.text = cidadePrinc.nome;
+        idCidade  = cidadePrinc.id;
     }else if(pickerView == opcoesCidade){
         Cidade *cidadeEscolhida = [listaCidades objectAtIndex:row];
         self.cidade.text = cidadeEscolhida.nome;
@@ -252,6 +244,75 @@ BOOL concluiCad;
 }
 
 #pragma mark - UITextFieldDelegate
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
+{
+    if (textField == self.CPF){
+        if(string.length == 0){
+            return YES;
+        }
+        
+        if(range.location == 3 || range.location == 7) {
+            NSString *str = [NSString stringWithFormat:@"%@.",textField.text];
+            textField.text = str;
+        }
+        
+        if(range.location == 11){
+            NSString *str = [NSString stringWithFormat:@"%@-", textField.text];
+            textField.text = str;
+        }
+        
+        if(range.location == 14){
+            return NO;
+        }
+    }
+    
+    if (textField == self.telCelular || textField == self.telComercial || textField == self.telFixo){
+        if(string.length == 0){
+            return YES;
+        }
+        
+        if(range.location == 0){
+            NSString *str = [NSString stringWithFormat:@"%@(", textField.text];
+            textField.text = str;
+        }
+        
+        if(range.location == 3){
+            NSString *str = [NSString stringWithFormat:@"%@)", textField.text];
+            textField.text = str;
+        }
+        
+        if(range.location == 8){
+            NSString *str = [NSString stringWithFormat:@"%@-", textField.text];
+            textField.text = str;
+        }
+        
+        if(range.location == 13){
+            return NO;
+        }
+    }
+    
+    if (textField == self.cep){
+        if(string.length == 0){
+            return YES;
+        }
+        
+        if(range.location == 2){
+            NSString *str = [NSString stringWithFormat:@"%@.", textField.text];
+            textField.text = str;
+        }
+        
+        if(range.location == 6){
+            NSString *str = [NSString stringWithFormat:@"%@-", textField.text];
+            textField.text = str;
+        }
+        
+        if(range.location == 9){
+            return NO;
+        }
+    }
+    return YES;
+}
 
 -(BOOL)textFieldShouldReturn:(UITextField*)textField;
 {
@@ -274,6 +335,13 @@ BOOL concluiCad;
 
 -(void)textFieldDidEndEditing:(UITextField *)textField{
     self.activeField = nil;
+    if (textField == self.CPF){
+        
+        if (![CWSBrasilValidate validarCPF:[[textField.text stringByReplacingOccurrencesOfString:@"." withString:@""] stringByReplacingOccurrencesOfString:@"-" withString:@""]]) {
+            
+            [GLB showMessage:@"CPF Inválido!"];
+        }
+    }
 }
 
 // Called when the UIKeyboardDidShowNotification is sent.
