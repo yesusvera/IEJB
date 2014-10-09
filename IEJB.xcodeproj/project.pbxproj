@@ -472,7 +472,7 @@
 				ORGANIZATIONNAME = "JY DESENV";
 				TargetAttributes = {
 					29A7D5FA195BBC6C00C3FA40 = {
-						DevelopmentTeam = WED6F4TVEP;
+						DevelopmentTeam = LEZ98KH8RJ;
 					};
 					29A7D61E195BBC6C00C3FA40 = {
 						TestTargetID = 29A7D5FA195BBC6C00C3FA40;
