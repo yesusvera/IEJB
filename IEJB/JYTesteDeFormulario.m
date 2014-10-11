@@ -8,8 +8,12 @@
 
 #import "XLForm.h"
 #import "JYTesteDeFormulario.h"
+//#import "DatesFormViewController.h"
 
 NSString *const kName = @"nome";
+NSString *const kCPF = @"CPF";
+NSString *const kDates = @"Data";
+NSString *const kTPSang = @"TPSang";
 NSString *const kEmail = @"email";
 NSString *const kTwitter = @"twitter";
 NSString *const kNumber = @"number";
@@ -20,6 +24,8 @@ NSString *const kPhone = @"phone";
 NSString *const kUrl = @"url";
 NSString *const kTextView = @"textView";
 NSString *const kNotes = @"notes";
+
+NSString *const kTiposSanguineos = @"tiposSanguineos";
 
 NSString * const kTextFieldAndTextView = @"TextFieldAndTextView";
 
@@ -35,14 +41,39 @@ NSString * const kTextFieldAndTextView = @"TextFieldAndTextView";
     formDescriptor.assignFirstResponderOnShow = YES;
     
     // Basic Information - Section
-    section = [XLFormSectionDescriptor formSectionWithTitle:@"TextField Types"];
+    section = [XLFormSectionDescriptor formSectionWithTitle:@"Dados Pessoais"];
     section.footerTitle = @"This is a long text that will appear on section footer";
     [formDescriptor addFormSection:section];
     
     // Name
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kName rowType:XLFormRowDescriptorTypeText title:@"Nome"];
     row.required = YES;
+    [row.cellConfigAtConfigure setObject:@(NSTextAlignmentRight) forKey:@"textField.textAlignment"];
+    [row.cellConfigAtConfigure setObject:@"Digite seu nome" forKey:@"textField.placeholder"];
     [section addFormRow:row];
+    
+    // CPF
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCPF rowType:XLFormRowDescriptorTypeText title:@"CPF"];
+    row.required = YES;
+    [row.cellConfigAtConfigure setObject:@(NSTextAlignmentRight) forKey:@"textField.textAlignment"];
+    [row.cellConfigAtConfigure setObject:@"000.000.000-00" forKey:@"textField.placeholder"];
+    [section addFormRow:row];
+    
+    
+    // Data de nascimento
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kDates rowType:XLFormRowDescriptorTypeDateInline title:@"Data de nascimento"];
+    row.value = [NSDate new];
+    [section addFormRow:row];
+    
+    
+    // Tipo Sanguieno
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kTiposSanguineos rowType:XLFormRowDescriptorTypeSelectorPickerViewInline title:@"Tipo Sanguíneo"];
+    row.selectorOptions = @[@"O-",@"O+",@"A-",@"A+",@"B-",@"B+",@"AB-",@"AB+"];
+    row.value = @"O-";
+    
+    [section addFormRow:row];
+    
+    
     
 //    // Email
 //    row = [XLFormRowDescriptor formRowDescriptorWithTag:kEmail rowType:XLFormRowDescriptorTypeEmail title:@"Email"];
@@ -85,14 +116,14 @@ NSString * const kTextFieldAndTextView = @"TextFieldAndTextView";
     [formDescriptor addFormSection:section];
     
     
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kTextView rowType:XLFormRowDescriptorTypeTextView];
-    [row.cellConfigAtConfigure setObject:@"TEXT VIEW EXAMPLE" forKey:@"textView.placeholder"];
-    [section addFormRow:row];
-    
-    section = [XLFormSectionDescriptor formSectionWithTitle:@"TextView With Label Example"];
-    [formDescriptor addFormSection:section];
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kNotes rowType:XLFormRowDescriptorTypeTextView title:@"Notes"];
-    [section addFormRow:row];
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:kTextView rowType:XLFormRowDescriptorTypeTextView];
+//    [row.cellConfigAtConfigure setObject:@"TEXT VIEW EXAMPLE" forKey:@"textView.placeholder"];
+//    [section addFormRow:row];
+//    
+//    section = [XLFormSectionDescriptor formSectionWithTitle:@"TextView With Label Example"];
+//    [formDescriptor addFormSection:section];
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:kNotes rowType:XLFormRowDescriptorTypeTextView title:@"Notes"];
+//    [section addFormRow:row];
     
     return [super initWithForm:formDescriptor];
     

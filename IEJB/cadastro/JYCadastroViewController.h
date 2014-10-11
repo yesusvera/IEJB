@@ -44,6 +44,5 @@
 @property (weak, nonatomic) IBOutlet UITextField *confirmaSenha;
 @property (weak, nonatomic) IBOutlet UIScrollView *barraRolagem;
 
-- (IBAction)validarCEP:(id)sender;
 
 @end

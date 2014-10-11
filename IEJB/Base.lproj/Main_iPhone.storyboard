@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Kta-Qz-FlQ">
     <dependencies>
+        <deployment defaultVersion="1808" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
     </dependencies>
     <scenes>
@@ -163,7 +164,7 @@
                                         </tableViewCellContentView>
                                         <accessibility key="accessibilityConfiguration" label=""/>
                                         <connections>
-                                            <segue destination="XoQ-vk-LLx" kind="push" id="CdZ-Ns-5CK"/>
+                                            <segue destination="XoQ-vk-LLx" kind="push" id="Dik-z5-VjK"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="82z-OF-NOZ" style="IBUITableViewCellStyleDefault" id="Fse-XW-4rZ">
@@ -231,7 +232,7 @@
                         <viewControllerLayoutGuide type="bottom" id="pkf-Vw-gbN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JkG-xN-mPk">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vkz-Hb-Ab2">
@@ -393,7 +394,7 @@
                         <viewControllerLayoutGuide type="bottom" id="85q-Ff-gps"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iTi-7e-PxO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OTT-Ii-X6O">
@@ -547,7 +548,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ON0-d3-cCI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2111" y="649"/>
+            <point key="canvasLocation" x="2078" y="910"/>
         </scene>
         <!--Cadastro Pessoal-->
         <scene sceneID="vn3-6T-ow5">
@@ -558,7 +559,7 @@
                         <viewControllerLayoutGuide type="bottom" id="dZ5-cK-bnm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6SO-ll-MCl">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDG-uU-aWW">
@@ -909,43 +910,22 @@
                                             <outlet property="delegate" destination="XoQ-vk-LLx" id="Pt4-h3-R54"/>
                                         </connections>
                                     </textField>
-                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="1Jv-tU-3kW">
-                                        <rect key="frame" x="99" y="216" width="94" height="29"/>
-                                        <connections>
-                                            <action selector="incrementarFilhos:" destination="XoQ-vk-LLx" eventType="valueChanged" id="8fK-34-3qf"/>
-                                        </connections>
-                                    </stepper>
-                                    <tableViewCell contentMode="scaleToFill" fixedFrame="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="AIF-WB-jnK" detailTextLabel="HdI-yh-Vcg" rowHeight="36" style="IBUITableViewCellStyleValue2" translatesAutoresizingMaskIntoConstraints="NO" id="5Tu-5Q-NwS">
-                                        <rect key="frame" x="208" y="213" width="104" height="36"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5Tu-5Q-NwS" id="pfx-aO-Oqy">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AIF-WB-jnK">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HdI-yh-Vcg">
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <segue destination="coe-X4-zFn" kind="push" trigger="accessoryAction" id="rSz-KA-1t3"/>
-                                        </connections>
-                                    </tableViewCell>
                                     <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" fixedFrame="YES" text="Detalhar filhos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" enabled="NO" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oJT-5S-gG1">
                                         <rect key="frame" x="208" y="225" width="83" height="11"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                         <color key="textColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="1Jv-tU-3kW">
+                                        <rect key="frame" x="99" y="216" width="94" height="29"/>
+                                        <connections>
+                                            <action selector="incrementarFilhos:" destination="XoQ-vk-LLx" eventType="valueChanged" id="8fK-34-3qf"/>
+                                        </connections>
+                                    </stepper>
                                 </subviews>
+                                <connections>
+                                    <outlet property="delegate" destination="XoQ-vk-LLx" id="o57-wr-brh"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -966,7 +946,7 @@
                         <outlet property="dataNascimento" destination="nWx-jP-VYg" id="N5J-U8-jCV"/>
                         <outlet property="email" destination="A1T-Yd-eQF" id="4gS-6T-6k2"/>
                         <outlet property="nome" destination="u3h-gS-vpu" id="fhV-9F-3Ek"/>
-                        <outlet property="qtdFilhos" destination="o3p-S9-PI4" id="ufc-Cz-pEO"/>
+                        <outlet property="qtdFilhos" destination="o3p-S9-PI4" id="vHg-uj-u3c"/>
                         <outlet property="ruaLogradouro" destination="m7j-Fa-cyo" id="g4r-m1-Cpn"/>
                         <outlet property="senha" destination="NFI-ez-ZG1" id="bfT-nf-xfr"/>
                         <outlet property="sexo" destination="NCH-c8-2hu" id="X7S-Sm-CXr"/>
@@ -979,7 +959,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="56T-ud-Prm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3879" y="1871"/>
+            <point key="canvasLocation" x="1918" y="166"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="iD4-5O-Qw5">
@@ -990,7 +970,7 @@
                         <viewControllerLayoutGuide type="bottom" id="hhB-e2-LqV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0M8-aS-YkF">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
+                        <rect key="frame" x="0.0" y="44" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  FILHOS" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0tg-hP-Mag">
@@ -1053,7 +1033,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WKn-IV-u9x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4289" y="1871"/>
+            <point key="canvasLocation" x="2761" y="-33"/>
         </scene>
         <!--SistemaIEJB View Controller-->
         <scene sceneID="Vcy-DN-y4J">
@@ -1230,7 +1210,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="wNL-Vv-FA9"/>
-        <segue reference="fEi-H8-QOw"/>
+        <segue reference="jB2-oj-IbE"/>
+        <segue reference="Mtb-UQ-c7M"/>
     </inferredMetricsTieBreakers>
 </document>
