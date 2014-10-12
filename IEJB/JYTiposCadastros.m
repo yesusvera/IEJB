@@ -37,6 +37,13 @@ NSString * const kCadastroPessoal = @"CadastroPessoal";
     return self;
 }
 
+// Mostrando a barra de navegação
+- (void) viewWillAppear:(BOOL)animated
+{
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
+    
+}
+
 #pragma mark - Helper
 
 -(void)initializeForm

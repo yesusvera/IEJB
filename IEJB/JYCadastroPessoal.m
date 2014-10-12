@@ -8,19 +8,21 @@
 #import "XLForm.h"
 #import "JYCadastroPessoal.h"
 
-NSString *const kName = @"nome";
+NSString *const kName = @"name";
 NSString *const kCPF = @"CPF";
 NSString *const kDates = @"dataNascimento";
 NSString *const kTiposSanguineos = @"tiposSanguineos";
 NSString *const kSexo = @"tiposSanguineos";
 NSString *const kConjuge = @"conjuge";
 NSString *const kFilhos = @"filhos";
+NSString *const kTextView = @"textView";
 
 @implementation JYCadastroPessoal
 
 -(id)init
 {
-    XLFormDescriptor * formDescriptor = [XLFormDescriptor formDescriptorWithTitle:@"Text Fields"];
+    
+    XLFormDescriptor * formDescriptor = [XLFormDescriptor formDescriptorWithTitle:@"Cadastro Pessoal"];
     XLFormSectionDescriptor * section;
     XLFormRowDescriptor * row;
     
@@ -113,6 +115,15 @@ NSString *const kFilhos = @"filhos";
     [self.tableView endEditing:YES];
     UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Valid Form", nil) message:@"No errors found" delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
     [alertView show];
+}
+
+/* Força o tamanho da célula para 44 em função de inconsistências no IOS8*/
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 44;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 44;
 }
 
 @end
