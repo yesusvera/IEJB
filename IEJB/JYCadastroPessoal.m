@@ -117,14 +117,14 @@ NSString *const kTelCom = @"telCom";
     [section addFormRow:row];
     
     //UF
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kUF rowType:XLFormRowDescriptorTypeSelectorPickerViewInline title:@"UF"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kUF rowType:XLFormRowDescriptorTypeSelectorPickerView title:@"UF"];
     UfCidadeDao *ufCidadeDao = [[UfCidadeDao alloc]init];
     row.selectorOptions = [ufCidadeDao buscarUfs];
     row.value = [row.selectorOptions objectAtIndex:6];
     [section addFormRow:row];
     
     //Cidade
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCidade rowType:XLFormRowDescriptorTypeSelectorPickerViewInline title:@"Cidades"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCidade rowType:XLFormRowDescriptorTypeSelectorPickerView title:@"Cidades"];
     row.selectorOptions = [ufCidadeDao buscarCidadesPor:(int)[self buscarPosicaoAtualNa:section doCampo:kUF] + 1];
     row.value = [row.selectorOptions objectAtIndex: 0];
     [section addFormRow:row];
