@@ -7,15 +7,21 @@
 //
 #import "XLForm.h"
 #import "JYCadastroPessoal.h"
+#import "UfCidadeDao.h"
+#import "UfCidades.h"
 
-NSString *const kName = @"name";
+NSString *const kNome = @"nome";
 NSString *const kCPF = @"CPF";
-NSString *const kDates = @"dataNascimento";
+NSString *const kDataNascimento = @"dataNascimento";
 NSString *const kTiposSanguineos = @"tiposSanguineos";
 NSString *const kSexo = @"tiposSanguineos";
 NSString *const kConjuge = @"conjuge";
 NSString *const kFilhos = @"filhos";
-NSString *const kTextView = @"textView";
+NSString *const kRua = @"rua";
+NSString *const kBairro = @"bairro";
+NSString *const kUF = @"uf";
+NSString *const kCidade = @"cidade";
+
 
 @implementation JYCadastroPessoal
 
@@ -33,7 +39,7 @@ NSString *const kTextView = @"textView";
     [formDescriptor addFormSection:section];
     
     // Name
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kName rowType:XLFormRowDescriptorTypeText title:@"Nome"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kNome rowType:XLFormRowDescriptorTypeText title:@"Nome"];
     row.required = YES;
     [row.cellConfigAtConfigure setObject:@(NSTextAlignmentRight) forKey:@"textField.textAlignment"];
     [row.cellConfigAtConfigure setObject:@"Digite seu nome" forKey:@"textField.placeholder"];
@@ -41,14 +47,13 @@ NSString *const kTextView = @"textView";
     
     // CPF
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kCPF rowType:XLFormRowDescriptorTypeText title:@"CPF"];
-    row.required = YES;
     [row.cellConfigAtConfigure setObject:@(NSTextAlignmentRight) forKey:@"textField.textAlignment"];
     [row.cellConfigAtConfigure setObject:@"000.000.000-00" forKey:@"textField.placeholder"];
     [section addFormRow:row];
     
     
     // Data de nascimento
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kDates rowType:XLFormRowDescriptorTypeDateInline title:@"Data de nascimento"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kDataNascimento rowType:XLFormRowDescriptorTypeDateInline title:@"Data de nascimento"];
     row.required = YES;
     row.value = [NSDate new];
     [section addFormRow:row];
@@ -75,11 +80,7 @@ NSString *const kTextView = @"textView";
     [row.cellConfigAtConfigure setObject:@"Digite o nome do cônjuge" forKey:@"textField.placeholder"];
     [section addFormRow:row];
     
-    
-    section = [XLFormSectionDescriptor formSection];
-    [formDescriptor addFormSection:section];
-    
-    // Another one
+    // Bloco dos filhos
     
     section = [XLFormSectionDescriptor formSectionWithTitle:@"Filhos" multivaluedSection:YES];
     section.multiValuedTag = @"filhos";
@@ -90,13 +91,83 @@ NSString *const kTextView = @"textView";
     [row.cellConfigAtConfigure setObject:@(NSTextAlignmentRight) forKey:@"textField.textAlignment"];
     [row.cellConfigAtConfigure setObject:@"Digite o nome" forKey:@"textField.placeholder"];
     
-    
     [section addFormRow:row];
     
+    
+    
+    // Bloco do Endereço
+    section = [XLFormSectionDescriptor formSectionWithTitle:@"Endereço"];
+    [formDescriptor addFormSection:section];
+    
+    // Rua - Logradouro
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kRua rowType:XLFormRowDescriptorTypeText title:@"Rua - Logradouro"];
+    [row.cellConfigAtConfigure setObject:@(NSTextAlignmentRight) forKey:@"textField.textAlignment"];
+    [row.cellConfigAtConfigure setObject:@"Digite a Rua" forKey:@"textField.placeholder"];
+    [section addFormRow:row];
+    
+    // Bairro
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kBairro rowType:XLFormRowDescriptorTypeText title:@"Bairro"];
+    [row.cellConfigAtConfigure setObject:@(NSTextAlignmentRight) forKey:@"textField.textAlignment"];
+    [row.cellConfigAtConfigure setObject:@"Digite o Bairro" forKey:@"textField.placeholder"];
+    [section addFormRow:row];
+    
+    // UF
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kUF rowType:XLFormRowDescriptorTypeSelectorPickerView title:@"UF"];
+    UfCidadeDao *ufCidadeDao = [[UfCidadeDao alloc]init];
+    listaUfCidade = ufCidadeDao.buscarUfCidades;
+    UfCidades *uf = [listaUfCidade objectAtIndex:0];
+    row.value = uf.uf ;
+    int i = 0;
+    NSMutableArray *listaUf = [[NSMutableArray alloc]init];
+    for (i = 0; i < listaUfCidade.count; i++) {
+        
+        uf = [listaUfCidade objectAtIndex:i];
+        
+        [listaUf addObject: uf.uf];
+    }
+    row.selectorOptions = listaUf;
+    [section addFormRow:row];
+    
+    
+    // Cidade
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCidade rowType:XLFormRowDescriptorTypeSelectorPickerView title:@"Cidade"];
+//    UfCidadeDao *ufCidadeDao = [[UfCidadeDao alloc]init];
+//    listaUfCidade = ufCidadeDao.buscarUfCidades;
+//    UfCidades *uf = [listaUfCidade objectAtIndex:0];
+//    row.value = uf.uf ;
+//    int i = 0;
+//    NSMutableArray *listaUf = [[NSMutableArray alloc]init];
+//    for (i = 0; i < listaUfCidade.count; i++) {
+//        
+//        uf = [listaUfCidade objectAtIndex:i];
+//        
+//        [listaUf addObject: uf.uf];
+//    }
+//    row.selectorOptions = listaUf;
+//    [section addFormRow:row];
+    
+    
+    
+    
+    
+    
+    section = [XLFormSectionDescriptor formSection];
+    [formDescriptor addFormSection:section];
+
     
     return [super initWithForm:formDescriptor];
     
 }
+
+-(void)didSelectFormRow:(XLFormRowDescriptor *)formRow
+{
+    [super didSelectFormRow:formRow];
+    
+    if ([formRow.tag isEqual:kUF]) {
+        // do your thing for your row.
+    }
+}
+
 
 -(void)viewDidLoad
 {

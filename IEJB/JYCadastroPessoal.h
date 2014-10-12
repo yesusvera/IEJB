@@ -8,6 +8,8 @@
 
 #import "XLFormViewController.h"
 
-@interface JYCadastroPessoal : XLFormViewController
+@interface JYCadastroPessoal : XLFormViewController{
+    NSArray *listaUfCidade;
+}
 
 @end
