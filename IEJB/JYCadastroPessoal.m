@@ -112,20 +112,30 @@ NSString *const kCidade = @"cidade";
     [section addFormRow:row];
     
     // UF
+//    row = [XLFormRowDescriptor formRowDescriptorWithTag:kUF rowType:XLFormRowDescriptorTypeSelectorPickerView title:@"UF"];
+//    UfCidadeDao *ufCidadeDao = [[UfCidadeDao alloc]init];
+//    listaUfCidade = ufCidadeDao.buscarUfCidades;
+//    UfCidades *uf = [listaUfCidade objectAtIndex:0];
+//    row.value = uf.uf ;
+//    int i = 0;
+//    NSMutableArray *listaUf = [[NSMutableArray alloc]init];
+//    for (i = 0; i < listaUfCidade.count; i++) {
+//        
+//        uf = [listaUfCidade objectAtIndex:i];
+//        
+//        [listaUf addObject: uf.uf];
+//    }
+//    row.selectorOptions = listaUf;
+//    [section addFormRow:row];
+    
+    
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kUF rowType:XLFormRowDescriptorTypeSelectorPickerView title:@"UF"];
     UfCidadeDao *ufCidadeDao = [[UfCidadeDao alloc]init];
-    listaUfCidade = ufCidadeDao.buscarUfCidades;
-    UfCidades *uf = [listaUfCidade objectAtIndex:0];
-    row.value = uf.uf ;
-    int i = 0;
-    NSMutableArray *listaUf = [[NSMutableArray alloc]init];
-    for (i = 0; i < listaUfCidade.count; i++) {
-        
-        uf = [listaUfCidade objectAtIndex:i];
-        
-        [listaUf addObject: uf.uf];
-    }
-    row.selectorOptions = listaUf;
+    
+    
+    row.selectorOptions = ufCidadeDao.buscarUfs;
+    [row accessibilityElements];
+    row.value = [row.selectorOptions objectAtIndex:0];
     [section addFormRow:row];
     
     

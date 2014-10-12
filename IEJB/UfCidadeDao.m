@@ -66,4 +66,47 @@
     return listaUfCidades;
 }
 
+- (NSArray *)buscarUfs{
+    
+    NSArray *resultsUFCidades = [SCSQLite selectRowSQL: @"Select tb_uf.sigla from tb_uf"];
+    
+    int i = 0;
+
+    NSMutableArray *listaUf= [[NSMutableArray alloc]init];
+
+    while(i < resultsUFCidades.count){
+        
+        NSDictionary *resultUfCidade = [resultsUFCidades objectAtIndex:i];
+        
+            
+        [listaUf addObject:[resultUfCidade objectForKey:@"sigla"]];
+        
+        i++;
+    }
+
+    return listaUf;
+}
+
+- (NSArray *)buscarCidades:(int) idCidade {
+    
+    NSArray *resultsUFCidades = [SCSQLite selectRowSQL: @"Select nome from tb_cidade where idEstado = '%i'", idCidade];
+    
+    int i = 0;
+    
+    NSMutableArray *listaUf= [[NSMutableArray alloc]init];
+    
+    while(i < resultsUFCidades.count){
+        
+        NSDictionary *resultUfCidade = [resultsUFCidades objectAtIndex:i];
+        
+        
+        [listaUf addObject:[resultUfCidade objectForKey:@"sigla"]];
+        
+        i++;
+    }
+    
+    return listaUf;
+}
+
+
 @end

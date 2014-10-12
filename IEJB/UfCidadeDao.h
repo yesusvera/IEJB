@@ -12,4 +12,6 @@
 
 
 - (NSArray *)buscarUfCidades;
+- (NSArray *)buscarUfs;
+- (NSArray *)buscarCidades:(int) idCidade;
 @end
