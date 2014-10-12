@@ -87,25 +87,25 @@
     return listaUf;
 }
 
-- (NSArray *)buscarCidades:(int) idCidade {
+- (NSArray *)buscarCidadesPor:(int) idUF {
     
-    NSArray *resultsUFCidades = [SCSQLite selectRowSQL: @"Select nome from tb_cidade where idEstado = '%i'", idCidade];
+    NSArray *resultsUFCidades = [SCSQLite selectRowSQL: @"Select nome from tb_cidade where idEstado = '%i'", idUF];
     
     int i = 0;
     
-    NSMutableArray *listaUf= [[NSMutableArray alloc]init];
+    NSMutableArray *listaCidadesDaUf= [[NSMutableArray alloc]init];
     
     while(i < resultsUFCidades.count){
         
         NSDictionary *resultUfCidade = [resultsUFCidades objectAtIndex:i];
         
         
-        [listaUf addObject:[resultUfCidade objectForKey:@"sigla"]];
+        [listaCidadesDaUf addObject:[resultUfCidade objectForKey:@"nome"]];
         
         i++;
     }
     
-    return listaUf;
+    return listaCidadesDaUf;
 }
 
 

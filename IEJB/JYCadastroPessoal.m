@@ -21,6 +21,11 @@ NSString *const kRua = @"rua";
 NSString *const kBairro = @"bairro";
 NSString *const kUF = @"uf";
 NSString *const kCidade = @"cidade";
+NSString *const kCep = @"CEP";
+NSString *const kTelFixo = @"telFixo";
+NSString *const kTelCel = @"telCel";
+NSString *const kTelCom = @"telCom";
+
 
 
 @implementation JYCadastroPessoal
@@ -111,53 +116,48 @@ NSString *const kCidade = @"cidade";
     [row.cellConfigAtConfigure setObject:@"Digite o Bairro" forKey:@"textField.placeholder"];
     [section addFormRow:row];
     
-    // UF
-//    row = [XLFormRowDescriptor formRowDescriptorWithTag:kUF rowType:XLFormRowDescriptorTypeSelectorPickerView title:@"UF"];
-//    UfCidadeDao *ufCidadeDao = [[UfCidadeDao alloc]init];
-//    listaUfCidade = ufCidadeDao.buscarUfCidades;
-//    UfCidades *uf = [listaUfCidade objectAtIndex:0];
-//    row.value = uf.uf ;
-//    int i = 0;
-//    NSMutableArray *listaUf = [[NSMutableArray alloc]init];
-//    for (i = 0; i < listaUfCidade.count; i++) {
-//        
-//        uf = [listaUfCidade objectAtIndex:i];
-//        
-//        [listaUf addObject: uf.uf];
-//    }
-//    row.selectorOptions = listaUf;
-//    [section addFormRow:row];
-    
-    
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kUF rowType:XLFormRowDescriptorTypeSelectorPickerView title:@"UF"];
+    //UF
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kUF rowType:XLFormRowDescriptorTypeSelectorPickerViewInline title:@"UF"];
     UfCidadeDao *ufCidadeDao = [[UfCidadeDao alloc]init];
+    row.selectorOptions = [ufCidadeDao buscarUfs];
+    row.value = [row.selectorOptions objectAtIndex:6];
+    [section addFormRow:row];
     
+    //Cidade
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCidade rowType:XLFormRowDescriptorTypeSelectorPickerViewInline title:@"Cidades"];
+    row.selectorOptions = [ufCidadeDao buscarCidadesPor:(int)[self buscarPosicaoAtualNa:section doCampo:kUF] + 1];
+    row.value = [row.selectorOptions objectAtIndex: 0];
+    [section addFormRow:row];
     
-    row.selectorOptions = ufCidadeDao.buscarUfs;
-    [row accessibilityElements];
-    row.value = [row.selectorOptions objectAtIndex:0];
+    // CEP
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCep rowType:XLFormRowDescriptorTypePhone title:@"CEP"];
+    [row.cellConfigAtConfigure setObject:@(NSTextAlignmentRight) forKey:@"textField.textAlignment"];
+    [row.cellConfigAtConfigure setObject:@"00.000-000" forKey:@"textField.placeholder"];
     [section addFormRow:row];
     
     
-    // Cidade
-//    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCidade rowType:XLFormRowDescriptorTypeSelectorPickerView title:@"Cidade"];
-//    UfCidadeDao *ufCidadeDao = [[UfCidadeDao alloc]init];
-//    listaUfCidade = ufCidadeDao.buscarUfCidades;
-//    UfCidades *uf = [listaUfCidade objectAtIndex:0];
-//    row.value = uf.uf ;
-//    int i = 0;
-//    NSMutableArray *listaUf = [[NSMutableArray alloc]init];
-//    for (i = 0; i < listaUfCidade.count; i++) {
-//        
-//        uf = [listaUfCidade objectAtIndex:i];
-//        
-//        [listaUf addObject: uf.uf];
-//    }
-//    row.selectorOptions = listaUf;
-//    [section addFormRow:row];
     
+    // Bloco dos contatos
+    section = [XLFormSectionDescriptor formSectionWithTitle:@"Contatos"];
+    [formDescriptor addFormSection:section];
     
+    // Fixo
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kTelFixo rowType:XLFormRowDescriptorTypePhone title:@"Fixo"];
+    [row.cellConfigAtConfigure setObject:@(NSTextAlignmentRight) forKey:@"textField.textAlignment"];
+    [row.cellConfigAtConfigure setObject:@"(00) 0000-0000" forKey:@"textField.placeholder"];
+    [section addFormRow:row];
     
+    // Celular
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kTelCel rowType:XLFormRowDescriptorTypePhone title:@"Celular"];
+    [row.cellConfigAtConfigure setObject:@(NSTextAlignmentRight) forKey:@"textField.textAlignment"];
+    [row.cellConfigAtConfigure setObject:@"(00) 0000-0000" forKey:@"textField.placeholder"];
+    [section addFormRow:row];
+    
+    // Comercial
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kTelCom rowType:XLFormRowDescriptorTypePhone title:@"Comercial"];
+    [row.cellConfigAtConfigure setObject:@(NSTextAlignmentRight) forKey:@"textField.textAlignment"];
+    [row.cellConfigAtConfigure setObject:@"(00) 0000-0000" forKey:@"textField.placeholder"];
+    [section addFormRow:row];
     
     
     
@@ -169,15 +169,25 @@ NSString *const kCidade = @"cidade";
     
 }
 
--(void)didSelectFormRow:(XLFormRowDescriptor *)formRow
+
+-(void)formRowDescriptorValueHasChanged:(XLFormRowDescriptor *)rowDescriptor oldValue:(id)oldValue newValue:(id)newValue
 {
-    [super didSelectFormRow:formRow];
-    
-    if ([formRow.tag isEqual:kUF]) {
-        // do your thing for your row.
+    [super formRowDescriptorValueHasChanged:rowDescriptor oldValue:oldValue newValue:newValue];
+    [self reloadFormRow:rowDescriptor];
+    if ([rowDescriptor.tag isEqualToString:kUF]) {
+        
+        if (![rowDescriptor.value isEqualToString: oldValue]){
+            
+            for (XLFormRowDescriptor * row in rowDescriptor.sectionDescriptor.formRows) {
+                if (row.tag && [row.tag isEqualToString:kCidade]){
+                    UfCidadeDao *ufCidadeDao = [[UfCidadeDao alloc]init];
+                    row.selectorOptions = [ufCidadeDao buscarCidadesPor:(int)[self buscarPosicaoAtualNa:rowDescriptor.sectionDescriptor doCampo:kUF] + 1];
+                    row.value = [row.selectorOptions objectAtIndex: 0];
+                }
+            }
+        }
     }
 }
-
 
 -(void)viewDidLoad
 {
@@ -205,6 +215,15 @@ NSString *const kCidade = @"cidade";
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 44;
+}
+
+- (long) buscarPosicaoAtualNa: (XLFormSectionDescriptor *) secao doCampo:(NSString *) campo{
+    for (XLFormRowDescriptor * row in secao.formRows) {
+        if (row.tag && [row.tag isEqualToString:campo]){
+            return  [row.selectorOptions indexOfObject:[row value]];
+        }
+    }
+    return 0;
 }
 
 @end

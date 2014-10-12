@@ -13,5 +13,5 @@
 
 - (NSArray *)buscarUfCidades;
 - (NSArray *)buscarUfs;
-- (NSArray *)buscarCidades:(int) idCidade;
+- (NSArray *)buscarCidadesPor:(int) idUF;
 @end
