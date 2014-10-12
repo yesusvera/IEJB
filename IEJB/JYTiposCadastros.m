@@ -5,16 +5,11 @@
 //  Created by Jonathan Jordan Carrillo Salcedo on 10/10/14.
 //  Copyright (c) 2014 JY DESENV. All rights reserved.
 //
-
-#import "XLForm.h"
-#import "JYTiposCadastros.h"
 #import "JYCadastroPessoal.h"
+#import "JYTiposCadastros.h"
+#import "XLForm.h"
 
-NSString * const kTextFieldAndTextView = @"TextFieldAndTextView";
-NSString * const kSelectors = @"Selectors";
-NSString * const kOthes = @"Others";
-NSString * const kDates = @"Dates";
-NSString * const kMultivalued = @"Multivalued";
+NSString * const kCadastroPessoal = @"CadastroPessoal";
 
 @interface JYTiposCadastros ()
 
@@ -23,32 +18,9 @@ NSString * const kMultivalued = @"Multivalued";
 @implementation JYTiposCadastros
 
 
-
-
--(void)viewDidLoad
+-(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    [super viewDidLoad];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePressed:)];
-}
-
-
--(IBAction)savePressed:(UIBarButtonItem * __unused)button
-{
-    NSArray * validationErrors = [self formValidationErrors];
-    if (validationErrors.count > 0){
-        [self showFormValidationError:[validationErrors firstObject]];
-        return;
-    }
-    [self.tableView endEditing:YES];
-    UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Valid Form", nil) message:@"No errors found" delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
-    [alertView show];
-}
-
-
-
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self){
         [self initializeForm];
     }
@@ -80,9 +52,10 @@ NSString * const kMultivalued = @"Multivalued";
     
     
     // TextFieldAndTextView
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kTextFieldAndTextView rowType:XLFormRowDescriptorTypeButton title:@"Pessoal"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCadastroPessoal rowType:XLFormRowDescriptorTypeButton title:@"Pessoal"];
     row.buttonViewController = [JYCadastroPessoal class];
     [section addFormRow:row];
+    
     
     self.form = form;
     

@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 JY DESENV. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "XLFormViewController.h"
 
 @interface JYCadastroPessoal : XLFormViewController
 

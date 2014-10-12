@@ -81,7 +81,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="zOK-cS-UUI" kind="push" id="yQI-40-cEo"/>
+                                    <segue destination="B2d-jb-aGC" kind="push" id="CC9-I8-Uil"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -104,32 +104,30 @@
             </objects>
             <point key="canvasLocation" x="959" y="154"/>
         </scene>
-        <!--Tipos Cadastros-->
-        <scene sceneID="rNU-sE-Knu">
+        <!--Voltar-->
+        <scene sceneID="lgP-Jz-HtF">
             <objects>
-                <tableViewController id="zOK-cS-UUI" customClass="JYTiposCadastros" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="frB-ff-O6u">
+                <viewController id="B2d-jb-aGC" customClass="JYTiposCadastros" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xVI-4c-JtB"/>
+                        <viewControllerLayoutGuide type="bottom" id="1Ud-Ga-aBt"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fZo-K5-Zqx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="vBE-Qr-1dA">
+                                <rect key="frame" x="-5" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="iUd-wD-WKH">
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iUd-wD-WKH" id="uiz-jU-ITP">
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="zOK-cS-UUI" id="598-ES-G5y"/>
-                            <outlet property="delegate" destination="zOK-cS-UUI" id="42o-1J-lVK"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="U0P-Ac-u0k"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="117-xU-NCO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Voltar" id="uZg-2q-Red"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qsK-9N-9pC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="979" y="854"/>
+            <point key="canvasLocation" x="992" y="825"/>
         </scene>
         <!--Cadastro-->
         <scene sceneID="MEI-CB-0IJ">

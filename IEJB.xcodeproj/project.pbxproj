@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0848C6072A5C000C9C6C7A86 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3329572F633F216C5804CB2 /* libPods.a */; };
+		0848C6072A5C000C9C6C7A86 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3329572F633F216C5804CB2 /* libPods.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		290245FE19DDBD3E00539CE7 /* logo do APP 1 a 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 290245FD19DDBD3E00539CE7 /* logo do APP 1 a 1.png */; };
 		293FA17719E7F9AA0085F98A /* JYTiposCadastros.m in Sources */ = {isa = PBXBuildFile; fileRef = 293FA17619E7F9AA0085F98A /* JYTiposCadastros.m */; };
 		2941DF1A195CF72D004BFEAE /* JYCadastroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2941DF19195CF72D004BFEAE /* JYCadastroViewController.m */; };
@@ -664,7 +664,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -697,7 +697,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -717,6 +717,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IEJB/IEJB-Prefix.pch";
 				INFOPLIST_FILE = "IEJB/IEJB-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/IEJB/COD_PDF/LeitorIDR/LeitorIDR/PDFLib",
@@ -740,6 +741,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "IEJB/IEJB-Prefix.pch";
 				INFOPLIST_FILE = "IEJB/IEJB-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/IEJB/COD_PDF/LeitorIDR/LeitorIDR/PDFLib",
