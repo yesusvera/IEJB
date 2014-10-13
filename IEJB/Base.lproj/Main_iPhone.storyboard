@@ -81,7 +81,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="R46-nV-cY4" kind="push" id="pdh-EE-DF7"/>
+                                    <segue destination="R46-nV-cY4" kind="push" id="5tI-QQ-61c"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -205,7 +205,7 @@
                         <viewControllerLayoutGuide type="bottom" id="pkf-Vw-gbN"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JkG-xN-mPk">
-                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="524"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vkz-Hb-Ab2">
@@ -1164,7 +1164,7 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="0Rm-pK-qD5"/>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="8Me-1K-XUN"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmU-hB-tCM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1214,40 +1214,6 @@
             </objects>
             <point key="canvasLocation" x="603" y="837"/>
         </scene>
-        <!--Voltar-->
-        <scene sceneID="CRK-9C-f2z">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="hla-tK-cXN" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="hq6-Ob-LkS"/>
-                        <viewControllerLayoutGuide type="bottom" id="roN-PV-LuG"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CCu-2u-Y22">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="ixN-uf-bkl">
-                                <rect key="frame" x="-5" y="64" width="320" height="504"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="roN-PV-LuG" firstAttribute="top" secondItem="ixN-uf-bkl" secondAttribute="bottom" id="JAU-BE-d2I"/>
-                            <constraint firstItem="ixN-uf-bkl" firstAttribute="leading" secondItem="CCu-2u-Y22" secondAttribute="leading" id="bE7-Iv-MEW"/>
-                            <constraint firstAttribute="trailing" secondItem="ixN-uf-bkl" secondAttribute="trailing" id="g6f-8v-8dA"/>
-                            <constraint firstItem="ixN-uf-bkl" firstAttribute="top" secondItem="hq6-Ob-LkS" secondAttribute="bottom" id="hOO-pX-u8I"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Voltar" id="Hkh-tN-4x2"/>
-                    <connections>
-                        <outlet property="tableView" destination="ixN-uf-bkl" id="09U-3h-Qcg"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="1Az-JX-vsE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="953" y="848"/>
-        </scene>
     </scenes>
     <resources>
         <image name="Logo_IEJB.png" width="3508" height="2482"/>
@@ -1260,7 +1226,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="Mtb-UQ-c7M"/>
         <segue reference="wNL-Vv-FA9"/>
+        <segue reference="fEi-H8-QOw"/>
     </inferredMetricsTieBreakers>
 </document>

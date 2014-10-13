@@ -117,14 +117,14 @@ NSString *const kTelCom = @"telCom";
     [section addFormRow:row];
     
     //UF
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kUF rowType:XLFormRowDescriptorTypeSelectorPickerView title:@"UF"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kUF rowType:XLFormRowDescriptorTypeSelectorPickerViewInline title:@"UF"];
     UfCidadeDao *ufCidadeDao = [[UfCidadeDao alloc]init];
     row.selectorOptions = [ufCidadeDao buscarUfs];
     row.value = [row.selectorOptions objectAtIndex:6];
     [section addFormRow:row];
     
     //Cidade
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCidade rowType:XLFormRowDescriptorTypeSelectorPickerView title:@"Cidades"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCidade rowType:XLFormRowDescriptorTypeSelectorPickerViewInline title:@"Cidades"];
     row.selectorOptions = [ufCidadeDao buscarCidadesPor:(int)[self buscarPosicaoAtualNa:section doCampo:kUF] + 1];
     row.value = [row.selectorOptions objectAtIndex: 0];
     [section addFormRow:row];
@@ -193,6 +193,7 @@ NSString *const kTelCom = @"telCom";
 {
     [super viewDidLoad];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePressed:)];
+        self.tableView.rowHeight = 44;
 }
 
 
@@ -209,13 +210,13 @@ NSString *const kTelCom = @"telCom";
 }
 
 /* Força o tamanho da célula para 44 em função de inconsistências no IOS8*/
-- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 44;
-}
+//- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return 44;
+//}
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 44;
-}
+//- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    return 44;
+//}
 
 - (long) buscarPosicaoAtualNa: (XLFormSectionDescriptor *) secao doCampo:(NSString *) campo{
     for (XLFormRowDescriptor * row in secao.formRows) {

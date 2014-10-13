@@ -48,6 +48,7 @@ NSString * const kCadastroPessoal = @"CadastroPessoal";
 
 -(void)initializeForm
 {
+
     XLFormDescriptor * form;
     XLFormSectionDescriptor * section;
     XLFormRowDescriptor * row;
