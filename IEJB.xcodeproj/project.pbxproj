@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0848C6072A5C000C9C6C7A86 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A3329572F633F216C5804CB2 /* libPods.a */; settings = {ATTRIBUTES = (Required, ); }; };
 		290245FE19DDBD3E00539CE7 /* logo do APP 1 a 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 290245FD19DDBD3E00539CE7 /* logo do APP 1 a 1.png */; };
+		290778BD19F3F78500D9EBFB /* JYDetalheFilhos.m in Sources */ = {isa = PBXBuildFile; fileRef = 290778BC19F3F78500D9EBFB /* JYDetalheFilhos.m */; };
 		293FA17719E7F9AA0085F98A /* JYTiposCadastros.m in Sources */ = {isa = PBXBuildFile; fileRef = 293FA17619E7F9AA0085F98A /* JYTiposCadastros.m */; };
 		2941DF1A195CF72D004BFEAE /* JYCadastroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2941DF19195CF72D004BFEAE /* JYCadastroViewController.m */; };
 		294F50B519D4C577005AC2D6 /* Logo_M1A1.png in Resources */ = {isa = PBXBuildFile; fileRef = 294F50B419D4C577005AC2D6 /* Logo_M1A1.png */; };
@@ -73,6 +74,8 @@
 
 /* Begin PBXFileReference section */
 		290245FD19DDBD3E00539CE7 /* logo do APP 1 a 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "logo do APP 1 a 1.png"; sourceTree = "<group>"; };
+		290778BB19F3F78500D9EBFB /* JYDetalheFilhos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYDetalheFilhos.h; sourceTree = "<group>"; };
+		290778BC19F3F78500D9EBFB /* JYDetalheFilhos.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYDetalheFilhos.m; sourceTree = "<group>"; };
 		293FA17519E7F9AA0085F98A /* JYTiposCadastros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYTiposCadastros.h; sourceTree = "<group>"; };
 		293FA17619E7F9AA0085F98A /* JYTiposCadastros.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYTiposCadastros.m; sourceTree = "<group>"; };
 		2941DF18195CF72D004BFEAE /* JYCadastroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCadastroViewController.h; sourceTree = "<group>"; };
@@ -207,6 +210,8 @@
 				293FA17619E7F9AA0085F98A /* JYTiposCadastros.m */,
 				2952CA2819E9F25C005B8C69 /* JYCadastroPessoal.h */,
 				2952CA2919E9F25C005B8C69 /* JYCadastroPessoal.m */,
+				290778BB19F3F78500D9EBFB /* JYDetalheFilhos.h */,
+				290778BC19F3F78500D9EBFB /* JYDetalheFilhos.m */,
 			);
 			name = "formulario cadastro";
 			sourceTree = "<group>";
@@ -571,6 +576,7 @@
 				293FA17719E7F9AA0085F98A /* JYTiposCadastros.m in Sources */,
 				29A7D60F195BBC6C00C3FA40 /* JYAppDelegate.m in Sources */,
 				29B6154719DBAF97003B6C68 /* UITextFieldMask.m in Sources */,
+				290778BD19F3F78500D9EBFB /* JYDetalheFilhos.m in Sources */,
 				2952CA2A19E9F25C005B8C69 /* JYCadastroPessoal.m in Sources */,
 				29B6155219DBB684003B6C68 /* GLB.m in Sources */,
 				29B6154B19DBB088003B6C68 /* Membro.m in Sources */,

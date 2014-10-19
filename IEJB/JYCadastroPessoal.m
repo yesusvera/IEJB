@@ -7,15 +7,17 @@
 //
 #import "XLForm.h"
 #import "JYCadastroPessoal.h"
+#import "JYDetalheFilhos.h"
 #import "UfCidadeDao.h"
 #import "UfCidades.h"
 
 NSString *const kNome = @"nome";
 NSString *const kCPF = @"CPF";
-NSString *const kDataNascimento = @"dataNascimento";
+NSString *const kDataNasc = @"dataNascimento";
 NSString *const kTiposSanguineos = @"tiposSanguineos";
-NSString *const kSexo = @"tiposSanguineos";
+NSString *const kSexo = @"sexo";
 NSString *const kConjuge = @"conjuge";
+NSString *const kQtdFilhos = @"qtdFilhos";
 NSString *const kFilhos = @"filhos";
 NSString *const kRua = @"rua";
 NSString *const kBairro = @"bairro";
@@ -25,6 +27,10 @@ NSString *const kCep = @"CEP";
 NSString *const kTelFixo = @"telFixo";
 NSString *const kTelCel = @"telCel";
 NSString *const kTelCom = @"telCom";
+
+NSString *const kNomeFilho = @"nomeFilho";
+NSString *const kDataNascFilho = @"dataNascFilho";
+NSString *const kSexoFilho = @"sexoFilho";
 
 
 
@@ -58,7 +64,7 @@ NSString *const kTelCom = @"telCom";
     
     
     // Data de nascimento
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kDataNascimento rowType:XLFormRowDescriptorTypeDateInline title:@"Data de nascimento"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kDataNasc rowType:XLFormRowDescriptorTypeDateInline title:@"Data de nascimento"];
     row.required = YES;
     row.value = [NSDate new];
     [section addFormRow:row];
@@ -85,17 +91,12 @@ NSString *const kTelCom = @"telCom";
     [row.cellConfigAtConfigure setObject:@"Digite o nome do cônjuge" forKey:@"textField.placeholder"];
     [section addFormRow:row];
     
-    // Bloco dos filhos
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kQtdFilhos rowType:XLFormRowDescriptorTypeStepCounter title:@"Qtd Filhos"];
+    [section addFormRow:row];
     
-    section = [XLFormSectionDescriptor formSectionWithTitle:@"Filhos" multivaluedSection:YES];
-    section.multiValuedTag = @"filhos";
-    [formDescriptor addFormSection:section];
-    
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kFilhos rowType:XLFormRowDescriptorTypeText title:@"Filho " ];
-    
-    [row.cellConfigAtConfigure setObject:@(NSTextAlignmentRight) forKey:@"textField.textAlignment"];
-    [row.cellConfigAtConfigure setObject:@"Digite o nome" forKey:@"textField.placeholder"];
-    
+    // TextFieldAndTextView
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kFilhos rowType:XLFormRowDescriptorTypeButton title:@"Detalhar Filhos"];
+    row.buttonViewController = [JYDetalheFilhos class];
     [section addFormRow:row];
     
     
@@ -158,11 +159,6 @@ NSString *const kTelCom = @"telCom";
     [row.cellConfigAtConfigure setObject:@(NSTextAlignmentRight) forKey:@"textField.textAlignment"];
     [row.cellConfigAtConfigure setObject:@"(00) 0000-0000" forKey:@"textField.placeholder"];
     [section addFormRow:row];
-    
-    
-    
-    section = [XLFormSectionDescriptor formSection];
-    [formDescriptor addFormSection:section];
 
     
     return [super initWithForm:formDescriptor];
@@ -170,14 +166,62 @@ NSString *const kTelCom = @"telCom";
 }
 
 
+-(void)didSelectFormRow:(XLFormRowDescriptor *)formRow{
+    if ([formRow.tag isEqualToString:kFilhos]) {
+        double qtd = 0;
+        for (XLFormRowDescriptor * row in formRow.sectionDescriptor.formRows) {
+            if (row.tag && [row.tag isEqualToString:kQtdFilhos]){
+                qtd = [row.value doubleValue];
+            }
+        }
+        
+        XLFormDescriptor * formDescriptor = [XLFormDescriptor formDescriptorWithTitle:@"Filhos"];
+        XLFormSectionDescriptor * section;
+        XLFormRowDescriptor * row;
+    
+        formDescriptor.assignFirstResponderOnShow = YES;
+    
+        for (int i = 1; i <= qtd; i++) {
+        
+            // Basic Information - Section
+            section = [XLFormSectionDescriptor formSectionWithTitle:[@"Dados do filho " stringByAppendingString:@(i).stringValue]];
+            [formDescriptor addFormSection:section];
+        
+        
+            // Name
+            row = [XLFormRowDescriptor formRowDescriptorWithTag:[kNomeFilho stringByAppendingString:@(i).stringValue] rowType:XLFormRowDescriptorTypeText title:@"Nome"];
+            [row.cellConfigAtConfigure setObject:@(NSTextAlignmentRight) forKey:@"textField.textAlignment"];
+            [row.cellConfigAtConfigure setObject:@"Digite o nome" forKey:@"textField.placeholder"];
+            [section addFormRow:row];
+        
+            // Data de nascimento
+            row = [XLFormRowDescriptor formRowDescriptorWithTag:[kDataNascFilho stringByAppendingString:@(i).stringValue]  rowType:XLFormRowDescriptorTypeDateInline title:@"Data de nascimento"];
+            row.value = [NSDate new];
+            [section addFormRow:row];
+        
+        
+            // Opções de sexo
+            row = [XLFormRowDescriptor formRowDescriptorWithTag:[kSexoFilho stringByAppendingString:@(i).stringValue]  rowType:XLFormRowDescriptorTypeSelectorSegmentedControl title:@"Sexo"];
+            row.selectorOptions = @[@"Masculino", @"Feminino"];
+            row.value = @"Masculino";
+            [section addFormRow:row];
+        }
+    
+        JYDetalheFilhos *filhos = [[JYDetalheFilhos alloc] initWithForm:formDescriptor];
+    
+        [self.navigationController pushViewController:filhos animated:YES];
+    }
+}
+
+
 -(void)formRowDescriptorValueHasChanged:(XLFormRowDescriptor *)rowDescriptor oldValue:(id)oldValue newValue:(id)newValue
 {
     [super formRowDescriptorValueHasChanged:rowDescriptor oldValue:oldValue newValue:newValue];
-    [self reloadFormRow:rowDescriptor];
+    //[self reloadFormRow:rowDescriptor];
     if ([rowDescriptor.tag isEqualToString:kUF]) {
         
         if (![rowDescriptor.value isEqualToString: oldValue]){
-            
+
             for (XLFormRowDescriptor * row in rowDescriptor.sectionDescriptor.formRows) {
                 if (row.tag && [row.tag isEqualToString:kCidade]){
                     UfCidadeDao *ufCidadeDao = [[UfCidadeDao alloc]init];
