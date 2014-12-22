@@ -14,6 +14,9 @@
 NSString *const kIgrejaOrigem = @"igrejaOrigem";
 NSString *const kAnoConversao = @"anoConversao";
 NSString *const kMotivoMudanca = @"motivoMudanca";
+NSString *const kMinisterio = @"ministerio";
+NSString *const kFuncao = @"funcao";
+NSString *const kTrabDesenv = @"trabDesenv";
 
 -(void)viewDidLoad
 {
@@ -49,6 +52,33 @@ NSString *const kMotivoMudanca = @"motivoMudanca";
     // Motivo da mudanças
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kMotivoMudanca rowType:XLFormRowDescriptorTypeTextView];
     [row.cellConfigAtConfigure setObject:@"Motivo da mudança" forKey:@"textView.placeholder"];
+    [section addFormRow:row];
+    
+    
+    // Basic Information - Section
+    section = [XLFormSectionDescriptor formSectionWithTitle:@"Ministério"];
+    [formDescriptor addFormSection:section];
+    
+    // Lista de ministérios
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kMinisterio rowType:XLFormRowDescriptorTypeSelectorPickerViewInline title:@"Ministério principal"];
+    NSString *plistCaminho = [[NSBundle mainBundle]
+                              pathForResource:@"ministerios"  ofType:@"plist"];
+    
+    row.selectorOptions = [NSArray
+                           arrayWithContentsOfFile:plistCaminho];
+    row.value = [row.selectorOptions objectAtIndex: 0];
+    [section addFormRow:row];
+    
+    // Função
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kFuncao rowType:XLFormRowDescriptorTypeNumber title:@"Função"];
+    [row.cellConfigAtConfigure setObject:@(NSTextAlignmentRight) forKey:@"textField.textAlignment"];
+    [row.cellConfigAtConfigure setObject:@"Digite a função" forKey:@"textField.placeholder"];
+    [section addFormRow:row];
+    
+    
+    // Trabalhos desenvolvidos
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kTrabDesenv rowType:XLFormRowDescriptorTypeTextView];
+    [row.cellConfigAtConfigure setObject:@"Trabalhos/Atividades desenvolvidas " forKey:@"textView.placeholder"];
     [section addFormRow:row];
     
     

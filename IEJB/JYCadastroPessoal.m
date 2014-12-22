@@ -5,8 +5,9 @@
 //  Created by Jonathan Jordan Carrillo Salcedo on 11/10/14.
 //  Copyright (c) 2014 JY DESENV. All rights reserved.
 //
-#import "XLForm.h"
+
 #import "JYCadastroPessoal.h"
+#import "XLForm.h"
 #import "JYDetalheFilhos.h"
 #import "UfCidadeDao.h"
 #import "UfCidades.h"
@@ -55,6 +56,7 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
     
     formDescriptor.assignFirstResponderOnShow = YES;
     
+    
     // Basic Information - Section
     section = [XLFormSectionDescriptor formSectionWithTitle:@"Dados Pessoais"];
     [formDescriptor addFormSection:section];
@@ -79,7 +81,9 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
     row.value = [NSDate new];
     [section addFormRow:row];
     
+
     
+//
     // Opções de sexo
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kSexo rowType:XLFormRowDescriptorTypeSelectorSegmentedControl title:@"Sexo"];
     row.selectorOptions = @[@"Masculino", @"Feminino"];
@@ -98,7 +102,7 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
     
     // Detalhar filhos
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kFilhos rowType:XLFormRowDescriptorTypeButton title:@"Detalhar Filhos"];
-    row.buttonViewController = [JYDetalheFilhos class];
+    //row.buttonViewController = [JYDetalheFilhos class];
     [section addFormRow:row];
     
     
@@ -244,6 +248,9 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
 
 
 -(void)didSelectFormRow:(XLFormRowDescriptor *)formRow{
+    
+    [super didSelectFormRow:formRow];
+
     if ([formRow.tag isEqualToString:kFilhos]) {
         double qtd = 0;
         for (XLFormRowDescriptor * row in formRow.sectionDescriptor.formRows) {
@@ -255,15 +262,14 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
         XLFormDescriptor * formDescriptor = [XLFormDescriptor formDescriptorWithTitle:@"Filhos"];
         XLFormSectionDescriptor * section;
         XLFormRowDescriptor * row;
-    
         formDescriptor.assignFirstResponderOnShow = YES;
     
         for (int i = 1; i <= qtd; i++) {
         
             // Basic Information - Section
             section = [XLFormSectionDescriptor formSectionWithTitle:[@"Dados do filho " stringByAppendingString:@(i).stringValue]];
+            
             [formDescriptor addFormSection:section];
-        
         
             // Name
             row = [XLFormRowDescriptor formRowDescriptorWithTag:[kNomeFilho stringByAppendingString:@(i).stringValue] rowType:XLFormRowDescriptorTypeText title:@"Nome"];
@@ -283,18 +289,18 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
             row.value = @"Masculino";
             [section addFormRow:row];
         }
-    
-        JYDetalheFilhos *filhos = [[JYDetalheFilhos alloc] initWithForm:formDescriptor];
-    
+
+         JYDetalheFilhos *filhos = [[JYDetalheFilhos alloc] initWithForm:formDescriptor];
         [self.navigationController pushViewController:filhos animated:YES];
     }
+   
+
 }
 
 
 -(void)formRowDescriptorValueHasChanged:(XLFormRowDescriptor *)rowDescriptor oldValue:(id)oldValue newValue:(id)newValue
 {
     [super formRowDescriptorValueHasChanged:rowDescriptor oldValue:oldValue newValue:newValue];
-    //[self reloadFormRow:rowDescriptor];
     if ([rowDescriptor.tag isEqualToString:kUF]) {
         
         if (![rowDescriptor.value isEqualToString: oldValue]){
@@ -315,9 +321,11 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
     [super viewDidLoad];
    
 //    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSave target:self action:@selector(savePressed:)];
-    
+
     self.tableView.rowHeight = 44;
+   // self.form.delegate = self;
 }
+
 
 
 //-(IBAction)savePressed:(UIBarButtonItem * __unused)button
@@ -349,5 +357,16 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
 //    }
 //    [self deselectFormRow:sender];
 //}
+
+
+- (id)initWithCoder:(NSCoder*)aDecoder
+{
+    if(self = [super initWithCoder:aDecoder])
+    {
+        XLFormDescriptor * form  = [XLFormDescriptor formDescriptorWithTitle:@"Filhos"];
+        self.form = form;
+    }
+    return self;
+}
 
 @end
