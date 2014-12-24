@@ -8,5 +8,9 @@
 
 #import "XLFormViewController.h"
 
-@interface JYCadastroSocial : XLFormViewController
+@interface JYCadastroSocial : XLFormViewController{
+    NSArray *listaProfissoes;
+    NSArray *listaGrauInstrucao;
+    NSArray *listaRendas;
+}
 @end

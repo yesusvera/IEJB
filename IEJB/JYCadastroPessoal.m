@@ -11,6 +11,7 @@
 #import "JYDetalheFilhos.h"
 #import "UfCidadeDao.h"
 #import "UfCidades.h"
+#import "JYCadastroEclesiastico.h"
 
 NSString *const kNome = @"nome";
 NSString *const kCPF = @"CPF";
@@ -82,8 +83,6 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
     [section addFormRow:row];
     
 
-    
-//
     // Opções de sexo
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kSexo rowType:XLFormRowDescriptorTypeSelectorSegmentedControl title:@"Sexo"];
     row.selectorOptions = @[@"Masculino", @"Feminino"];
@@ -102,6 +101,7 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
     
     // Detalhar filhos
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kFilhos rowType:XLFormRowDescriptorTypeButton title:@"Detalhar Filhos"];
+    [row.cellConfig setObject:[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] forKey:@"textLabel.textColor"];
     //row.buttonViewController = [JYDetalheFilhos class];
     [section addFormRow:row];
     
@@ -231,7 +231,9 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
     // Ir para o cadastro eclesi[astico
     XLFormRowDescriptor * butaoIrEcle = [XLFormRowDescriptor formRowDescriptorWithTag:kBotaoEcles rowType:XLFormRowDescriptorTypeButton title:@"Cadastro Eclesiástico"];
     [butaoIrEcle.cellConfig setObject:[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] forKey:@"textLabel.textColor"];
-    //buttonRow.action.formSelector = @selector(didTouchButton:);
+    
+    butaoIrEcle.buttonViewController = [JYCadastroEclesiastico class];
+    //[butaoIrEcle.action.formSelector = @selector(didTouchButton:)];
     [section addFormRow:butaoIrEcle];
     
     // Concluir o cadastro
@@ -349,24 +351,13 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
     return 0;
 }
 
-//-(void)didTouchButton:(XLFormRowDescriptor *)sender
-//{
-//    if ([[sender.sectionDescriptor.formDescriptor formRowWithTag:kSwitchBool].value boolValue]){
-//        UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Switch is ON", nil) message:@"Button has checked the switch value..." delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
-//        [alertView show];
-//    }
-//    [self deselectFormRow:sender];
-//}
-
-
-- (id)initWithCoder:(NSCoder*)aDecoder
+-(void)didTouchButton:(XLFormRowDescriptor *)sender
 {
-    if(self = [super initWithCoder:aDecoder])
-    {
-        XLFormDescriptor * form  = [XLFormDescriptor formDescriptorWithTitle:@"Filhos"];
-        self.form = form;
+    if ([[sender.sectionDescriptor.formDescriptor formRowWithTag:kBotaoEcles].value boolValue]){
+        UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Switch is ON", nil) message:@"Button has checked the switch value..." delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
+        [alertView show];
     }
-    return self;
+    [self deselectFormRow:sender];
 }
 
 @end
