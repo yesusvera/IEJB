@@ -231,23 +231,25 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
     // Ir para o cadastro eclesi[astico
     XLFormRowDescriptor * butaoIrEcle = [XLFormRowDescriptor formRowDescriptorWithTag:kBotaoEcles rowType:XLFormRowDescriptorTypeButton title:@"Cadastro Eclesiástico"];
     [butaoIrEcle.cellConfig setObject:[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] forKey:@"textLabel.textColor"];
-    
+    [butaoIrEcle.cellConfig setObject:@(NSTextAlignmentCenter) forKey:@"textLabel.textAlignment"];
+    [butaoIrEcle.cellConfig setObject:@(UITableViewCellAccessoryDisclosureIndicator) forKey:@"accessoryType"];
     butaoIrEcle.buttonViewController = [JYCadastroEclesiastico class];
     //[butaoIrEcle.action.formSelector = @selector(didTouchButton:)];
+    
     [section addFormRow:butaoIrEcle];
     
     // Concluir o cadastro
     XLFormRowDescriptor * butaoConcluir = [XLFormRowDescriptor formRowDescriptorWithTag:kBotaoConcluirCad rowType:XLFormRowDescriptorTypeButton title:@"Concluir Cadastro"];
     [butaoConcluir.cellConfig setObject:[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] forKey:@"textLabel.textColor"];
-    
-    //buttonRow.action.formSelector = @selector(didTouchButton:);
+    butaoConcluir.cellConfig.accessibilityLabel = UITableViewCellStyleDefault;
+    //[butaoConcluir.cellConfig setObject:[UITableViewCellStyleDefault ] forKey:@"textLabel.aling"];
+    //butaoConcluir.action.formSelector = @selector(didTouchButton:);
     [section addFormRow:butaoConcluir];
 
     
     return [super initWithForm:formDescriptor];
     
 }
-
 
 -(void)didSelectFormRow:(XLFormRowDescriptor *)formRow{
     
@@ -294,6 +296,15 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
 
          JYDetalheFilhos *filhos = [[JYDetalheFilhos alloc] initWithForm:formDescriptor];
         [self.navigationController pushViewController:filhos animated:YES];
+    } else if ([formRow.tag isEqualToString:kBotaoConcluirCad]){
+
+        UIAlertView *alert = [[UIAlertView alloc]
+                              initWithTitle:@"Deseja concluir o cadastro?"
+                              message:nil
+                              delegate:self
+                              cancelButtonTitle:@"Não"
+                              otherButtonTitles:@"Sim", nil];
+        [alert show];
     }
    
 
@@ -328,7 +339,14 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
    // self.form.delegate = self;
 }
 
-
+- (void)alertView:(UIAlertView *)alertView
+clickedButtonAtIndex:(NSInteger) buttonIndex{
+    
+    if (buttonIndex == 1) {
+        // Preencher os dados para envio ao webservice
+        //NSLog(@"Entrou", nil);
+    }
+}
 
 //-(IBAction)savePressed:(UIBarButtonItem * __unused)button
 //{
