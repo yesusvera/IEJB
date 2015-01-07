@@ -326,6 +326,26 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
                 }
             }
         }
+    }else if ([rowDescriptor.tag isEqualToString:kCPF]){
+        if([rowDescriptor.value isEqualToString:oldValue]){
+            return;
+        }
+        
+        NSString *valor = rowDescriptor.value;
+
+        if(valor.length == 3 || valor.length == 7) {
+            NSString *str = [NSString stringWithFormat:@"%@.",valor];
+            rowDescriptor.value = str;
+        }
+        
+        if(valor.length == 11){
+            NSString *str = [NSString stringWithFormat:@"%@-", valor];
+            rowDescriptor.value = str;
+        }
+        
+        if(valor.length == 14){
+            return;
+        }
     }
 }
 
