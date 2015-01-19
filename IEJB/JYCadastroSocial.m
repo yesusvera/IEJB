@@ -68,7 +68,7 @@ NSString *const kBotaoConcluirCad3 = @"botaoConcluirCadastro3";
     [formDescriptor addFormSection:section];
     
     // Lista de rendas
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kRenda rowType:XLFormRowDescriptorTypeSelectorPickerViewInline title:@"Grau de instrução"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kRenda rowType:XLFormRowDescriptorTypeSelectorPickerViewInline title:@"Renda Familiar"];
     NSString *plistCaminhoRendas = [[NSBundle mainBundle]
                                            pathForResource:@"rendas"  ofType:@"plist"];
     row.selectorOptions = [NSArray arrayWithContentsOfFile:plistCaminhoRendas];

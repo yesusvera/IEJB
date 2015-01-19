@@ -131,7 +131,7 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
     [section addFormRow:row];
     
     //Cidade
-    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCidade rowType:XLFormRowDescriptorTypeSelectorPickerViewInline title:@"Cidades"];
+    row = [XLFormRowDescriptor formRowDescriptorWithTag:kCidade rowType:XLFormRowDescriptorTypeSelectorPickerViewInline title:@"Cidade"];
     row.selectorOptions = [ufCidadeDao buscarCidadesPor:(int)[self buscarPosicaoAtualNa:section doCampo:kUF] + 1];
     row.value = [row.selectorOptions objectAtIndex: 0];
     [section addFormRow:row];
