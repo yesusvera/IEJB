@@ -244,7 +244,7 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
     [butaoConcluir.cellConfig setObject:[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] forKey:@"textLabel.textColor"];
     butaoConcluir.cellConfig.accessibilityLabel = UITableViewCellStyleDefault;
     //[butaoConcluir.cellConfig setObject:[UITableViewCellStyleDefault ] forKey:@"textLabel.aling"];
-    //butaoConcluir.action.formSelector = @selector(didTouchButton:);
+    butaoConcluir.action.formSelector = @selector(didTouchButton:);
     [section addFormRow:butaoConcluir];
 
     
@@ -365,10 +365,22 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
 clickedButtonAtIndex:(NSInteger) buttonIndex{
     
     if (buttonIndex == 1) {
-        // Preencher os dados para envio ao webservice
+        // TODO: Validação de campos
+//            NSArray * validationErrors = [self formValidationErrors];
+//            if (validationErrors.count > 0){
+//                [self showFormValidationError:[validationErrors firstObject]];
+//                return;
+//            }
+//            [self.tableView endEditing:YES];
+//            UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Valid Form", nil) message:@"No errors found" delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
+//            [alertView show];
+        
+        
+        
         NSLog(@"Entrou", nil);
     }
 }
+
 
 //-(IBAction)savePressed:(UIBarButtonItem * __unused)button
 //{
@@ -393,7 +405,7 @@ clickedButtonAtIndex:(NSInteger) buttonIndex{
 
 -(void)didTouchButton:(XLFormRowDescriptor *)sender
 {
-    if ([[sender.sectionDescriptor.formDescriptor formRowWithTag:kBotaoEcles].value boolValue]){
+    if ([sender.tag isEqualToString:kBotaoConcluirCad]){
         UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Switch is ON", nil) message:@"Button has checked the switch value..." delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
         [alertView show];
     }
