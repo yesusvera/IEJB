@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Kta-Qz-FlQ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Kta-Qz-FlQ">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
         <!--Tela Login View Controller-->
@@ -56,7 +56,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="R46-nV-cY4" kind="push" id="AKt-If-evD"/>
+                                    <segue destination="4AZ-Qc-cmB" kind="push" id="zQX-4W-QxP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sMy-uU-YTM">
@@ -358,7 +358,7 @@
                         <viewControllerLayoutGuide type="bottom" id="85q-Ff-gps"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iTi-7e-PxO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OTT-Ii-X6O">
@@ -1165,7 +1165,7 @@
         <!--Voltar-->
         <scene sceneID="RmT-BL-P1L">
             <objects>
-                <tableViewController id="R46-nV-cY4" customClass="JYTiposCadastros" sceneMemberID="viewController">
+                <tableViewController id="R46-nV-cY4" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="KjG-Hc-Rhs">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1203,7 +1203,41 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T3c-qV-8Gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1350" y="1101"/>
+            <point key="canvasLocation" x="1096" y="888"/>
+        </scene>
+        <!--Cadastro-->
+        <scene sceneID="0i2-HF-HjS">
+            <objects>
+                <viewController title="Cadastro" automaticallyAdjustsScrollViewInsets="NO" id="4AZ-Qc-cmB" customClass="JYOpcoesDeCadastros" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9qY-Pa-HT0"/>
+                        <viewControllerLayoutGuide type="bottom" id="Zo3-aP-EAe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6Ox-Pn-Pkl">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="VPf-PA-gBc">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zo3-aP-EAe" firstAttribute="top" secondItem="VPf-PA-gBc" secondAttribute="bottom" id="VMh-rh-HFe"/>
+                            <constraint firstAttribute="trailing" secondItem="VPf-PA-gBc" secondAttribute="trailing" id="cLI-m5-8DQ"/>
+                            <constraint firstItem="VPf-PA-gBc" firstAttribute="top" secondItem="9qY-Pa-HT0" secondAttribute="bottom" id="sgh-k9-nWY"/>
+                            <constraint firstItem="VPf-PA-gBc" firstAttribute="leading" secondItem="6Ox-Pn-Pkl" secondAttribute="leading" id="tMk-0Y-vBV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Cadastro IEJB" id="CEh-Bi-Ui0"/>
+                    <connections>
+                        <outlet property="tableView" destination="VPf-PA-gBc" id="Yjf-bY-RlM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dIP-kb-g7E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="764" y="888"/>
         </scene>
     </scenes>
     <resources>
@@ -1217,7 +1251,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="jB2-oj-IbE"/>
         <segue reference="Mtb-UQ-c7M"/>
-        <segue reference="wNL-Vv-FA9"/>
     </inferredMetricsTieBreakers>
 </document>

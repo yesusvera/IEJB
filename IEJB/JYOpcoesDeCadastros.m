@@ -1,12 +1,5 @@
-//
-//  JYTesteDeFormulario.m
-//  IEJB
-//
-//  Created by Jonathan Jordan Carrillo Salcedo on 10/10/14.
-//  Copyright (c) 2014 JY DESENV. All rights reserved.
-//
 #import "XLForm.h"
-#import "JYTiposCadastros.h"
+#import "JYOpcoesDeCadastros.h"
 #import "JYCadastroPessoal.h"
 #import "JYCadastroEclesiastico.h"
 #import "JYCadastroSocial.h"
@@ -16,11 +9,11 @@ NSString * const kCadastroPessoal = @"CadastroPessoal";
 NSString * const kCadastroEclesiastico = @"CadastroEclesiastico";
 NSString * const kCadastroSocial = @"CadastroSocial";
 
-@interface JYTiposCadastros ()
+@interface JYOpcoesDeCadastros ()<UITableViewDataSource>
 
 @end
 
-@implementation JYTiposCadastros
+@implementation JYOpcoesDeCadastros
 
 
 -(instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -53,7 +46,7 @@ NSString * const kCadastroSocial = @"CadastroSocial";
 
 -(void)initializeForm
 {
-
+    
     XLFormDescriptor * form;
     XLFormSectionDescriptor * section;
     XLFormRowDescriptor * row;
@@ -72,7 +65,7 @@ NSString * const kCadastroSocial = @"CadastroSocial";
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kCadastroEclesiastico rowType:XLFormRowDescriptorTypeButton title:@"Eclesiástico"];
     row.buttonViewController = [JYCadastroEclesiastico class];
     [section addFormRow:row];
-   
+    
     // Cadastro Social
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kCadastroSocial rowType:XLFormRowDescriptorTypeButton title:@"Social"];
     row.buttonViewController = [JYCadastroSocial class];

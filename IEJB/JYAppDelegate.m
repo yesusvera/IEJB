@@ -17,6 +17,15 @@
     [SCSQLite initWithDatabase:@"iejb.db"];
     //[self copyDatabaseFile];
     
+//    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+//    // Override point for customization after application launch.
+//    self.window.backgroundColor = [UIColor whiteColor];
+//    
+//    // load the initial form form Storybiard
+//    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone.storyboard" bundle:nil];
+//    [self.window setRootViewController:[storyboard instantiateInitialViewController]];
+//    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 							
