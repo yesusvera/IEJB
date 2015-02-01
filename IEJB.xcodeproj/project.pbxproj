@@ -13,6 +13,7 @@
 		290778C019F4613C00D9EBFB /* JYCadastroEclesiastico.m in Sources */ = {isa = PBXBuildFile; fileRef = 290778BF19F4613C00D9EBFB /* JYCadastroEclesiastico.m */; };
 		290778C319F4614D00D9EBFB /* JYCadastroSocial.m in Sources */ = {isa = PBXBuildFile; fileRef = 290778C219F4614D00D9EBFB /* JYCadastroSocial.m */; };
 		2940878C1A7E8FF70056F71C /* JYOpcoesDeCadastros.m in Sources */ = {isa = PBXBuildFile; fileRef = 2940878B1A7E8FF70056F71C /* JYOpcoesDeCadastros.m */; };
+		294087911A7E9B510056F71C /* Podfile.lock in Resources */ = {isa = PBXBuildFile; fileRef = 294087901A7E9B510056F71C /* Podfile.lock */; };
 		2941DF1A195CF72D004BFEAE /* JYCadastroViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2941DF19195CF72D004BFEAE /* JYCadastroViewController.m */; };
 		294F50B519D4C577005AC2D6 /* Logo_M1A1.png in Resources */ = {isa = PBXBuildFile; fileRef = 294F50B419D4C577005AC2D6 /* Logo_M1A1.png */; };
 		294F50B719D4C599005AC2D6 /* Logo_IEJB.png in Resources */ = {isa = PBXBuildFile; fileRef = 294F50B619D4C599005AC2D6 /* Logo_IEJB.png */; };
@@ -84,6 +85,7 @@
 		290778C219F4614D00D9EBFB /* JYCadastroSocial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCadastroSocial.m; sourceTree = "<group>"; };
 		2940878A1A7E8FF70056F71C /* JYOpcoesDeCadastros.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYOpcoesDeCadastros.h; sourceTree = "<group>"; };
 		2940878B1A7E8FF70056F71C /* JYOpcoesDeCadastros.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYOpcoesDeCadastros.m; sourceTree = "<group>"; };
+		294087901A7E9B510056F71C /* Podfile.lock */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile.lock; sourceTree = "<group>"; };
 		2941DF18195CF72D004BFEAE /* JYCadastroViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JYCadastroViewController.h; sourceTree = "<group>"; };
 		2941DF19195CF72D004BFEAE /* JYCadastroViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JYCadastroViewController.m; sourceTree = "<group>"; };
 		294F50B419D4C577005AC2D6 /* Logo_M1A1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo_M1A1.png; sourceTree = "<group>"; };
@@ -251,6 +253,7 @@
 		29A7D5F2195BBC6B00C3FA40 = {
 			isa = PBXGroup;
 			children = (
+				294087901A7E9B510056F71C /* Podfile.lock */,
 				29A7D604195BBC6C00C3FA40 /* IEJB */,
 				29A7D626195BBC6C00C3FA40 /* IEJBTests */,
 				29A7D5FD195BBC6C00C3FA40 /* Frameworks */,
@@ -499,6 +502,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				294087911A7E9B510056F71C /* Podfile.lock in Resources */,
 				29A3015519D63C1200FD1214 /* H2CD.png in Resources */,
 				29B612F219DB8822003B6C68 /* ministerios.plist in Resources */,
 				290245FE19DDBD3E00539CE7 /* logo do APP 1 a 1.png in Resources */,
