@@ -73,7 +73,7 @@ NSString * const kCadastroSocial = @"CadastroSocial";
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kCadastroEclesiastico rowType:XLFormRowDescriptorTypeButton title:@"Eclesiástico"];
     row.buttonViewController = [JYCadastroEclesiastico class];
     [section addFormRow:row];
-    
+   
     // Cadastro Social
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kCadastroSocial rowType:XLFormRowDescriptorTypeButton title:@"Social"];
     row.buttonViewController = [JYCadastroSocial class];

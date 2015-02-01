@@ -11,4 +11,5 @@
 
 @interface JYTiposCadastros : XLFormViewController
 
+
 @end
