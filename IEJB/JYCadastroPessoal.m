@@ -191,6 +191,7 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
     
     // Email
     row = [XLFormRowDescriptor formRowDescriptorWithTag:kEmail rowType:XLFormRowDescriptorTypeEmail];
+    [row addValidator:[XLFormValidator emailValidator]];
     [row.cellConfigAtConfigure setObject:@"Informe o seu E-mail" forKey:@"textField.placeholder"];
     
     //[row addValidator:[XLFormValidator emailValidator]];
@@ -327,25 +328,26 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
             }
         }
     }else if ([rowDescriptor.tag isEqualToString:kCPF]){
-        if([rowDescriptor.value isEqualToString:oldValue]){
-            return;
-        }
-        
-        NSString *valor = rowDescriptor.value;
-
-        if(valor.length == 3 || valor.length == 7) {
-            NSString *str = [NSString stringWithFormat:@"%@.",valor];
-            rowDescriptor.value = str;
-        }
-        
-        if(valor.length == 11){
-            NSString *str = [NSString stringWithFormat:@"%@-", valor];
-            rowDescriptor.value = str;
-        }
-        
-        if(valor.length == 14){
-            return;
-        }
+        // Falta implementar para incluir a mascara dinamicamente.
+//        if([rowDescriptor.value isEqualToString:oldValue]){
+//            return;
+//        }
+//        
+//        NSString *valor = rowDescriptor.value;
+//
+//        if(valor.length == 3 || valor.length == 7) {
+//            NSString *str = [NSString stringWithFormat:@"%@.",valor];
+//            rowDescriptor.value = str;
+//        }
+//        
+//        if(valor.length == 11){
+//            NSString *str = [NSString stringWithFormat:@"%@-", valor];
+//            rowDescriptor.value = str;
+//        }
+//        
+//        if(valor.length == 14){
+//            return;
+//        }
     }
 }
 
@@ -364,7 +366,7 @@ clickedButtonAtIndex:(NSInteger) buttonIndex{
     
     if (buttonIndex == 1) {
         // Preencher os dados para envio ao webservice
-        //NSLog(@"Entrou", nil);
+        NSLog(@"Entrou", nil);
     }
 }
 
