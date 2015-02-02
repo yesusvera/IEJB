@@ -14,6 +14,7 @@
 @property(nonatomic, retain) NSString *CPF;
 @property(nonatomic, retain) NSString *dataNascimento;
 @property(nonatomic, retain) NSString *tipoSanguineo;
+@property(nonatomic, retain) NSString *doencas;
 @property(nonatomic, retain) NSString *sexo;
 @property(nonatomic, retain) NSString *conjuge;
 @property(nonatomic, retain) NSString *qtdFilhos;

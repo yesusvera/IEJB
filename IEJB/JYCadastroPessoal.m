@@ -12,6 +12,7 @@
 #import "UfCidadeDao.h"
 #import "UfCidades.h"
 #import "JYCadastroEclesiastico.h"
+#import "Membro.h"
 
 NSString *const kNome = @"nome";
 NSString *const kCPF = @"CPF";
@@ -244,7 +245,24 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
     [butaoConcluir.cellConfig setObject:[UIColor colorWithRed:0.0 green:122.0/255.0 blue:1.0 alpha:1.0] forKey:@"textLabel.textColor"];
     butaoConcluir.cellConfig.accessibilityLabel = UITableViewCellStyleDefault;
     //[butaoConcluir.cellConfig setObject:[UITableViewCellStyleDefault ] forKey:@"textLabel.aling"];
-    butaoConcluir.action.formSelector = @selector(didTouchButton:);
+    
+    
+    butaoConcluir.action.formBlock = ^(XLFormRowDescriptor * sender){
+        
+        
+        if ([sender.tag isEqualToString:kBotaoConcluirCad]){
+                    UIAlertView *concluirCad = [[UIAlertView alloc]
+                                          initWithTitle:@"Deseja concluir o cadastro?"
+                                          message:nil
+                                          delegate: self
+                                          cancelButtonTitle:@"Não"
+                                          otherButtonTitles:@"Sim", nil];
+                    [concluirCad show];
+        }
+        [self deselectFormRow:sender];
+    };
+    
+    //butaoConcluir.action.formSelector = @selector(didTouchButton:);
     [section addFormRow:butaoConcluir];
 
     
@@ -297,16 +315,17 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
 
          JYDetalheFilhos *filhos = [[JYDetalheFilhos alloc] initWithForm:formDescriptor];
         [self.navigationController pushViewController:filhos animated:YES];
-    } else if ([formRow.tag isEqualToString:kBotaoConcluirCad]){
-
-        UIAlertView *alert = [[UIAlertView alloc]
-                              initWithTitle:@"Deseja concluir o cadastro?"
-                              message:nil
-                              delegate:self
-                              cancelButtonTitle:@"Não"
-                              otherButtonTitles:@"Sim", nil];
-        [alert show];
     }
+//    } else if ([formRow.tag isEqualToString:kBotaoConcluirCad]){
+//
+//        UIAlertView *alert = [[UIAlertView alloc]
+//                              initWithTitle:@"Deseja concluir o cadastro?"
+//                              message:nil
+//                              delegate:self
+//                              cancelButtonTitle:@"Não"
+//                              otherButtonTitles:@"Sim", nil];
+//        [alert show];
+//    }
    
 
 }
@@ -364,7 +383,9 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
 - (void)alertView:(UIAlertView *)alertView
 clickedButtonAtIndex:(NSInteger) buttonIndex{
     
-    if (buttonIndex == 1) {
+    if ([alertView.title isEqualToString:@"concluirCad"]) {
+    
+        if (buttonIndex == 1) {
         // TODO: Validação de campos
 //            NSArray * validationErrors = [self formValidationErrors];
 //            if (validationErrors.count > 0){
@@ -374,10 +395,11 @@ clickedButtonAtIndex:(NSInteger) buttonIndex{
 //            [self.tableView endEditing:YES];
 //            UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Valid Form", nil) message:@"No errors found" delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
 //            [alertView show];
+            
+            //TODO Setar variavel que defina a carga do Membro no didToch
         
-        
-        
-        NSLog(@"Entrou", nil);
+            NSLog(@"Entrou", nil);
+        }
     }
 }
 
@@ -406,8 +428,55 @@ clickedButtonAtIndex:(NSInteger) buttonIndex{
 -(void)didTouchButton:(XLFormRowDescriptor *)sender
 {
     if ([sender.tag isEqualToString:kBotaoConcluirCad]){
-        UIAlertView * alertView = [[UIAlertView alloc] initWithTitle:NSLocalizedString(@"Switch is ON", nil) message:@"Button has checked the switch value..." delegate:self cancelButtonTitle:NSLocalizedString(@"OK", nil) otherButtonTitles:nil];
-        [alertView show];
+        
+        Membro *membro = [[Membro alloc]init];
+        
+        for (XLFormRowDescriptor * row in sender.sectionDescriptor.formRows) {
+            if ([row.tag isEqualToString:kNome]){
+                membro.nome = row.value;
+            }else if ([row.tag isEqualToString:kCPF]){
+                membro.CPF = row.value;
+            }else if ([row.tag isEqualToString:kDataNasc]){
+                membro.dataNascimento = row.value;
+            }else if ([row.tag isEqualToString:kSexo]){
+                membro.sexo = row.value;
+            }else if ([row.tag isEqualToString:kConjuge]){
+                membro.conjuge = row.value;
+            }else if ([row.tag isEqualToString:kQtdFilhos]){
+                membro.qtdFilhos = row.value;
+            }else if ([row.tag isEqualToString:kFilhos]){
+                // Detalhar filhos
+                //membro = row.value;
+            }else if ([row.tag isEqualToString:kRua]){
+                membro.ruaLogradouro = row.value;
+            }else if ([row.tag isEqualToString:kBairro]){
+                membro.bairro = row.value;
+            }else if ([row.tag isEqualToString:kUF]){
+                membro.UF = row.value;
+            }else if ([row.tag isEqualToString:kCidade]){
+                membro.cidade = row.value;
+            }else if ([row.tag isEqualToString:kCep]){
+                membro.cep = row.value;
+            }else if ([row.tag isEqualToString:kTelFixo]){
+                membro.telFixo = row.value;
+            }else if ([row.tag isEqualToString:kTelCel]){
+                membro.telCelular= row.value;
+            }else if ([row.tag isEqualToString:kTelCom]){
+                membro.telComercial = row.value;
+            }else if ([row.tag isEqualToString:kTiposSanguineos]){
+                membro.tipoSanguineo = row.value;
+            }else if ([row.tag isEqualToString:kDoencas]){
+                membro.doencas = row.value;
+            }else if ([row.tag isEqualToString:kEmail]){
+                membro.email = row.value;
+            }else if ([row.tag isEqualToString:kUsuario]){
+                membro.usuario = row.value;
+            }else if ([row.tag isEqualToString:kSenha1]){
+                membro.senha = row.value;
+            }else if ([row.tag isEqualToString:kSenha2]){
+                membro.confirmaSenha = row.value;
+            }
+        }
     }
     [self deselectFormRow:sender];
 }
