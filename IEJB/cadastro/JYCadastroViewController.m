@@ -160,10 +160,12 @@
     membro.senha = self.senha.text;
     membro.confirmaSenha = self.confirmaSenha.text;
     membro.idCidade = idCidade;
+
     
-    ConexaoCadastrarMembro *cadMembro = [[ConexaoCadastrarMembro alloc]init];
-    
-    [cadMembro cadastrarMembro:membro];
+   
+//    ConexaoCadastrarMembro *cadMembro = [[ConexaoCadastrarMembro alloc]init];
+//    
+//    [cadMembro cadastrarMembro:membro];
 }
 
 

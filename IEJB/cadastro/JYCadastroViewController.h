@@ -23,6 +23,8 @@
     NSString *idCidade;
     
 }
+- (IBAction)concluirCadastroPessoal:(id)sender;
+
 @property (weak, nonatomic) IBOutlet UITextField *nome;
 @property (weak, nonatomic) IBOutlet UITextField *CPF;
 @property (weak, nonatomic) IBOutlet UITextField *dataNascimento;

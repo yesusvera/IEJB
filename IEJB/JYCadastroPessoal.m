@@ -250,15 +250,121 @@ NSString *const kBotaoConcluirCad = @"botaoConcluirCad";
     butaoConcluir.action.formBlock = ^(XLFormRowDescriptor * sender){
         
         
-        if ([sender.tag isEqualToString:kBotaoConcluirCad]){
-                    UIAlertView *concluirCad = [[UIAlertView alloc]
-                                          initWithTitle:@"Deseja concluir o cadastro?"
-                                          message:nil
-                                          delegate: self
-                                          cancelButtonTitle:@"Não"
-                                          otherButtonTitles:@"Sim", nil];
-                    [concluirCad show];
+//        if ([sender.tag isEqualToString:kBotaoConcluirCad]){
+//                    UIAlertView *concluirCad = [[UIAlertView alloc]
+//                                          initWithTitle:@"Deseja concluir o cadastro?"
+//                                          message:nil
+//                                          delegate: self
+//                                          cancelButtonTitle:@"Não"
+//                                          otherButtonTitles:@"Sim", nil];
+//                    [concluirCad show];
+//        }
+        
+        
+        NSString *soapMessage = [NSString stringWithFormat:
+                                 @"<soapenv:Envelope xmlns:soapenv=\"http://schemas.xmlsoap.org/soap/envelope/\" xmlns:v1=\"http://www.iejb.com/servicos/CadastrarMembroWS/v1\">"
+                                 "<soapenv:Header/>"
+                                 "<soapenv:Body>"
+                                 "<v1:cadastroMembro>"
+                                 "<membro>"
+                                 "<id></id>"
+                                 "<nome>MARIANA</nome>"
+                                 "<nomeConjuge></nomeConjuge>"
+                                 "<cpf>23234234</cpf>"
+                                 "<sexo>F</sexo>"
+                                 "<dataNascimento></dataNascimento>"
+                                 "<tipoSanguineo></tipoSanguineo>"
+                                 "<email></email>"
+                                 
+                                 " <!--Zero or more repetitions:-->"
+                                 " <filhos>"
+                                 " <dataNascimento></dataNascimento>"
+                                 " <id></id>"
+                                 " <nome></nome>"
+                                 "<sexo></sexo>"
+                                 "</filhos>"
+                                 "<endereco></endereco>"
+                                 "<bairro></bairro>"
+                                 "<cidade>"
+                                 "<id>1</id>"
+                                 "</cidade>"
+                                 
+                                 "<cep></cep>"
+                                 
+                                 "<telefoneFixo></telefoneFixo>"
+                                 "<telefoneCelular></telefoneCelular>"
+                                 "<telefoneComercial></telefoneComercial>"
+                                 
+                                 "<usuario>"
+                                 "<login></login>"
+                                 "<senha></senha>"
+                                 "</usuario>"
+                                 
+                                 "<hashConfirmacaoCadastro></hashConfirmacaoCadastro>"
+                                 "<doencas></doencas>"
+                                 "<necessidadesEspeciais></necessidadesEspeciais>"
+                                 "<grauInstrucao></grauInstrucao>"
+                                 "<profissao></profissao>"
+                                 "<aptidoes></aptidoes>"
+                                 
+                                 "<eclesiastico>"
+                                 "<anoConversao></anoConversao>"
+                                 "<id></id>"
+                                 "<igrejaOrigem></igrejaOrigem>"
+                                 "<ministerio></ministerio>"
+                                 "<motivoMudancaIgreja></motivoMudancaIgreja>"
+                                 "<musico></musico>"
+                                 "<trabalhosExecutados></trabalhosExecutados>"
+                                 "</eclesiastico>"
+                                 
+                                 "<social>"
+                                 "<id></id>"
+                                 "<necessidadesImediatas></necessidadesImediatas>"
+                                 "<necessidadesLongoPrazo></necessidadesLongoPrazo>"
+                                 "<necessidadesMedioPrazo></necessidadesMedioPrazo>"
+                                 "<pedidosOracao></pedidosOracao>"
+                                 "<rendaFamiliar></rendaFamiliar>"
+                                 "<rendaPessoal></rendaPessoal>"
+                                 "<temCasaPropria></temCasaPropria>"
+                                 "<eEmpregado></eEmpregado>"
+                                 "</social>"
+                                 "</membro>"
+                                 
+                                 "<user>iejbUser8234</user>"
+                                 "<pass>iejb_298RF@@!</pass>"
+                                 "</v1:cadastroMembro>"
+                                 "</soapenv:Body>"
+                                 "</soapenv:Envelope>\n"];
+        
+        
+        NSLog(@"%@", soapMessage);
+        
+        
+        NSURL *url = [NSURL URLWithString:@"http://localhost:8080/SGIJardimBotanicoWEB/CadastrarMembroWS"];
+        NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
+        NSString *msgLength = [NSString stringWithFormat:@"%d", [soapMessage length]];
+        
+        [theRequest addValue:@"text/xml; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+//        [theRequest addValue:@"http://www.iejb.com/servicos/CadastrarMembroWS/v1" forHTTPHeaderField:@"SOAPAction"];
+        [theRequest addValue:msgLength forHTTPHeaderField:@"Content-Length"];
+        [theRequest setHTTPMethod:@"POST"];
+        [theRequest setHTTPBody:[soapMessage dataUsingEncoding:NSUTF8StringEncoding]];
+        
+        
+        NSURLConnection *theConnection = [[NSURLConnection alloc] initWithRequest:theRequest delegate:self];
+        
+        
+        if(theConnection)
+        {
+            //webData = [NSMutableData data];
+            
         }
+        else
+        {
+            NSLog(@"theConnection is null");
+        }
+
+        
         [self deselectFormRow:sender];
     };
     

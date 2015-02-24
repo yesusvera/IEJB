@@ -14,6 +14,8 @@
 
     NSArray *listaMinisterios;
     UIPickerView *opcoesMinisterios;
+    
+    NSMutableData *webData;
 }
 @property (weak, nonatomic) IBOutlet UITextField *anoConversao;
 @property (weak, nonatomic) IBOutlet UITextField *igrejaOrigem;
@@ -21,5 +23,6 @@
 @property (weak, nonatomic) IBOutlet UITextField *miniterio;
 @property (weak, nonatomic) IBOutlet UITextField *funcao;
 @property (weak, nonatomic) IBOutlet UITextField *trabDesenvolvidos;
+@property(nonatomic, retain) NSMutableData *webData;
 
 @end
